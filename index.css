@@ -57,6 +57,7 @@ body{
     font-size:32px;
     border: 0.15em solid black;
     border-radius: 0.5em;
+    background-color: white;
     margin: 0.2em;
     padding:0em;
 }

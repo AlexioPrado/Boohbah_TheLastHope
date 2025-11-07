@@ -1,0 +1,69 @@
+
+
+@font-face {
+    font-family: 'cookiefont';
+    src: url(Fonts/cookie_bold.TTF) format('truetype'),
+         url(Fonts/cookie_regular.TTF) format('truetype'),
+         url(Fonts/cookie_Black.TTF) format('truetype');
+}
+
+body{
+    font-family: cookiefont;
+    user-select: none; 
+    
+}
+
+
+#mainPanel{
+    background-image: url(background.jpg);
+    background-size: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#titleCard {
+    background-color: hsl(0, 0%, 100%, 50%);
+    display: grid;
+    grid-template-columns: 60% 40%;
+    align-items: center;
+    padding: 2em;
+    height: 50vh;
+    width: 50%;
+    border: 0.5em solid rgb(255, 255, 255);
+    border-radius: 1em;
+}
+
+#cardImage{
+    height: inherit;
+    border-radius: inherit;
+    margin-right: 1em;
+    min-width: inherit;
+}
+
+#pageDirectory{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.button {
+    font-family: cookiefont;
+    font-size:larger;
+    letter-spacing: 0.3em;
+    border: 0.25em solid black;
+    border-radius: 0.5em;
+    margin: 0.2em;
+    padding:0.5em;
+}
+
+#history{
+    margin-top: 1em;
+    font-size: 2em;
+}
+
+.storyParagraph{
+    font: url(Fonts/cookie_regular.TTF);
+}

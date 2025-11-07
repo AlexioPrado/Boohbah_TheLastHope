@@ -15,7 +15,7 @@ body{
 
 
 #mainPanel{
-    background-image: url(background.jpg);
+    background-image: url(titleImages/background.jpg);
     background-size: 100%;
     border: none;
     height: 100vh;

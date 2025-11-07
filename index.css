@@ -10,6 +10,7 @@
 body{
     font-family: cookiefont;
     user-select: none; 
+    overflow: hidden;
 }
 
 
@@ -38,8 +39,8 @@ body{
 }
 
 #cardImage{
-    height: 100%;
-    max-width:100%;
+    height: inherit;
+    max-width: 100%;
     border-radius: inherit;
     object-fit: cover;
     
@@ -60,9 +61,41 @@ body{
     padding:0em;
 }
 
-#history{
+#downArrow {
     margin-top: 1em;
+    width: 5vh;
+    position: relative;
+    -webkit-animation: mover s infinite  alternate;
+    animation: mover 1s infinite  alternate;
+}
+
+@-webkit-keyframes mover {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-20px); }
+}
+@keyframes mover {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-20px); }
+}
+
+
+#scrollDown, #scrollUp{
+    margin-top: 1em;
+    margin-bottom: 0em;
     font-size: 2em;
+}
+
+#lowPanel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+#storyCard {
+    width: 120vh;
+    font-size: large;
 }
 
 .storyParagraph{

@@ -10,13 +10,13 @@
 body{
     font-family: cookiefont;
     user-select: none; 
-    
 }
 
 
 #mainPanel{
     background-image: url(background.jpg);
     background-size: 100%;
+    border: none;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -28,19 +28,21 @@ body{
     background-color: hsl(0, 0%, 100%, 50%);
     display: grid;
     grid-template-columns: 60% 40%;
+    grid-column-gap: 1em;
     align-items: center;
     padding: 2em;
     height: 50vh;
-    width: 50%;
+    width: 80vh;
     border: 0.5em solid rgb(255, 255, 255);
     border-radius: 1em;
 }
 
 #cardImage{
-    height: inherit;
+    height: 100%;
+    max-width:100%;
     border-radius: inherit;
-    margin-right: 1em;
-    min-width: inherit;
+    object-fit: cover;
+    
 }
 
 #pageDirectory{
@@ -51,12 +53,11 @@ body{
 
 .button {
     font-family: cookiefont;
-    font-size:larger;
-    letter-spacing: 0.3em;
-    border: 0.25em solid black;
+    font-size:32px;
+    border: 0.15em solid black;
     border-radius: 0.5em;
     margin: 0.2em;
-    padding:0.5em;
+    padding:0em;
 }
 
 #history{

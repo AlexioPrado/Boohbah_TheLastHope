@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guidebook</title>
+    <link rel="stylesheet" href="guidebook.css">
+    <link rel="icon" type="image/png" href="tabIcons/Humbah_stand.ico">
+</head>
+<body>
+    <!--INSERT IMAGE FOR EXIT BUTTON-->
+    <div id="titlePanel">
+        <h3 style="font-size: 72px; margin: 0;;">Guidebook</h3>
+    </div>
+    
+    <div id="guidePanel">
+        <div id="listContainer">
+            <div id="contentList">
+                <button class="infoSection" id="boobahCardGame">Boobah:<br> The Last Hope</button>
+                <button class="infoSection" id="gameFlow">Game Flow</button>
+                <button class="infoSection" id="takingAction">Taking Action</button>
+                <button class="infoSection" id="characterRoles">Character Roles</button>
+                <button class="infoSection" id="damageTypes">Damage Types</button>
+                <button class="infoSection" id="attributes">Attributes</button>
+                <button class="infoSection" id="otherRules">Other Rules</button>
+            </div>
+        </div>
+        <div id="infoContainer">
+            <div id="information">
+                <h1 class="infoTitles">Boobah: The Last Hope</h1>
+                   <p></p>
+                <h1 class="infoTitles">Game Flow</h1>
+                   <p></p>
+                <h1 class="infoTitles">Taking Action</h1>
+                   <p></p>
+                <h1 class="infoTitles">Character Roles</h1>
+                   <p></p>
+                <h1 class="infoTitles">Damage Types</h1>
+                    <p>Each damaging move a character has falls under these 3 categories. Each type excels in different combat scenarios</p>
+                    <p>
+                    <strong>Single-Target</strong><br>
+                    Excels in dealing high amounts of damage to a single target.
+                    </p>
+                    <p>
+                    <strong>Damage over Time</strong><br>
+                    Little in damage, its effects will last long until the enemy is defeated.
+                    </p>
+                    <p>
+                    <strong>Area of Effect</strong><br>
+                    Deals damage to multiple enemies at once.
+                    </p>
+                <h1 class="infoTitles">Attributes</h1>
+                    <p>
+                        Each enemy has an attribute bar that increases when characters of the same attribute attack. 
+                        Each attack has differing levels of attribute stacks given. Enemies can have higher/lower requirements 
+                        in the amount of stacks to proc the attribute effect.
+                    </p>
+                    <p>
+                        <strong>Coder</strong><br>
+                        Accumulate debug stacks and stun the enemy for 2 rounds. Damage during sting is increased by 1.
+                    </p>
+                    <p style="margin-bottom: 0em;">
+                        <strong>Cyber</strong><br>
+                        Accumulate network security stacks and summon a firewall, lasting 2 rounds.<br><u>Firewall:</u>
+                    </p>
+                    <ul>
+                        <li>Reduce damage taken by 1</li>
+                        <li>Counterattack, dmg calculated based on 1/2 of the initial attack damage + 1 damage.</li>
+                    </ul>
+                    <p style="margin-bottom: 0em;">
+                        <strong>Biotech</strong><br>
+                        Accumulate chemical agents and summon poison, damaging enemies and healing the party based on poison damage.
+                    </p>
+                    <ul>
+                        <li>Deal 2 damage at the end of the round. (2 rounds)</li>
+                        <li>Heal 1/2 of poison damage</li>
+                    </ul>
+                    
+                <h1 class="infoTitles">Other Rules</h1>
+                    <p></p>
+            </div>
+        </div>
+    </div>
+
+    <!--Linking Script-->
+    <script src="guidebook.js"></script>
+</body>
+</html>

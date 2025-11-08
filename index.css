@@ -1,20 +1,18 @@
-
-
 @font-face {
     font-family: 'cookiefont';
-    src: url(Fonts/cookie_bold.TTF) format('truetype'),
-         url(Fonts/cookie_regular.TTF) format('truetype'),
-         url(Fonts/cookie_Black.TTF) format('truetype');
+    src: url(fonts/cookie_bold.TTF) format('truetype'),
+         url(fonts/cookie_regular.TTF) format('truetype'),
+         url(fonts/cookie_Black.TTF) format('truetype');
 }
 
-body{
+body {
     font-family: cookiefont;
     user-select: none; 
     overflow: hidden;
 }
 
 
-#mainPanel{
+#mainPanel {
     background-image: url(titleImages/background.jpg);
     background-size: 100%;
     border: none;
@@ -38,7 +36,7 @@ body{
     border-radius: 1em;
 }
 
-#cardImage{
+#cardImage {
     height: inherit;
     max-width: 100%;
     border-radius: inherit;
@@ -46,7 +44,7 @@ body{
     
 }
 
-#pageDirectory{
+#pageDirectory {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -61,6 +59,19 @@ body{
     margin: 0.2em;
     padding:0em;
 }
+
+.button:hover {
+    animation: shake 0.5s ease-in-out;
+    background-color: rgb(255, 239, 239);
+}
+
+@keyframes shake {
+      0% { transform: translateX(0); rotate: 0deg;}
+      25% { transform: translateX(-5px); rotate: 1deg;}
+      50% { transform: translateX(5px); rotate: -1deg;}
+      75% { transform: translateX(-5px); rotate: 1deg;}
+      100% { transform: translateX(0); rotate: 0deg;}
+    }
 
 #downArrow {
     margin-top: 1em;
@@ -80,7 +91,7 @@ body{
 }
 
 
-#scrollDown, #scrollUp{
+#scrollDown, #scrollUp {
     margin-top: 1em;
     margin-bottom: 0em;
     font-size: 2em;
@@ -99,6 +110,6 @@ body{
     font-size: large;
 }
 
-.storyParagraph{
-    font: url(Fonts/cookie_regular.TTF);
+.storyParagraph {
+    font: url(fonts/cookie_regular.TTF);
 }

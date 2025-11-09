@@ -44,7 +44,7 @@ body {
 
 #guidePanel {
     display: grid;
-    grid-template-columns: 20% 80%;
+    grid-template-columns: 25% 75%;
     column-gap: 1em;
     margin: 0em 2em 2em 2em;
 }
@@ -86,7 +86,6 @@ body {
     border-radius: 1vh;
 }
 
-
 .infoTitles {
     font-weight: bolder;
     font-size: 48px;
@@ -96,7 +95,7 @@ p,li,strong {
     font-size: 24px;
 }
 
-ul {
+ul,ol {
     margin-top: 0em;
 }
 

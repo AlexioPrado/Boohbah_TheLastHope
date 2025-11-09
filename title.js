@@ -1,7 +1,7 @@
 
 let scrolldown = document.getElementById('scrollDown');
 let scrollup = document.getElementById('scrollUp');
-var audio = new Audio('audio/minecraft_click.mp3')
+var click = new Audio('audio/minecraft_click.mp3')
 
 
 /* Linking pages
@@ -17,7 +17,7 @@ scrolldown.onclick = function () {
         top: 2000,
         behavior: 'smooth'
     });
-    audio.play();
+    click.play();
     console.log('Went to History');
 }
 
@@ -26,6 +26,6 @@ scrollup.onclick = function () {
         top: 0,
         behavior: 'smooth'
     });
-    audio.play();
+    click.play();
     console.log('Went to Title Screen');
 }

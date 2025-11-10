@@ -5,11 +5,65 @@
 }
 @font-face {
     font-family: 'cookiefont';
-    src: url(fonts/cookie_Black.TTF) format('truetype');
-    font-weight: bolder;
-}@font-face {
-    font-family: 'cookiefont';
     src: url(fonts/cookie_regular.TTF) format('truetype');
     font-weight: normal;
 }
+@font-face {
+    font-family: 'zzzfont';
+    src: url(fonts/印品鸿蒙体.ttf) format('truetype');
+    font-weight: bolder;
+}
 
+ * {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: cookiefont;
+    background-color: rgb(83,162,231);
+}
+
+#mainPanel {
+    display: grid;
+    grid-template-rows: 15% 85%;
+    row-gap: 1em;
+    margin: 1em;
+}
+
+#titlePanel {
+    display: grid;
+    grid-template-columns: 80% 10% 10%;
+    
+}
+
+#exit {
+    width: 10vh;
+}
+
+#filterOverlay {
+  position: fixed; /* Sit on top of the page content */
+  display: none; /* Hidden by default */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+  cursor: pointer; /* Add a pointer on hover */
+}
+
+#cardOverlay {
+  position: fixed; /* Sit on top of the page content */
+  display: none; /* Hidden by default */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+  z-index: 3; /* Specify a stack order in case you're using a different order for other elements */
+  cursor: pointer; /* Add a pointer on hover */
+}

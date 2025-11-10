@@ -20,8 +20,8 @@ let otherRulesTitle = document.getElementById('info7');
 let creditsTitle = document.getElementById('info8');
 
 //Audio
-var click = new Audio('audio/minecraft_click.mp3')
-var background_audio = new Audio('audio/Takeshi Abo - KYOUHEI.mp3');
+var click = new Audio('audio/ui/minecraft_click.mp3')
+var background_audio = new Audio('audio/background/Takeshi Abo - KYOUHEI.mp3');
 
 document.addEventListener('mouseover', (event) => {
     background_audio.loop = true;

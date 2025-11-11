@@ -14,3 +14,10 @@ document.addEventListener("visibilitychange", () => {
     background_audio.play()
   }
 });
+
+/* Linking Pages*/
+let exit = document.getElementById('exit');
+
+exit.onclick = function (){
+    window.location.href = ("https://alexioprado.github.io/Boohbah_TheLastHope/");
+}

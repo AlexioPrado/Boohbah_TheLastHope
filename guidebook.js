@@ -86,6 +86,7 @@ credits.onclick = function (){
 }
 
 
+/* Linking Pages*/
 let exit = document.getElementById('exit');
 
 exit.onclick = function (){

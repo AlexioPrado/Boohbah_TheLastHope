@@ -1,16 +1,16 @@
 @font-face {
     font-family: 'cookiefont';
-    src: url(fonts/cookie_bold.TTF) format('truetype');
+    src: url(Fonts/cookie_bold.TTF) format('truetype');
     font-weight: bold;
 }
 @font-face {
     font-family: 'cookiefont';
-    src: url(fonts/cookie_regular.TTF) format('truetype');
+    src: url(Fonts/cookie_regular.TTF) format('truetype');
     font-weight: normal;
 }
 @font-face {
     font-family: 'zzzfont';
-    src: url(fonts/印品鸿蒙体.ttf) format('truetype');
+    src: url(Fonts/印品鸿蒙体.ttf) format('truetype');
     font-weight: bolder;
 }
 

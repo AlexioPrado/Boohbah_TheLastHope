@@ -1,15 +1,15 @@
 @font-face {
     font-family: 'cookiefont';
-    src: url(../fonts/cookie_bold.TTF) format('truetype');
+    src: url(Fonts/cookie_bold.TTF) format('truetype');
     font-weight: bold;
 }
 @font-face {
     font-family: 'cookiefont';
-    src: url(../fonts/cookie_Black.TTF) format('truetype');
+    src: url(Fonts/cookie_Black.TTF) format('truetype');
     font-weight: bolder;
 }@font-face {
     font-family: 'cookiefont';
-    src: url(../fonts/cookie_regular.TTF) format('truetype');
+    src: url(Fonts/cookie_regular.TTF) format('truetype');
     font-weight: normal;
 }
 

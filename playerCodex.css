@@ -25,6 +25,7 @@ body {
     background-color: rgb(83,162,231);
     display: flex;
     flex-direction: column;
+    user-select: none; 
 }
 
 #header {
@@ -47,9 +48,41 @@ body {
 
 #cardPanel {
     display: grid;
-    grid-template-columns: 25% 75%;
+    grid-template-columns: 30% 70%;
     column-gap: 1em;
     margin: 0em 2em 2em 2em;
+}
+
+.card {
+    max-height: 33%;
+    width: 100%;
+    display: grid;
+    place-items: center;
+}
+
+.cardImg {
+    border-radius: 1em;
+    width: 100%;
+    min-width: 4rem;
+    max-width: 8rem;
+    height: 12rem;
+    object-fit:cover;
+}
+
+.cardName {
+    font-size: 18px;
+    text-align: center;
+    margin: 0.3em 0 0 0;
+}
+
+#filter {
+    background-color: rgb(111, 188, 255);
+    border: 1vh solid rgb(228, 241, 255);
+    border-radius: 2vh;
+    font-family: cookiefont;
+    font-weight: bold;
+    font-size: 24px;
+    width: 20%;
 }
 
 #cardContainer {
@@ -60,10 +93,12 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: fit-content;
+    height: 65vh;
     align-self: start;
     position: sticky;
     top: 2em;
+    overflow-y: scroll;
+
 }
 
 #infoContainer {
@@ -79,8 +114,9 @@ body {
     background-color: rgb(111, 188, 255);
     border-radius: 1.25vh;
     display: grid;
-    grid-template-columns: inherit;
+    grid-template-columns: 33% 33% 33%;
     row-gap: 1em;
+    column-gap: 0.5em;
     width: 100%;
     padding: 5%;
 }
@@ -115,4 +151,20 @@ strong {
 
 p {
     margin-bottom: 0em;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: none;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(60, 100, 194);
+  border-radius: 1em;
 }

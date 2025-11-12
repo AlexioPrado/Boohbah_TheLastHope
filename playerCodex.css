@@ -14,56 +14,105 @@
     font-weight: bolder;
 }
 
+
  * {
     box-sizing: border-box;
 }
 
 body {
     font-family: cookiefont;
+    font-weight: normal;
     background-color: rgb(83,162,231);
+    display: flex;
+    flex-direction: column;
 }
 
-#mainPanel {
-    display: grid;
-    grid-template-rows: 15% 85%;
-    row-gap: 1em;
-    margin: 1em;
-}
-
-#titlePanel {
-    display: grid;
-    grid-template-columns: 80% 10% 10%;
-    
+#header {
+    display: flex;
+    flex-direction: row;
 }
 
 #exit {
-    width: 10vh;
+    left: 92%;
+    top: 2em;
+    width: 6em;
+    align-self: flex-start;
+    position: absolute;
 }
 
-#filterOverlay {
-  position: fixed; /* Sit on top of the page content */
-  display: none; /* Hidden by default */
-  width: 100%; /* Full width (cover the whole page) */
-  height: 100%; /* Full height (cover the whole page) */
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0,0,0,0.5); /* Black background with opacity */
-  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
-  cursor: pointer; /* Add a pointer on hover */
+#titlePanel {
+    margin: 2em 2em 0em 2em;
+    height: fit-content;
 }
 
-#cardOverlay {
-  position: fixed; /* Sit on top of the page content */
-  display: none; /* Hidden by default */
-  width: 100%; /* Full width (cover the whole page) */
-  height: 100%; /* Full height (cover the whole page) */
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0,0,0,0.5); /* Black background with opacity */
-  z-index: 3; /* Specify a stack order in case you're using a different order for other elements */
-  cursor: pointer; /* Add a pointer on hover */
+#cardPanel {
+    display: grid;
+    grid-template-columns: 25% 75%;
+    column-gap: 1em;
+    margin: 0em 2em 2em 2em;
+}
+
+#cardContainer {
+    background-color: rgb(255,249,249);
+    border: 1vh solid rgb(228, 241, 255);
+    border-radius: 2vh;
+    margin: 1em 0em 1em 0em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: fit-content;
+    align-self: start;
+    position: sticky;
+    top: 2em;
+}
+
+#infoContainer {
+    background-color: rgb(111, 188, 255);
+    border: 1vh solid rgb(228, 241, 255);
+    border-radius: 2vh;
+    margin: 1em 1em 1em 0em;
+    padding: 3%;
+    user-select: none; 
+}
+
+#contentList {
+    background-color: rgb(111, 188, 255);
+    border-radius: 1.25vh;
+    display: grid;
+    grid-template-columns: inherit;
+    row-gap: 1em;
+    width: 100%;
+    padding: 5%;
+}
+
+.infoSection {
+    background-color: rgb(185, 222, 255);
+    font-family: cookiefont;
+    font-size: 2rem;
+    font-weight: bolder;
+    color: rgb(7,30,34);
+    width: 100%;
+    border: none;
+    border-radius: 1vh;
+}
+
+.infoTitles {
+    font-weight: bolder;
+    font-size: 48px;
+}
+
+p,li,strong {
+    font-size: 24px;
+}
+
+ul,ol {
+    margin-top: 0em;
+}
+
+strong {
+    color: rgb(60, 100, 194);
+}
+
+p {
+    margin-bottom: 0em;
 }

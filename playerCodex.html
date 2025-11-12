@@ -8,60 +8,21 @@
     <link rel="icon" type="image/png" href="tabIcons/Jingbah_render.ico">
 </head>
 <body>
-    <div id="mainPanel">
-        <div id="titlePanel">
-            <h1 id="title" style="font-size: 72px; margin: 0;">Player Codex</h1>
-            <button id="filter">Filter</button>
-            <img id="exit" src="miscellaneous/exitButton.png">
-        </div>
-        <div id="cardPanel">
-            <div id="cardList">
-                <!--Repeat below for all cards-->
-                <section class="card" id="characterName_Attribute_Role"> <!--ID will be used for filtering cards-->
-                    <!--Insert character image-->
-                    <!--Insert character name-->
-                </section>
+    <!--INSERT IMAGE FOR EXIT a-->
+    <div id="titlePanel">
+        <h3 style="font-size: 72px; margin: 0; color: rgb(228, 241, 255);">Player Cards</h3>
+    </div>
+    <div id="cardPanel">
+        <div id="cardContainer">
+            <div id="contentList">
+
             </div>
         </div>
-    </div>
-    <div id="filterOverlay">
-        <section id="playerRoles">
-            <h3 class="filterTitle"></h3>
-            <button class="filterButton" id="attack">Attack</button>
-            <button class="filterButton" id="support">Support</button>
-            <button class="filterButton" id="tank">Tank</button>
-        </section>
-        <section id="attributes">
-            <h3 class="filterTitle"></h3>
-            <button class="filterButton" id="coder">Coder</button>
-            <button class="filterButton" id="cyber">Cyber</button>
-            <button class="filterButton" id="biotech">Biotech</button>
-        </section>
-    </div>
-    <div id="cardOverlay">
-        <div id="cardInformation">
-            <section id="cardImg">
-                <!--Insert img with health-->
-                <!--Insert Character Image-->
-            </section>
-            <section id="kitInfo">
-                <h2 id="characterName"></h2>
-                <section id="filterTags">
-                    <p id="attribute"></p>
-                    <p id="role1"></p>
-                    <p id="role2"></p>
-                </section>
-                <h3 id="normalAttack"></h3>
-                <p></p>
-                <h3 id="skill"></h3>
-                <p></p>
-                <h3 id="Ultimate"></h3>
-                <p></p>
-            </section>
+        <div id="infoContainer">
+            <div id="information">
+            </div>
         </div>
-        <section id="continueSection">
-            <p id="continue">>click to continue<</p>
-        </section>
+        <img id="exit" src="miscellaneous/exitButton.png">
     </div>
     <!--Linking Script-->
     <script src="playerCodex.js"></script>

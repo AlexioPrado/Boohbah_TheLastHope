@@ -1,6 +1,6 @@
 
 // Buttons
-let boobah = document.getElementById('boobahCardGame');
+let boohbah = document.getElementById('boohbahCardGame');
 let gameFlow = document.getElementById('gameFlow');
 let takingAction = document.getElementById('takingAction');
 let characterRoles = document.getElementById('characterRoles');
@@ -11,7 +11,7 @@ let gameArea = document.getElementById('gameArea');
 let credits = document.getElementById('credits');
 
 //Titles of the Guidebook
-let boobahTitle = document.getElementById('info1');
+let boohbahTitle = document.getElementById('info1');
 let gameFlowTitle = document.getElementById('info2');
 let takingActionTitle = document.getElementById('info3');
 let characterRolesTitle = document.getElementById('info4');
@@ -39,9 +39,9 @@ document.addEventListener("visibilitychange", () => {
   }
 });
 
-boobah.onclick = function (){
+boohbah.onclick = function (){
     console.log('General Game Section');
-    boobahTitle.scrollIntoView({behavior: "smooth", block: "center"});
+    boohbahTitle.scrollIntoView({behavior: "smooth", block: "center"});
     click.play();
 }
 gameFlow.onclick = function (){

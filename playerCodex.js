@@ -46,6 +46,16 @@ let ultInfo = document.getElementById('ultInfo');
     d. attribute effect stacks
     e. Description
 */
+
+const template = {'imgURL': 'cardImages/.png',
+                  'Name': '',
+                  'HP': '',
+                  'Attribute': '', 
+                  'Roles': [''], 
+                  'NA': ['Undecided', 'N', '0', '0', '<p></p>'],
+                  'SK': ['Undecided', 'N', '0', '0', '<p></p>'],
+                  'UL': ['Undecided', 'N', '0', '0', '0', '<p></p>']};
+
 const adamM = {'imgURL': 'cardImages/evanYango.png',
                'Name': 'Adam Mitchell',
                'HP': '40',
@@ -53,8 +63,31 @@ const adamM = {'imgURL': 'cardImages/evanYango.png',
                'Roles': ['Tank'], 
                'NA': ['Undecided', 'S', '2', '1', '<p>Deal 1 dmg to all enemies.</p>'],
                'SK': ['Undecided', 'N', '3', '0', '<p>Increase Base HP of the party by 5. (3 rounds)<br>Character\'s HP will reduce to their original Base HP once the duration ends if Current HP is higher than their Base HP.</p>'],
-               'UL': ['Undecided', 'N', '3', '0', '<p>Create a shield with HP based on the character with the most difference from their current and base HP. Max 10 HP </p>']}
-
+               'UL': ['Undecided', 'N', '3', '0', '2', '<p>Place a shield onto the active character with HP based on the character with the most difference from their current and base HP. Max 10 HP </p>']};
+const aftonP = {'imgURL': 'cardImages/aftonPate.png',
+                  'Name': 'Afton Pate',
+                  'HP': '45',
+                  'Attribute': 'Coder', 
+                  'Roles': ['Tank', 'Support'], 
+                  'NA': ['Undecided', 'S', '2', '1', '<p>Deal 2 dmg to the enemy.</p>'],
+                  'SK': ['Undecided', 'N', '3', '0', '<p>Place a shield onto the active character with HP based on the difference between Afton\’s Base HP and the character with the closest Base HP to Afton\’s. Max 10 HP.</p>'],
+                  'UL': ['Undecided', 'S', '3', '1', '2','<p>Deal 3 dmg to the enemy.<br>Gain another reroll during the roll phase. (3 rounds)</p>']};
+const alexAK = {'imgURL': 'cardImages/evanYango.png',
+                  'Name': 'Alex Arias-Kurcan',
+                  'HP': '30',
+                  'Attribute': 'Coder', 
+                  'Roles': ['Attack', 'Support'], 
+                  'NA': ['Undecided', 'S', '2', '2', '<p>Deal 2 dmg to the enemy.</p>'],
+                  'SK': ['Undecided', 'D', '3', '1', '<p>Deal 2 dmg to the enemy and summon Sparring Partner.<br><u>Sparring Partner</u>: Deals 2 dmg at the end of every round. (3 rounds)</p>'],
+                  'UL': ['Undecided', 'D', '3', '1', '2', '<p>Summon <u>Sparring Partner</u>. If already present, refresh duration.<br>When an action occurs, Sparring Partner will deal 1 dmg to the enemy</p>']};
+const angelC = {'imgURL': 'cardImages/angelCarmichael.png',
+                  'Name': 'Angel Carmichael',
+                  'HP': '35',
+                  'Attribute': 'Coder', 
+                  'Roles': ['Tank', 'Attack'], 
+                  'NA': ['Undecided', 'S', '1', '1', '<p>Deal 1 dmg to the enemy.</p>'],
+                  'SK': ['Undecided', 'S', '3', '1', '<p>Place a shield with 7 HP to the active character.<br>When broken, deal 4 dmg.</p>'],
+                  'UL': ['Undecided', 'A', '3', '0', '3', '<p>If shield is present, break the shield and deal 2 piercing dmg to characters adjacent to the active enemy.<br>If shield is not present, deal 2 dmg to all characters.</p>']};
 const biancaB = {'imgURL': 'cardImages/evanYango.png',
                  'Name':'Bianca Baccay',
                  'HP': '40',
@@ -62,8 +95,15 @@ const biancaB = {'imgURL': 'cardImages/evanYango.png',
                  'Roles': ['Attack'], 
                  'NA': ['Overwhelm The Enemy', 'A', '3', '2', '<p>Deal 1 dmg to all enemies.<br>If health is less than 20, heal by 10 HP.</p>'],
                  'SK': ['Friendly Fire', 'N', '3', '0', '<p>Decrease Bianca\'s HP by 4.<br>Every 4 HP away from Base HP increases <u>Overwhelm The Enemy</u> dmg by 2.</p>'],
-                 'UL': ['Crash Out', 'S', '4', '1', '<p>Deal 5 dmg to the enemy.<br>Decrease HP by 10. If HP is decreased below 0, set HP to 1.<br>The next two incoming attacks will not deal dmg.</p>']}
-
+                 'UL': ['Crash Out', 'S', '4', '1', '3', '<p>Deal 5 dmg to the enemy.<br>Decrease HP by 10. If HP is decreased below 0, set HP to 1.<br>The next two incoming attacks will not deal dmg.</p>']};
+const birukY = {'imgURL': 'cardImages/evanYango.png',
+                  'Name': 'Biruk Yidnekachew',
+                  'HP': '35',
+                  'Attribute': 'Coder', 
+                  'Roles': ['Support'], 
+                  'NA': ['Undecided', 'A', '2', '1', '<p>Deal 1 dmg to all enemies.</p>'],
+                  'SK': ['Undecided', 'N', '2', '0', '<p>Increase the party\'s DoT Attack Dmg by 2. (2 rounds)</p>'],
+                  'UL': ['Undecided', 'N', '3', '0', '3', '<p>All attacks are considered DoT attacks.<br>DoT attacks Dmg is further increased by 3. (3 rounds)</p>']};
 
 // character Card from HTML
 const adamCard = document.getElementById('adamMitchell');
@@ -77,19 +117,19 @@ adamCard.onclick = function(){
   selectingCard(adamM);
 }
 aftonCard.onclick = function(){
-  selectingCard(biancaB);
+  selectingCard(aftonP);
 }
 alexCard.onclick = function(){
-  selectingCard(biancaB);
+  selectingCard(alexAK);
 }
 angelCard.onclick = function(){
-  selectingCard(biancaB);
+  selectingCard(angelC);
 }
 biancaCard.onclick = function(){
   selectingCard(biancaB);
 }
 birukCard.onclick = function(){
-  selectingCard(biancaB);
+  selectingCard(birukY);
 }
 
 // Main Function in displaying all information of the specified character
@@ -156,8 +196,8 @@ function selectingCard (characterSheet){
   //Display ultimate information
   ulTitle.innerHTML = 'Ultimate: ' + characterSheet['UL'][0];
   attackType_tags(attackType_ULT, characterSheet['UL'][1]);
-  ultInfo.innerHTML = '<p>Participation Cost: <b>' + characterSheet['UL'][2] + '</b> ' + '| ' + attributeEffect + ': <b>' + characterSheet['UL'][3] + '</b></p>';
-  ultInfo.innerHTML += characterSheet['UL'][4];
+  ultInfo.innerHTML = '<p>Energy Cost: <b>' + characterSheet['UL'][4] + '</b> | Participation Cost: <b>' + characterSheet['UL'][2] + '</b> ' + '| ' + attributeEffect + ': <b>' + characterSheet['UL'][3] + '</b></p>';
+  ultInfo.innerHTML += characterSheet['UL'][5];
 
   //Display user's action
   console.log('Selected: ' + characterSheet['Name']);

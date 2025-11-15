@@ -26,7 +26,7 @@ body {
     display: flex;
     flex-direction: column;
     user-select: none; 
-    overflow-y: hidden;
+    overflow-y: scroll;
 }
 
 #header {
@@ -109,17 +109,17 @@ body {
     background-color: rgb(111, 188, 255);
     border: 1vh solid rgb(228, 241, 255);
     border-radius: 2vh;
-    height: 70vh;
+    height: max-content;
     margin: 1em 1em 1em 0em;
     padding: 3%;
     display: grid;
-    grid-template-columns: 40% 60%;
+    grid-template-columns: 30% 70%;
     user-select: none; 
 }
 
 #infoCardImg {
     aspect-ratio: 2.25/3.5;
-    max-width: 85%;
+    max-width: 95%;
     max-height: 100%;
     border-radius: 1.25em;
     object-fit: cover;
@@ -230,7 +230,7 @@ h2 {
 }
 
 p,li,strong {
-    font-size: 24px;
+    font-size: 20px;
 }
 
 ul,ol {
@@ -242,7 +242,7 @@ strong {
 }
 
 p {
-    margin-bottom: 0em;
+    margin: 0.5em 0em 0.5em 0em;
 }
 
 /* width */

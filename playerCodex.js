@@ -62,32 +62,32 @@ const adamM = {'imgURL': 'cardImages/evanYango.png',
                'Attribute': 'Biotech', 
                'Roles': ['Tank'], 
                'NA': ['Undecided', 'S', '2', '1', '<p>Deal 1 dmg to all enemies.</p>'],
-               'SK': ['Undecided', 'N', '3', '0', '<p>Increase Base HP of the party by 5. (3 rounds)<br>Character\'s HP will reduce to their original Base HP once the duration ends if Current HP is higher than their Base HP.</p>'],
-               'UL': ['Undecided', 'N', '3', '0', '2', '<p>Place a shield onto the active character with HP based on the character with the most difference from their current and base HP. Max 10 HP </p>']};
+               'SK': ['Undecided', 'N', '3', '0', '<p>Increase Base HP of the party by 5. (3 rounds)<br>Character\'s HP will reduce to their original Base HP once the duration ends if current HP is higher than their Base HP.</p>'],
+               'UL': ['Undecided', 'N', '3', '0', '2', '<p>Place a shield onto the active character with strength based on the character with the most difference from their current and Base HP. Max 10 strength.</p>']};
 const aftonP = {'imgURL': 'cardImages/aftonPate.png',
-                  'Name': 'Afton Pate',
-                  'HP': '45',
-                  'Attribute': 'Coder', 
-                  'Roles': ['Tank', 'Support'], 
-                  'NA': ['Undecided', 'S', '2', '1', '<p>Deal 2 dmg to the enemy.</p>'],
-                  'SK': ['Undecided', 'N', '3', '0', '<p>Place a shield onto the active character with HP based on the difference between Afton\’s Base HP and the character with the closest Base HP to Afton\’s. Max 10 HP.</p>'],
-                  'UL': ['Undecided', 'S', '3', '1', '2','<p>Deal 3 dmg to the enemy.<br>Gain another reroll during the roll phase. (3 rounds)</p>']};
+                'Name': 'Afton Pate',
+                'HP': '45',
+                'Attribute': 'Coder', 
+                'Roles': ['Tank', 'Support'], 
+                'NA': ['Undecided', 'S', '2', '1', '<p>Deal 2 dmg to the enemy.</p>'],
+                'SK': ['Undecided', 'N', '3', '0', '<p>Place a shield onto the active character with strength based on the difference between Afton\’s Base HP and the character with the closest Base HP to Afton\’s. Max 10 strength.</p>'],
+                'UL': ['Undecided', 'S', '3', '1', '2','<p>Deal 3 dmg to the enemy.<br>Gain another reroll during the roll phase. (3 rounds)</p>']};
 const alexAK = {'imgURL': 'cardImages/evanYango.png',
-                  'Name': 'Alex Arias-Kurcan',
-                  'HP': '30',
-                  'Attribute': 'Coder', 
-                  'Roles': ['Attack', 'Support'], 
-                  'NA': ['Undecided', 'S', '2', '2', '<p>Deal 2 dmg to the enemy.</p>'],
-                  'SK': ['Undecided', 'D', '3', '1', '<p>Deal 2 dmg to the enemy and summon Sparring Partner.<br><u>Sparring Partner</u>: Deals 2 dmg at the end of every round. (3 rounds)</p>'],
-                  'UL': ['Undecided', 'D', '3', '1', '2', '<p>Summon <u>Sparring Partner</u>. If already present, refresh duration.<br>When an action occurs, Sparring Partner will deal 1 dmg to the enemy</p>']};
+                'Name': 'Alex Arias-Kurcan',
+                'HP': '30',
+                'Attribute': 'Coder', 
+                'Roles': ['Attack', 'Support'], 
+                'NA': ['Undecided', 'S', '2', '2', '<p>Deal 2 dmg to the enemy.</p>'],
+                'SK': ['Undecided', 'D', '3', '1', '<p>Deal 2 dmg to the enemy and summon Sparring Partner.<br><u>Sparring Partner</u>: Deals 3 dmg at the end of the round. (3 rounds)</p>'],
+                'UL': ['Undecided', 'D', '3', '1', '2', '<p>Summon <u>Sparring Partner</u>. If already present, refresh duration.<br>When an action occurs, Sparring Partner will deal 2 dmg to the enemy. (3 rounds)</p>']};
 const angelC = {'imgURL': 'cardImages/angelCarmichael.png',
-                  'Name': 'Angel Carmichael',
-                  'HP': '35',
-                  'Attribute': 'Coder', 
-                  'Roles': ['Tank', 'Attack'], 
-                  'NA': ['Undecided', 'S', '1', '1', '<p>Deal 1 dmg to the enemy.</p>'],
-                  'SK': ['Undecided', 'S', '3', '1', '<p>Place a shield with 7 HP to the active character.<br>When broken, deal 4 dmg.</p>'],
-                  'UL': ['Undecided', 'A', '3', '0', '3', '<p>If shield is present, break the shield and deal 2 piercing dmg to characters adjacent to the active enemy.<br>If shield is not present, deal 2 dmg to all characters.</p>']};
+                'Name': 'Angel Carmichael',
+                'HP': '35',
+                'Attribute': 'Coder', 
+                'Roles': ['Tank', 'Attack'], 
+                'NA': ['Undecided', 'S', '1', '1', '<p>Deal 1 dmg to the enemy.</p>'],
+                'SK': ['Undecided', 'S', '3', '1', '<p>Place a shield with 7 strength to the active character.<br>When broken, deal 4 dmg.</p>'],
+                'UL': ['Undecided', 'A', '3', '2', '3', '<p>If shield is present, break the shield and deal 3 piercing dmg to characters adjacent to the active enemy.<br>If shield is not present, deal 4 dmg to all characters.</p>']};
 const biancaB = {'imgURL': 'cardImages/evanYango.png',
                  'Name':'Bianca Baccay',
                  'HP': '40',
@@ -97,13 +97,157 @@ const biancaB = {'imgURL': 'cardImages/evanYango.png',
                  'SK': ['Friendly Fire', 'N', '3', '0', '<p>Decrease Bianca\'s HP by 4.<br>Every 4 HP away from Base HP increases <u>Overwhelm The Enemy</u> dmg by 2.</p>'],
                  'UL': ['Crash Out', 'S', '4', '1', '3', '<p>Deal 5 dmg to the enemy.<br>Decrease HP by 10. If HP is decreased below 0, set HP to 1.<br>The next two incoming attacks will not deal dmg.</p>']};
 const birukY = {'imgURL': 'cardImages/evanYango.png',
-                  'Name': 'Biruk Yidnekachew',
+                'Name': 'Biruk Yidnekachew',
+                'HP': '35',
+                'Attribute': 'Coder', 
+                'Roles': ['Support'], 
+                'NA': ['Undecided', 'A', '2', '1', '<p>Deal 1 dmg to all enemies.</p>'],
+                'SK': ['Undecided', 'N', '2', '0', '<p>Increase the party\'s DoT Attack Dmg by 2. (2 rounds)</p>'],
+                'UL': ['Undecided', 'N', '3', '0', '3', '<p>All attacks are considered DoT attacks.<br>DoT Attack Dmg is further increased by 3. (3 rounds)</p>']};
+const calebA = {'imgURL': 'cardImages/calebArrick.png',
+                'Name': 'Caleb Arrick',
+                'HP': '45',
+                'Attribute': 'Biotech', 
+                'Roles': ['Tank'], 
+                'NA': ['Undecided', 'S', '1', '1', '<p>Deal 1 dmg to the enemy.</p>'],
+                'SK': ['Undecided', 'A', '3', '2', '<p>Deal 2 dmg to all enemies.<br>Place the Turtle shield with 7 strength to the active character.<br>When an action occurs, heal the shield by 1 strength.</p>'],
+                'UL': ['Undecided', 'S', '4', '1', '2', '<p>Place the Turtle shield with 7 strength to the active character. If already present, reset strength to 7.<br> When the active character is attacked, reduce dmg by 1 and increase the shield strength by 3.</p>']};
+const christopherM = {'imgURL': 'cardImages/christopherMarkham.png',
+                      'Name': 'Christopher Markham',
+                      'HP': '25',
+                      'Attribute': 'Coder', 
+                      'Roles': ['Attack'], 
+                      'NA': ['Undecided', 'S', '1', '1', '<p>Deal 2 dmg to the enemy.<br>Gain 1 stack.</p>'],
+                      'SK': ['Undecided', 'A', '5', '1', '<p>Deal 4 dmg to all enemies.<br>Every stack increases dmg by 1. Max 10 stacks can be used.</p>'],
+                      'UL': ['Undecided', 'S', '2', '2', '5', '<p>Deal 5 dmg to the enemy.<br>Gain 5 stacks.</p>']};
+const elizabethT = {'imgURL': 'cardImages/evanYango.png',
+                    'Name': 'Elizabeth Taiwo',
+                    'HP': '30',
+                    'Attribute': 'Coder', 
+                    'Roles': ['Support', 'Attack'], 
+                    'NA': ['Undecided', 'S', '2', '1', '<p>Deal 2 dmg to the enemy.</p>'],
+                    'SK': ['Undecided', 'S', '3', '1', '<p>Steal 4 HP from the enemy and heal the lowest health character by 3 HP.<br>Save 1 HP to the <u>Health Bank.<u></p>'],
+                    'UL': ['Undecided', 'N', '3', '0', '3', '<p>Unleash the Health Bank, healing the party based on HP saved.</p>']};
+const evanY = {'imgURL': 'cardImages/evanYango.png',
+               'Name': 'Evan Yango',
+               'HP': '40',
+               'Attribute': 'Coder', 
+               'Roles': ['Attack', 'Support'], 
+               'NA': ['Undecided', 'S', '2', '1', '<p>Deal 2 dmg to the enemy.</p>'],
+               'SK': ['Undecided', 'A', '3', '2', '<p>Deal 2 dmg to all enemies.<br>If enemies are stunned, deal twice as much dmg.</p>'],
+               'UL': ['Undecided', 'S', '3', '2', '3', '<p>Deal 5 dmg to the enemy.<br>If a character in the party loses or gains HP, increase the next Skill dmg by 2. (3 rounds)</p>']};
+const evelynM = {'imgURL': 'cardImages/evanYango.png',
+                 'Name': 'Evelyn Meier',
+                 'HP': '50',
+                 'Attribute': 'Cyber', 
+                 'Roles': ['Tank'], 
+                 'NA': ['Undecided', 'S', '2', '1', '<p>Deal 2 dmg to the enemy.</p>'],
+                 'SK': ['Undecided', 'N', '3', '0', '<p>Dmg taken by the party is reduced by half. (3 rounds)</p>'],
+                 'UL': ['Undecided', 'A', '2', '2', '2', '<p>Deal 2 dmg to all enemies.<br>Ultimates do not require energy during this round.</p>']};
+const karimRA = {'imgURL': 'cardImages/evanYango.png',
+                  'Name': 'Karim Rivera-Apolinar',
                   'HP': '35',
                   'Attribute': 'Coder', 
-                  'Roles': ['Support'], 
-                  'NA': ['Undecided', 'A', '2', '1', '<p>Deal 1 dmg to all enemies.</p>'],
-                  'SK': ['Undecided', 'N', '2', '0', '<p>Increase the party\'s DoT Attack Dmg by 2. (2 rounds)</p>'],
-                  'UL': ['Undecided', 'N', '3', '0', '3', '<p>All attacks are considered DoT attacks.<br>DoT attacks Dmg is further increased by 3. (3 rounds)</p>']};
+                  'Roles': ['Attack'], 
+                  'NA': ['Undecided', 'S', '2', '2', '<p>Deal 3 dmg to the enemy.</p>'],
+                  'SK': ['Undecided', 'A', '3', '1', '<p>Deal 2 dmg to all enemies.</p>'],
+                  'UL': ['Undecided', 'A', '4', '2', '2', '<p>Deal 3 dmg to all enemies.<br>When Karim is the active character, gain an extra action. (5 rounds)<br>When Karim uses his Normal Attack or Skill, their respective dmg is increased by 1.</p>']};
+const katarinaR = {'imgURL': 'cardImages/evanYango.png',
+                   'Name': 'Katarina Russo',
+                   'HP': '30',
+                   'Attribute': 'Cyber', 
+                   'Roles': ['Support'], 
+                   'NA': ['Undecided', 'S', '1', '1', '<p>Deal 1 dmg to the enemy.</p>'],
+                   'SK': ['Undecided', 'D', '4', '1', '<p>Deal 3 dmg to the enemy and summon Fiesty Kat.<br><u>Fiesty Kat:</u> Heals 2 HP to the active character when they take an action and deals 2 dmg at the end of the round. (Thrice per round, 3 rounds)</p>'],
+                   'UL': ['Undecided', 'D', '3', '2', '2', '<p>Deal 4 dmg to the enemy.<br>Summon <u>Fiesty Kat</u>. If already present, refresh duration.<br>Healing caused by <u>Fiesty kat</u> is increased by 2 HP.</p>']};
+const keshavT = {'imgURL': 'cardImages/evanYango.png',
+                 'Name': 'Keshav Tekalur',
+                 'HP': '25',
+                 'Attribute': 'Biotech', 
+                 'Roles': ['Attack'], 
+                 'NA': ['Undecided', 'S', '2', '1', '<p>Deal 3 dmg to the enemy.<br>If the <u>Great Sword</u> is present, gain 1 sharpness stack.</p>'],
+                 'SK': ['Undecided', 'A', '3', '2', '<p>Deal 2 dmg to all enemies.<br>If skill was used twice during the round, deal an additonal 2 dmg to all enemies.<br>If the <u>Great Sword</u> is present, gain 2 sharpness stacks.</p>'],
+                 'UL': ['Undecided', 'S', '4', '1', '3', '<p>Summon the Great Sword.<br><u>Great Sword:</u> Deals 10 dmg to all enemies at the end of the round. Each sharpness stack increases dmg by 3.</p>']};
+const khaniL = {'imgURL': 'cardImages/evanYango.png',
+                'Name': 'Khani Lyan',
+                'HP': '40',
+                'Attribute': 'Coder', 
+                'Roles': ['Support'], 
+                'NA': ['Undecided', 'S', '2', '1', '<p>Deal 2 dmg to the enemy.</p>'],
+                'SK': ['Undecided', 'S', '3', '2', '<p>Deal 3 dmg to the enemy.<br>Heal the active character by 2 HP when a DoT Attack occurs. (Twice per round, 3 rounds)</p>'],
+                'UL': ['Undecided', 'A', '3', '1', '2', '<p>Deal 2 dmg to all enemies and heal the party by 5 HP.</p>']};
+const mandiN = {'imgURL': 'cardImages/mandiNguyen.png',
+                'Name': 'Mandi Nguyen',
+                'HP': '20',
+                'Attribute': 'Cyber', 
+                'Roles': ['Support'], 
+                'NA': ['Undecided', 'S', '1', '1', '<p>Deal 1 dmg to the enemy.</p>'],
+                'SK': ['Undecided', 'S', '3', '1', '<p>Deal 2 dmg to the enemy.<br>Increase the active character\'s Skill Dmg by 4 and reduce Skill participation point cost by 1. (3 rounds)</p>'],
+                'UL': ['Undecided', 'N', '2', '0', '4', '<p>Gain 3 extra dice during roll phase. (3 rounds)</p>']};
+const marcusC = {'imgURL': 'cardImages/marcusCeradini.png',
+                 'Name': 'Marcus Ceradini',
+                 'HP': '40',
+                 'Attribute': 'Coder', 
+                 'Roles': ['Tank', 'Attack'], 
+                 'NA': ['Undecided', 'S', '1', '1', '<p>Deal 1 dmg to the enemy.</p>'],
+                 'SK': ['Undecided', 'S', '3', '1', '<p>Deal 4 dmg to the enemy.<br>Place the Iron shield with 6 strength to the active character.<br>When the <u>Iron shield</u> breaks, deal 2 dmg to all enemies.</p>'],
+                 'UL': ['Undecided', 'A', '3', '2', '0', '<p>Deal 2 dmg to all enemies.<br>Place the <u>Iron Shield</u> to the active character. If already present, reset strength to 6.<br>If an action occurs, deal 1 dmg to all enemies. (Thrice per round)</p>']};
+const marcusP = {'imgURL': 'cardImages/evanYango.png',
+                 'Name': 'Marcus Alexio Prado',
+                 'HP': '25',
+                 'Attribute': 'Coder', 
+                 'Roles': ['Support'], 
+                 'NA': ['Undecided', 'S', '1', '1', '<p>Deal 1 dmg to the enemy.</p>'],
+                 'SK': ['Undecided', 'S', '3', '3', '<p>Deal 2 dmg to the enemy.<br>Increase the party\'s dmg by 2. Dmg caused during stun is further increased by 2. (3 rounds)</p>'],
+                 'UL': ['Undecided', 'S', '3', '4', '0', '<p>Deal 3 dmg to the enemy.<br>Increase the next stun duration by 1 round.</p>']};
+const oliviaD = {'imgURL': 'cardImages/oliviaDwyer.png',
+                 'Name': 'Olivia Dwyer',
+                 'HP': '30',
+                 'Attribute': 'Biotech', 
+                 'Roles': ['Attack', 'Support'], 
+                 'NA': ['Undecided', 'S', '2', '1', '<p>Deal 2 dmg to the enemy.</p>'],
+                 'SK': ['Undecided', 'D', '3', '1', '<p>Summon the Clone.<br><u>Clone:</u> Deals 2 dmg at the end of the round. When a character uses a Normal Attack or Skill, deal 3 dmg to the enemy and 2 piercing dmg to adjacent enemies. (Twice per round, 2 rounds)</p>'],
+                 'UL': ['Undecided', 'N', '4', '0', '3', '<p>Summon the <u>Clone</u>. If already present, reset duration.<br>Heal the party by 1 HP when a character uses a Normal Attack or Skill. (3 rounds)</p>']};
+const parthT = {'imgURL': 'cardImages/parthThite.png',
+                'Name': 'Parth Thite',
+                'HP': '35',
+                'Attribute': 'Coder', 
+                'Roles': ['Tank', 'Attack'], 
+                'NA': ['Undecided', 'S', '2', '1', '<p>Deal 2 piercing dmg to the enemy.</p>'],
+                'SK': ['Undecided', 'S', '3', '1', '<p>Deal 2 dmg to all enemies.<br> Place the Auric shield with 6 strength to the active character.</p>'],
+                'UL': ['Undecided', 'S', '4', '1', '2', '<p>Deal 3 dmg to the enemy.<br>Place the <u>Auric shield</u> to the active character. If already present, reset strength to 6.<br>Parth\'s Normal Attack dmg is increased based on the strength of <u>Auric Shield</u>.<br>Any action taken by a character increases <u>Auric Shield\'s</u> strength by 1.</p>']};
+const rahulM = {'imgURL': 'cardImages/evanYango.png',
+                'Name': 'Rahul Murgai',
+                'HP': '35',
+                'Attribute': 'Coder', 
+                'Roles': ['Tank', 'Support'], 
+                'NA': ['Undecided', 'S', '1', '1', '<p>Deal 1 dmg to the enemy.</p>'],
+                'SK': ['Undecided', 'S', '3', '1', '<p>Deal 2 dmg to the enemy.<br> Reduce dmg taken by enemies by 2. (2 rounds)<br>When the active character is attacked, create the Counter shield with strength based on half of the attack dmg. Max 7 strength. Subsequent attacks will increase the <u>Counter shield\'s</u> strength by 1 HP.</p>'],
+                'UL': ['Undecided', 'N', '4', '0', '2', '<p>Heal the party by 4 HP. If the <u>Counter shield</u> is present, heal an additional 2 HP.</p>']};
+const saraR = {'imgURL': 'cardImages/saraReinert.png',
+               'Name': 'Sara Reinert',
+               'HP': '25',
+               'Attribute': 'Biotech', 
+               'Roles': ['Support', 'Attack'], 
+               'NA': ['Egg Throw', 'S', '1', '1', '<p>Deal 1 dmg to the enemy.</p>'],
+               'SK': ['Feather Falling', 'N', '2', '0', '<p>Place a feather onto the active character.<br><u>Feather:</u> When attacked, heal by 2 Hp. (Thrice per round, 2 rounds)</p>'],
+               'UL': ['The Hooded Hero Strikes Again', 'D', '3', '2', '3', '<p>Deal 2 dmg to the enemy and summon the Turkey Catapult.<br><u>Turkey Catapult:</u> Deals 3 dmg at the end of the round. (3 rounds)</p>']};
+const shamN = {'imgURL': 'cardImages/evanYango.png',
+               'Name': 'Sham Nemer',
+               'HP': '40',
+               'Attribute': 'Coder', 
+               'Roles': ['Tank'], 
+               'NA': ['Not Worth My Time', 'S', '2', '1', '<p>Deal 2 dmg to the enemy.</p>'],
+               'SK': ['"You alright ladies?"', 'S', '2', '2', '<p>Deal 3 dmg to the enemy.<br>When Sham is on stanby, reduce dmg taken to the active character by 3. If Sham has atleast 20 HP, deal 2 dmg to herself. (Twice per round, 2 rounds)</p>'],
+               'UL': ['Papichulo In The House!', 'N', '3', '0', '3', '<p>Place the Stunning Shield to the active character with strength based on Sham\'s HP.<br>For every 4 HP away from her Base HP, increase <u>Stunning Shield</u> strength by 3.</p>']};
+const tanishkaP = {'imgURL': 'cardImages/evanYango.png',
+                   'Name': 'Tanishka Peddy',
+                   'HP': '25',
+                   'Attribute': 'Biotech', 
+                   'Roles': ['Attack'], 
+                   'NA': ['Step Back', 'S', '1', '1', '<p>Deal 2 dmg to the enemy.</p>'],
+                   'SK': ['I\'m Peddy Like That', 'S', '2', '2', '<p>Throw a tennies ball and deal 3 dmg to the enemy.<br>Deal 5 dmg to the enemy at the end of the round.</p>'],
+                   'UL': ['I\'m #1 For A Reason', 'S', '4', '3', '5', '<p>Deal 12 dmg to the enemy.</p>']};
 
 // character Card from HTML
 const adamCard = document.getElementById('adamMitchell');
@@ -112,6 +256,24 @@ const alexCard = document.getElementById('alexAriasKurcan');
 const angelCard = document.getElementById('angelCarmichael');
 const biancaCard = document.getElementById('biancaBaccay');
 const birukCard = document.getElementById('birukYidnekachew');
+const calebCard = document.getElementById('calebArrick');
+const christopherCard = document.getElementById('christopherMarkham');
+const elizabethCard = document.getElementById('elizabethTaiwo');
+const evanCard = document.getElementById('evanYango');
+const evelynCard = document.getElementById('evelynMeier');
+const karimCard = document.getElementById('karimRiveraApolinar');
+const katarinaCard = document.getElementById('katarinaRusso');
+const keshavCard = document.getElementById('keshavTekalur');
+const khaniCard = document.getElementById('khaniLyan');
+const mandiCard = document.getElementById('mandiNguyen');
+const marcusCCard = document.getElementById('marcusCeradini');
+const marcusPCard = document.getElementById('marcusPrado');
+const oliviaCard = document.getElementById('oliviaDwyer');
+const parthCard = document.getElementById('parthThite');
+const rahulCard = document.getElementById('rahulMurgai');
+const saraCard = document.getElementById('saraReinert');
+const shamCard = document.getElementById('shamNemer');
+const tanishkaCard = document.getElementById('tanishkaPeddy');
 
 adamCard.onclick = function(){
   selectingCard(adamM);
@@ -130,6 +292,60 @@ biancaCard.onclick = function(){
 }
 birukCard.onclick = function(){
   selectingCard(birukY);
+}
+calebCard.onclick = function(){
+  selectingCard(calebA);
+}
+christopherCard.onclick = function(){
+  selectingCard(christopherM);
+}
+elizabethCard.onclick = function(){
+  selectingCard(elizabethT);
+}
+evanCard.onclick = function(){
+  selectingCard(evanY);
+}
+evelynCard.onclick = function(){
+  selectingCard(evelynM);
+}
+karimCard.onclick = function(){
+  selectingCard(karimRA);
+}
+katarinaCard.onclick = function(){
+  selectingCard(katarinaR);
+}
+keshavCard.onclick = function(){
+  selectingCard(keshavT);
+}
+khaniCard.onclick = function(){
+  selectingCard(khaniL);
+}
+mandiCard.onclick = function(){
+  selectingCard(mandiN);
+}
+marcusCCard.onclick = function(){
+  selectingCard(marcusC);
+}
+marcusPCard.onclick = function(){
+  selectingCard(marcusP);
+}
+oliviaCard.onclick = function(){
+  selectingCard(oliviaD);
+}
+parthCard.onclick = function(){
+  selectingCard(parthT);
+}
+rahulCard.onclick = function(){
+  selectingCard(rahulM);
+}
+saraCard.onclick = function(){
+  selectingCard(saraR);
+}
+shamCard.onclick = function(){
+  selectingCard(shamN);
+}
+tanishkaCard.onclick = function(){
+  selectingCard(tanishkaP);
 }
 
 // Main Function in displaying all information of the specified character

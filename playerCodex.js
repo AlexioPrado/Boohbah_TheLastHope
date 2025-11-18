@@ -302,6 +302,9 @@ const saraCard = document.getElementById('saraReinert');
 const shamCard = document.getElementById('shamNemer');
 const tanishkaCard = document.getElementById('tanishkaPeddy');
 
+//Starting page
+selectingCard(adamM);
+
 adamCard.onclick = function(){
   selectingCard(adamM);
 }

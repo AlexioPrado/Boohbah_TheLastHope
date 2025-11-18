@@ -616,7 +616,7 @@ function filtering (){
   for (let i = 0; i < cards.length; i++){
     //displays all cards if attribute list is empty
     if (attributeList.length == 0){
-      cards[i].style = 'display: grid;';
+      displayCards.push(cards[i]);
       continue;
     }
     // If the card has an attribute in the list, add to displayCards
@@ -628,7 +628,24 @@ function filtering (){
       }
     }
   }
-
+/*
+  for (let i = 0; i < displayCards.length; i++){
+    //displays all cards if attribute list is empty
+    if (roleList.length == 0 & attributeList.length == 0){
+      cards[i].style = 'display: grid;';
+      continue;
+    }
+    // If the card has an attribute in the list, add to displayCards
+    for (let role of roleList) {
+      if (!displayCards[i].classList.contains(role)){
+        if (displayCards[i].classList.contains(roleList[-1])){
+          displayCards.push(cards[i])
+        }
+      } else {
+        cards[i].style = 'display: none;';
+      }
+    }
+  }*/
   /*
   if (exclusivity){
     for (let i = 0; i < displayCards.length; i++){

@@ -166,22 +166,6 @@ body {
     user-select: none; 
 }
 
-#shimmer {
-    aspect-ratio: 2.25/3.5;
-    max-width: 95%;
-    max-height: 100%;
-    border-radius: 1.25em;
-    object-fit: cover;
-    z-index: 2;
-    opacity: 0.3;
-    background: linear-gradient(-45deg, #efefef 40%, #fafafa 50%, #efefef 60%);
-    background-repeat: no-repeat;
-    background-size: 300%;
-    background-position-x: 100%;
-    transform: translateY(-101.3%);
-    animation: shimmer 1s infinite linear;
-}
-
 #infoCardImg {
     aspect-ratio: 2.25/3.5;
     max-width: 95%;
@@ -205,7 +189,11 @@ body {
 }
 
 #information {
-    background-color: rgb(228, 241, 255);
+    /*background-color: rgb(228, 241, 255);*/
+    background: linear-gradient(-45deg, #efefef 40%, #fafafa 50%, #efefef 60%);
+    background-size: 300%;
+    background-position-x: 100%;
+    animation: shimmer 1s infinite linear;
     border-radius: 1em;
     padding: 1em;
 }

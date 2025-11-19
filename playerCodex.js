@@ -140,7 +140,7 @@ const dennisW = {'imgURL': 'cardImages/evanYango.png',
                   'Name': 'Dennis Wright',
                   'HP': '40',
                   'Attribute': 'Cyber', 
-                  'Roles': ['Support', 'Attack'], 
+                  'Roles': ['Support', 'Tank'], 
                   'NA': ['Undecided', 'S', '2', '1', '<p>Deal 2 dmg to the enemy.</p>'],
                   'SK': ['Defensive Tactics', 'S', '3', '3', '<p>Deal 2 dmg to the enemy and summon a Defender.<br><u>Defender:</u> Reduce incoming dmg by 4 and heal the lowest HP character by 4 at the end of the round. (3 rounds)</p>'],
                   'UL': ['Undecided', 'S', '3', '3', '2', '<p>Deal 4 dmg to the enemy.<br>Heal the party by 5 HP and increase dmg by 4. (4 rounds)</p>']};
@@ -192,13 +192,13 @@ const keshavT = {'imgURL': 'cardImages/evanYango.png',
                  'NA': ['Undecided', 'S', '2', '1', '<p>Deal 3 dmg to the enemy.<br>If the <u>Great Sword</u> is present, gain 1 sharpness stack.</p>'],
                  'SK': ['Undecided', 'A', '3', '2', '<p>Deal 2 dmg to all enemies.<br>If skill was used twice during the round, deal an additonal 2 dmg to all enemies.<br>If the <u>Great Sword</u> is present, gain 2 sharpness stacks.</p>'],
                  'UL': ['Undecided', 'S', '4', '1', '3', '<p>Summon the Great Sword.<br><u>Great Sword:</u> Deals 10 dmg to all enemies at the end of the round. Each sharpness stack increases dmg by 3.</p>']};
-const khaniL = {'imgURL': 'cardImages/evanYango.png',
+const khaniL = {'imgURL': 'cardImages/khaniLyan.png',
                 'Name': 'Khani Lyan',
                 'HP': '40',
                 'Attribute': 'Coder', 
                 'Roles': ['Support'], 
                 'NA': ['Undecided', 'S', '2', '1', '<p>Deal 2 dmg to the enemy.</p>'],
-                'SK': ['Undecided', 'S', '3', '2', '<p>Deal 3 dmg to the enemy.<br>Heal the active character by 2 HP when a DoT Attack occurs. (Twice per round, 3 rounds)</p>'],
+                'SK': ['Undecided', 'S', '3', '2', '<p>Deal 3 dmg to the enemy.<br>Heal the active character by 3 HP when a DoT Attack occurs. (Twice per round, 3 rounds)</p>'],
                 'UL': ['Undecided', 'A', '3', '1', '2', '<p>Deal 2 dmg to all enemies and heal the party by 5 HP.</p>']};
 const mandiN = {'imgURL': 'cardImages/mandiNguyen.png',
                 'Name': 'Mandi Nguyen',
@@ -222,8 +222,8 @@ const marcusP = {'imgURL': 'cardImages/evanYango.png',
                  'Attribute': 'Coder', 
                  'Roles': ['Support'], 
                  'NA': ['Undecided', 'S', '1', '1', '<p>Deal 1 dmg to the enemy.</p>'],
-                 'SK': ['Undecided', 'S', '3', '3', '<p>Deal 2 dmg to the enemy.<br>Increase the party\'s dmg by 2. Dmg caused during stun is further increased by 2. (3 rounds)</p>'],
-                 'UL': ['Undecided', 'S', '3', '4', '0', '<p>Deal 3 dmg to the enemy.<br>Increase the next stun duration by 1 round.</p>']};
+                 'SK': ['Undecided', 'S', '3', '3', '<p>Deal 2 dmg to the enemy.<br>Increase the party\'s dmg by 3. Dmg caused during stun is further increased by 4. (3 rounds)</p>'],
+                 'UL': ['Undecided', 'S', '3', '4', '0', '<p>Deal 3 dmg to the enemy.<br>Increase the next stun duration by 2 rounds.</p>']};
 const oliviaD = {'imgURL': 'cardImages/oliviaDwyer.png',
                  'Name': 'Olivia Dwyer',
                  'HP': '30',
@@ -272,6 +272,14 @@ const tanishkaP = {'imgURL': 'cardImages/evanYango.png',
                    'NA': ['Step Back', 'S', '1', '1', '<p>Deal 2 dmg to the enemy.</p>'],
                    'SK': ['I\'m Peddy Like That', 'S', '2', '2', '<p>Throw a tennies ball and deal 3 dmg to the enemy.<br>Deal 5 dmg to the enemy at the end of the round.</p>'],
                    'UL': ['I\'m #1 For A Reason', 'S', '4', '3', '5', '<p>Deal 12 dmg to the enemy.</p>']};
+const samuelT = {'imgURL': 'cardImages/samuelTaiwo.png',
+                  'Name': 'Samuel Taiwo',
+                  'HP': '35',
+                  'Attribute': 'Cyber', 
+                  'Roles': ['Attack'], 
+                  'NA': ['Undecided', 'S', '3', '2', '<p>Deal 2 dmg to the enemy.</p>'],
+                  'SK': ['Undecided', 'S', '4', '1', '<p>Deal 4 dmg to the enemy and apply the buff status onto oneself.<br><u>Buff Status:</u> Increase Normal Attack dmg by 3. (4 usages) Using the buff status decreases HP by 3.<br>For every 1 HP from Base HP to current HP, increase buff status dmg by 1.</p>'],
+                  'UL': ['Undecided', 'A', '4', '2', '8', '<p>Deal 2 dmg to all enemies and heal by 15 HP.</p>']};
 
 // character Card from HTML
 const adamCard = document.getElementById('adamMitchell');
@@ -301,6 +309,7 @@ const rahulCard = document.getElementById('rahulMurgai');
 const saraCard = document.getElementById('saraReinert');
 const shamCard = document.getElementById('shamNemer');
 const tanishkaCard = document.getElementById('tanishkaPeddy');
+const samuelCard = document.getElementById('samuelTaiwo')
 
 //Starting page
 selectingCard(adamM);
@@ -385,6 +394,10 @@ shamCard.onclick = function(){
 }
 tanishkaCard.onclick = function(){
   selectingCard(tanishkaP);
+}
+
+samuelCard.onclick = function(){
+  selectingCard(samuelT);
 }
 
 // Main Function in displaying all information of the specified character
@@ -607,69 +620,81 @@ function filtering (){
     }
   }
 
-  console.log(roleList)
-
-  // Card list to be displayed
-  let displayCards = []
+  // Card list that passes attribute filter
+  let filteringOne = []
 
   // Cards filtered off by attribute
   for (let i = 0; i < cards.length; i++){
     //displays all cards if attribute list is empty
     if (attributeList.length == 0){
-      displayCards.push(cards[i]);
+      filteringOne.push(cards[i]);
       continue;
     }
     // If the card has an attribute in the list, add to displayCards
     for (let att of attributeList) {
       if (cards[i].classList.contains(att)){
-        displayCards.push(cards[i])
+        filteringOne.push(cards[i])
       } else {
         cards[i].style = 'display: none;';
       }
     }
-  }
-/*
-  for (let i = 0; i < displayCards.length; i++){
-    //displays all cards if attribute list is empty
-    if (roleList.length == 0 & attributeList.length == 0){
-      cards[i].style = 'display: grid;';
-      continue;
-    }
-    // If the card has an attribute in the list, add to displayCards
-    for (let role of roleList) {
-      if (!displayCards[i].classList.contains(role)){
-        if (displayCards[i].classList.contains(roleList[-1])){
-          displayCards.push(cards[i])
-        }
-      } else {
-        cards[i].style = 'display: none;';
-      }
-    }
-  }*/
-  /*
-  if (exclusivity){
-    for (let i = 0; i < displayCards.length; i++){
-      if (roleList.length == 0){
-        displayCards[i].style = 'display: grid;';
-        continue;
-      }
-      for (let role of roleList) {
-        if (!displayCards[i].classList.contains(role)){
-          displayCards.splice(i, 1);
-          console.log(displayCards);
-          console.log('removed')
-        } else {
-          continue;
-        }
-      }
-    }
-  }
-  */
-  
-  for (let i = 0; i <displayCards.length; i++){
-    displayCards[i].style = 'display: grid;';
   }
 
+  // Card list that passes role filter
+  let filteringTwo = [];
+
+  //If role list length is 0 or 3, it includes all cards under the first filter restriction
+  if (roleList.length == 3 || roleList.length == 0){
+    // Pushes each card from filterone to filtertwo
+    for (let i = 0; i < filteringOne.length; i++){
+      filteringTwo.push(filteringOne[i]);
+    }
+  } else { 
+    // If filtering is not exclusive, run
+    if (!exclusivity){
+      //Filter through filteringOne
+      for (let i = 0; i < filteringOne.length; i++){
+        // list roles a card has
+        let cardRoles = [];
+        for (let g = 2; g < filteringOne[i].classList.length; g++){
+          cardRoles.push(filteringOne[i].classList[g]);
+        }
+
+        // loop through list of roles selected
+        for (let role of roleList) {
+          // If card roles is not found in the role list, remove it
+          if (!cardRoles.includes(role)){
+            filteringOne[i].style = 'display: none';
+          // Add if included in the list
+          } else {
+            filteringTwo.push(filteringOne[i]);
+            break;
+          }
+        }
+      }
+    } else {
+      for (let i = 0; i < filteringOne.length; i++){
+        // list roles a card has
+        let cardRoles = [];
+        for (let g = 2; g < filteringOne[i].classList.length; g++){
+          cardRoles.push(filteringOne[i].classList[g]);
+        }
+
+        for (let role of roleList) {
+          if (cardRoles.every(item => roleList.includes(item))) {
+            filteringTwo.push(filteringOne[i]);
+          } else {
+            filteringOne[i].style = 'display: none';
+          }
+        }
+      }
+    }
+  }
+
+  // Display after intensive filtering
+  for (let i = 0; i <filteringTwo.length; i++){
+    filteringTwo[i].style = 'display: grid;';
+  }
 }
 
 /* General css styling*/

@@ -109,7 +109,7 @@ const mcCuen = {'imgURL': 'cardImages/enemyImages/russMcCuen.png',
                   'Attribute': 'Teacher', 
                   'Roles': ['Attack', 'Tank'], 
                   'attributeStacks': ['14', '14', '20'],
-                  'NA': ['Catharcist Friday', 'A', '2', '<p>Deal 2 dmg to the enemy.</p>'],
+                  'NA': ['Catharcist Friday', 'A', '2', '<p>Deal 2 dmg to all enemies.</p>'],
                   'SK': ['Devil\'s Advocate', 'S', '5', '<p>Mr. McCuen becomes invulnerable during the round. Deal dmg at the end of the round based on 2/3 of dmg taken during the round.<br>Invulnerability is removed when attribute effects are triggered.</p>'],
                   'UL': ['Plausinle Deniability', 'N', '4', '3', '<p>Heal 2 HP at the end of the round. (3 rounds)</p>']};
 const gardner = {'imgURL': 'cardImages/enemyImages/ethanGardner.png',

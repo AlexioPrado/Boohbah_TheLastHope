@@ -15,8 +15,6 @@ document.addEventListener("visibilitychange", () => {
   }
 });
 
-const click = new Audio('audio/ui/minecraft_click.mp3');
-
 let title = document.getElementById('title');
 let characterImg = document.getElementById('infoCardImg');
 let characterName = document.getElementById('name');
@@ -57,14 +55,7 @@ const template = {'imgURL': 'cardImages/.png',
                   'SK': ['Undecided', 'N', '0', '0', '<p></p>'],
                   'UL': ['Undecided', 'N', '0', '0', '0', '<p></p>']};
 
-const adamM = {'imgURL': 'cardImages/evanYango.png',
-               'Name': 'Adam Mitchell',
-               'HP': '40',
-               'Attribute': 'Biotech', 
-               'Roles': ['Tank'], 
-               'NA': ['Undecided', 'A', '2', '1', '<p>Deal 1 dmg to all enemies.</p>'],
-               'SK': ['Undecided', 'N', '3', '0', '<p>Increase Base HP of the party by 5. (3 rounds)<br>Character\'s HP will reduce to their original Base HP once the duration ends if current HP is higher than their Base HP.</p>'],
-               'UL': ['Undecided', 'N', '3', '0', '2', '<p>Place a shield onto the active character with strength based on the character with the most difference from their current and Base HP. Max 10 strength.</p>']};
+
 const addisonB = {'imgURL': 'cardImages/addisonBrooks.png',
                   'Name': 'Addison Brooks',
                   'HP': '30',

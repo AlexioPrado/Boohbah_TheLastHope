@@ -53,8 +53,6 @@ guidebook.onclick = function() {
 playerCards.onclick = function() {
     window.location.href = ('https://alexioprado.github.io/Boohbah_TheLastHope/playerCodex.html');
 }
-/*
-guidebook.onclick = function() {
-    window.location.href = ('https://alexioprado.github.io/Boohbah_TheLastHope/guidebook.html');
+enemyCards.onclick = function() {
+    window.location.href = ('https://alexioprado.github.io/Boohbah_TheLastHope/enemyCodex.html');
 }
-*/

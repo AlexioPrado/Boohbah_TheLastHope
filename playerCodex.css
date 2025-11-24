@@ -185,7 +185,7 @@ body {
     row-gap: 1em;
     column-gap: 0.5em;
     width: 100%;
-    padding: 5%;
+    padding: 5% 5% 5% 3%;
 }
 
 #information {

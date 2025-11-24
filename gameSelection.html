@@ -8,6 +8,125 @@
     <title>Game Select</title>
 </head>
 <body>
-    
+    <div id="gameDirectory">
+        <section class="game" id="game1">
+            <p id="number">1</p>
+            <h2 class="gameName">Chiikawa And Friends</h2>
+        </section>
+        <section class="game" id="game2">
+            <p id="number">2</p>
+            <h2 class="gameName"></h2>
+        </section>
+        <section class="game" id="game3">
+            <p id="number">3</p>
+            <h2 class="gameName"></h2>
+        </section>
+        <section class="game" id="game4">
+            <p id="number">4</p>
+            <h2 class="gameName"></h2>
+        </section>
+        <section class="game" id="game5">
+            <p id="number">5</p>
+            <h2 class="gameName"></h2>
+        </section>
+        <section class="game" id="game6">
+            <p id="number">6</p>
+            <h2 class="gameName"></h2>
+        </section>
+        <section class="game" id="game7">
+            <p id="number">7</p>
+            <h2 class="gameName"></h2>
+        </section>
+    </div>
+    <div id="gameDescription">
+        <div id="description">
+            <h1 id='gameName'></h1>
+            <div id="cardDirectory">
+                <div id="cardList">
+                    <img class='imgCard' id="card1" src="cardImages/enemyImages/chiikawa.png">
+                    <img class='imgCard' id="card2" src="cardImages/enemyImages/chiikawa.png">
+                    <img class='imgCard' id="card3" src="cardImages/enemyImages/chiikawa.png">
+                    <img class='imgCard' id="card4" src="cardImages/enemyImages/chiikawa.png">
+                    <img class='imgCard' id="card5" src="cardImages/enemyImages/chiikawa.png">
+                </div>
+                <div id="cardDescription">
+                    <img id="infoCardImg" src="cardImages/mandiNguyen.png">
+                    <div id="information">
+                        <div id="name_health" style="display: flex;">
+                            <h1 id="name" style="margin: 0;">Humbah</h2>
+                            <h2 id="health" style="margin: 0;">HP: </h2>                    
+                        </div>
+                        <div id="faction_roles" style="display: flex;">
+                            <p class="attribute" id="boohbah">Boohbah</p>
+                            <p class="attribute" id="teacher">Teacher</p>
+                            <p class="attribute" id="magical">Magical</p>
+                            <p class='attribute' id='redacted'>REDACTED</button>
+                            <p class="roles" id="attack">Attack</p>
+                            <p class="roles" id="tank">Tank</p>
+                            <p class="roles" id="support">Support</p>
+                        </div>
+                        <div id="attribute_stacks" style="display: flex;">
+                            <h2 id="stacks" style="font-size: 20px;">Coder: 0 | Cyber: 0 | Biotech: 0</h2>
+                        </div>
+                        <h2 id="normalAttack">Normal Attack: ____</h2>
+                        <div class="attackType" >
+                            <p class="single NA" >Single-Target</p>
+                            <p class="aoe NA">AoE</p>
+                            <p class="dot NA">DoT</p>
+                        </div>
+                        <div id="naInfo"></div>
+                        <hr>
+                        <h2 id="skill">Skill: ____</h2>
+                        <div class="attackType" style="display: flex;">
+                            <p class="single SK">Single-Target</p>
+                            <p class="aoe SK">AoE</p>
+                            <p class="dot SK">DoT</p>
+                        </div>
+                        <div id="skInfo"></div>
+                        <hr>
+                        <h2 id="ultimate">Ultimate: ____</h2>
+                        <div class="attackType" style="display: flex;">
+                            <p class="single ULT">Single-Target</p>
+                            <p class="aoe ULT">AoE</p>
+                            <p class="dot ULT">DoT</p>
+                        </div>  
+                        <div id="ultInfo"></div>
+                    </div>
+                </div>
+            </div>
+            <h2 id="gameRecommendations"></h2>
+            <div id="weak/resistance">
+                <h2 id="resistance">Resistance</h2>
+                <div id="resistTags">
+                    <p class="attribute" id="boohbah">Boohbah</p>
+                    <p class="attribute" id="teacher">Teacher</p>
+                    <p class="attribute" id="magical">Magical</p>
+                    <p class="roles" id="attack">Attack</p>
+                    <p class="roles" id="tank">Tank</p>
+                    <p class="roles" id="support">Support</p>
+                    <p class="attackType" id="single">Single-Target</p>
+                    <p class="attackType" id="aoe">AoE</p>
+                    <p class="attackType" id="dot">DoT</p>
+                </div>
+                <h2 id="weakness">Weakness</h2>
+                <div id="weakTags">
+                    <p class="attribute" id="boohbah">Boohbah</p>
+                    <p class="attribute" id="teacher">Teacher</p>
+                    <p class="attribute" id="magical">Magical</p>
+                    <p class="roles" id="attack">Attack</p>
+                    <p class="roles" id="tank">Tank</p>
+                    <p class="roles" id="support">Support</p>
+                    <p class="attackType" id="single">Single-Target</p>
+                    <p class="attackType" id="aoe">AoE</p>
+                    <p class="attackType" id="dot">DoT</p>
+                </div>
+            </div>
+            <h2 id="storyDescription">Story</h2>
+            <hr>
+            <p id="story"></p>
+        </div>
+    </div>
+    <!--Linking Script-->
+    <script src="gameSelection.js"></script>
 </body>
 </html>

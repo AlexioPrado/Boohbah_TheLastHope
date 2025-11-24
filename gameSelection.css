@@ -1,0 +1,20 @@
+@font-face {
+    font-family: 'cookiefont';
+    src: url(Fonts/cookie_bold.TTF) format('truetype');
+    font-weight: bold;
+}
+@font-face {
+    font-family: 'cookiefont';
+    src: url(Fonts/cookie_regular.TTF) format('truetype');
+    font-weight: normal;
+}
+@font-face {
+    font-family: 'zzzfont';
+    src: url(Fonts/印品鸿蒙体.ttf) format('truetype');
+    font-weight: bolder;
+}
+
+
+ * {
+    box-sizing: border-box;
+}

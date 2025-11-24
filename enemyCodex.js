@@ -21,7 +21,6 @@ exit.onclick = function (){
   window.location.href = ("https://alexioprado.github.io/Boohbah_TheLastHope/");
 }
 
-
 let title = document.getElementById('title');
 let characterImg = document.getElementById('infoCardImg');
 let characterName = document.getElementById('name');
@@ -122,6 +121,51 @@ const gardner = {'imgURL': 'cardImages/enemyImages/ethanGardner.png',
                   'NA': ['Undecided', 'S', '2', '<p>Deal 2 dmg to the enemy.</p>'],
                   'SK': ['Undecided', 'N', '3', '<p>Take 3 participation points from the enemy and gain 2 participation points.</p>'],
                   'UL': ['Undecided', 'N', '5', '0', '<p>Increase <u>Take Notes</u> by 3 dmg and gain 1 participation point when using Take Notes. (Twice per round, 2 rounds)<br>At the end of the round, heal by 3 HP. (2 rounds)</p>']};
+const chiikawa = {'imgURL': 'cardImages/enemyImages/chiikawa.png',
+                  'Name': 'Chiikawa',
+                  'HP': '40',
+                  'Attribute': 'Magical', 
+                  'Roles': ['Support'], 
+                  'attributeStacks': ['14', '14', '10'],
+                  'NA': ['Sasumata Jab', 'S', '2', '<p>Deal 2 dmg to the enemy.</p>'],
+                  'SK': ['Weeping', 'A', '3', '<p>Deal 2 dmg to all enemies.<br>Heal the party by 5 HP. Heal the party by 4 HP at the end of the round.</p>'],
+                  'UL': ['EH!', 'S', '4', '2', '<p>Deal 3 dmg to the enemy.<br>Increase party\'s dmg by 5. (3 rounds)</p>']};
+const hachiware = {'imgURL': 'cardImages/enemyImages/hachiware.png',
+                  'Name': 'Hachiware',
+                  'HP': '35',
+                  'Attribute': 'Magical', 
+                  'Roles': ['Tank'], 
+                  'attributeStacks': ['14', '12', '10'],
+                  'NA': ['Sasumata Swing', 'A', '2', '<p>Deal 2 dmg to all enemies.</p>'],
+                  'SK': ['Cameria Click', 'A', '3', '<p>Deal 3 dmg to all enemies.<br>Take a snapshot of the battefield and create a Photo shield with 8 strength to the active character. If attacked with the Photo shield present, turn on flash and deal 2 dmg to the enemy.</p>'],
+                  'UL': ['OI!', 'S', '4', '3', '<p>Deal 4 dmg to the enemy.<br>Reduce incoming attacks by 2. (5 rounds)</p>']};
+const usagi = {'imgURL': 'cardImages/enemyImages/usagi.png',
+                  'Name': 'Usagi',
+                  'HP': '35',
+                  'Attribute': 'Magical', 
+                  'Roles': ['Attack'], 
+                  'attributeStacks': ['10', '12', '10'],
+                  'NA': ['Staff Jab', 'S', '1', '<p>Deal 3 dmg to the enemy.</p>'],
+                  'SK': ['Two Dolla!', 'A', '2', '<p>Deal 4 dmg to all enemies. Reduce HP by 3.</p>'],
+                  'UL': ['UNA!', 'S', '3', '3', '<p>Deal 10 dmg to the enemy. Increase <u>UNA!</u> dmg by 2 for every 3 HP from Base HP.</p>']};
+const sixSeven = {'imgURL': 'cardImages/enemyImages/sixSeven.png',
+                  'Name': 'Six Seven',
+                  'HP': '67',
+                  'Attribute': 'Magical', 
+                  'Roles': ['Attack'], 
+                  'attributeStacks': ['20', '18', '16'],
+                  'NA': ['Peace Sign', 'A', '2', '<p>Deal 2 dmg to all enemies.</p>'],
+                  'SK': ['Six or Seven', 'S', '3', '<p>Deal 6 or 7 dmg to the enemy.</p>'],
+                  'UL': ['Lady Justice', 'A', '4', '2', '<p>Deal 4 dmg to all enemies.<br>Every Skill or Normal Attack used, deal a coordinated attack, dealing 2 dmg to the enemy. (3 rounds)<br>At the end of the round, heal 6 or 7 HP.</p>']};
+const kimJongBirukin = {'imgURL': 'cardImages/enemyImages/kimJongBirukin.png',
+                  'Name': 'sIDBQEWF=SINVQDonqdnq',
+                  'HP': '100',
+                  'Attribute': 'REDACTED', 
+                  'Roles': ['Attack'], 
+                  'attributeStacks': ['N', 'N', 'N'],
+                  'NA': ['REDACTED', 'N', '2', '<p>SDLKNOQWEKX;s pfjahasdva asdoafjacnva sdhfoqeaadsvle</p>'],
+                  'SK': ['REDACTED', 'N', '4', '<p>oweufpqdna pojgqeqeOIDOIEPOGFJDNAOP ijag iodsj vldgrdf</p>'],
+                  'UL': ['REDACTED', 'N', '4', '3', '<p>PNQUDHFNsd OHGOADHF AER nviovdsoirfa FDJQIFADA</p>']};
 
 // character Card from HTML
 const humbahCard = document.getElementById('humbah');
@@ -132,6 +176,13 @@ const zumbahCard = document.getElementById('zumbah');
 const kellerCard = document.getElementById('leslieKeller');
 const mcCuenCard = document.getElementById('russMcCuen');
 const gardnerCard = document.getElementById('ethanGardner');
+const chiikawaCard = document.getElementById('chiikawa');
+const hachiwareCard = document.getElementById('hachiware');
+const usagiCard = document.getElementById('usagi');
+const sixSevenCard = document.getElementById('sixSeven');
+const kimJongBirukinCard = document.getElementById('kimJongBirukin');
+
+selectingCard(humbah);
 
 humbahCard.onclick = function(){
   selectingCard(humbah);
@@ -157,6 +208,22 @@ mcCuenCard.onclick = function(){
 gardnerCard.onclick = function(){
   selectingCard(gardner);
 }
+chiikawaCard.onclick = function(){
+  selectingCard(chiikawa);
+}
+hachiwareCard.onclick = function(){
+  selectingCard(hachiware);
+}
+usagiCard.onclick = function(){
+  selectingCard(usagi);
+}
+sixSevenCard.onclick = function(){
+  selectingCard(sixSeven);
+}
+kimJongBirukinCard.onclick = function(){
+  selectingCard(kimJongBirukin);
+}
+
 
 // Main Function in displaying all information of the specified enemy
 function selectingCard (characterSheet){
@@ -183,6 +250,10 @@ function selectingCard (characterSheet){
     case 'Magical':
       displaying(attributes, [2], 'flex');
       characterImg.style = 'border-color: rgb(189, 224, 254);';
+      break;
+    case 'REDACTED':
+      displaying(attributes, [3], 'flex');
+      characterImg.style = 'border-color: black;';
       break;
     default:
       console.log('ERROR NO ATTRIBUTE FOUND');

@@ -8,124 +8,113 @@
     <title>Game Select</title>
 </head>
 <body>
-    <div id="gameDirectory">
-        <section class="game" id="game1">
-            <p id="number">1</p>
-            <h2 class="gameName">Chiikawa And Friends</h2>
-        </section>
-        <section class="game" id="game2">
-            <p id="number">2</p>
-            <h2 class="gameName"></h2>
-        </section>
-        <section class="game" id="game3">
-            <p id="number">3</p>
-            <h2 class="gameName"></h2>
-        </section>
-        <section class="game" id="game4">
-            <p id="number">4</p>
-            <h2 class="gameName"></h2>
-        </section>
-        <section class="game" id="game5">
-            <p id="number">5</p>
-            <h2 class="gameName"></h2>
-        </section>
-        <section class="game" id="game6">
-            <p id="number">6</p>
-            <h2 class="gameName"></h2>
-        </section>
-        <section class="game" id="game7">
-            <p id="number">7</p>
-            <h2 class="gameName"></h2>
-        </section>
-    </div>
-    <div id="gameDescription">
-        <div id="description">
-            <h1 id='gameName'></h1>
-            <div id="cardDirectory">
-                <div id="cardList">
-                    <img class='imgCard' id="card1" src="cardImages/enemyImages/chiikawa.png">
-                    <img class='imgCard' id="card2" src="cardImages/enemyImages/chiikawa.png">
-                    <img class='imgCard' id="card3" src="cardImages/enemyImages/chiikawa.png">
-                    <img class='imgCard' id="card4" src="cardImages/enemyImages/chiikawa.png">
-                    <img class='imgCard' id="card5" src="cardImages/enemyImages/chiikawa.png">
-                </div>
-                <div id="cardDescription">
-                    <img id="infoCardImg" src="cardImages/mandiNguyen.png">
-                    <div id="information">
-                        <div id="name_health" style="display: flex;">
-                            <h1 id="name" style="margin: 0;">Humbah</h2>
-                            <h2 id="health" style="margin: 0;">HP: </h2>                    
+    <div id="mainPanel">
+        <div id="gameDirectory">
+            <section class="game" id="game1">
+                <p class="number">1</p>
+                <h2 class="gameName">Little Critters Amongst The Crowd</h2>
+            </section>
+            <section class="game" id="game2">
+                <p class="number">2</p>
+                <h2 class="gameName">Wolfpack Gone Wild</h2>
+            </section>
+            <section class="game" id="game3">
+                <p class="number">3</p>
+                <h2 class="gameName">Combat Master</h2>
+            </section>
+            <section class="game" id="game4">
+                <p class="number">4</p>
+                <h2 class="gameName">Wolf In Sheep's Clothing</h2>
+            </section>
+            <section class="game" id="game5">
+                <p class="number">5</p>
+                <h2 class="gameName">Uncontrollable Psychological Event</h2>
+            </section>
+            <section class="game" id="game6">
+                <p class="number">6</p>
+                <h2 class="gameName">Battle Of The Century</h2>
+            </section>
+            <section class="game" id="game7">
+                <p class="number">7</p>
+                <h2 class="gameName">The True Mastermind</h2>
+            </section>
+        </div>
+        <div id="gameDescription">
+            <div id="description">
+                <h1 id='gameName' style="font-size: 7.111vh; margin: 0;">Little Critters Amongst The Crowd</h1>
+                <p id="gameStarter" style="font-size: 2.444vh;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <div id="cardDirectory">
+                    <div id="cardList">
+                        <img class='imgCard' id="card1" src="cardImages/enemyImages/chiikawa.png">
+                        <img class='imgCard' id="card2" src="cardImages/enemyImages/usagi.png">
+                        <img class='imgCard' id="card3" src="cardImages/enemyImages/hachiware.png">
+                        <img class='imgCard' id="card4" src="cardImages/enemyImages/chiikawa.png" style="display: none;">
+                        <img class='imgCard' id="card5" src="cardImages/enemyImages/chiikawa.png" style="display: none;">
+                    </div>
+                    
+                    <div id="cardDescription">
+                        <br>
+                        <div id="information">
+                            <div id="name_health" style="display: flex;">
+                                <h1 id="name" style="margin: 0;">Humbah</h2>
+                                <h2 id="health" style="margin: 0;">HP: </h2>                    
+                            </div>
+                            <div id="faction_roles" style="display: flex;">
+                                <p class="attribute" id="boohbah">Boohbah</p>
+                                <p class="attribute" id="teacher">Teacher</p>
+                                <p class="attribute" id="magical">Magical</p>
+                                <p class='attribute' id='redacted'>REDACTED</button>
+                                <p class="roles" id="attack">Attack</p>
+                                <p class="roles" id="tank">Tank</p>
+                                <p class="roles" id="support">Support</p>
+                            </div>
+                            <div id="attribute_stacks" style="display: flex;">
+                                <h2 id="stacks" style="font-size: 20px; margin: 0.5em 0 0.5em 0;">Coder: 0 | Cyber: 0 | Biotech: 0</h2>
+                            </div>
+                            <h2 id="normalAttack">Normal Attack: ____</h2>
+                            <div class="attackType" style="display: flex;">
+                                <p class="single NA" >Single-Target</p>
+                                <p class="aoe NA">AoE</p>
+                                <p class="dot NA">DoT</p>
+                            </div>
+                            <div id="naInfo"></div>
+                            <hr>
+                            <h2 id="skill">Skill: ____</h2>
+                            <div class="attackType" style="display: flex;">
+                                <p class="single SK">Single-Target</p>
+                                <p class="aoe SK">AoE</p>
+                                <p class="dot SK">DoT</p>
+                            </div>
+                            <div id="skInfo"></div>
+                            <hr>
+                            <h2 id="ultimate">Ultimate: ____</h2>
+                            <div class="attackType" style="display: flex;">
+                                <p class="single ULT">Single-Target</p>
+                                <p class="aoe ULT">AoE</p>
+                                <p class="dot ULT">DoT</p>
+                            </div>  
+                            <div id="ultInfo"></div>
                         </div>
-                        <div id="faction_roles" style="display: flex;">
-                            <p class="attribute" id="boohbah">Boohbah</p>
-                            <p class="attribute" id="teacher">Teacher</p>
-                            <p class="attribute" id="magical">Magical</p>
-                            <p class='attribute' id='redacted'>REDACTED</button>
-                            <p class="roles" id="attack">Attack</p>
-                            <p class="roles" id="tank">Tank</p>
-                            <p class="roles" id="support">Support</p>
-                        </div>
-                        <div id="attribute_stacks" style="display: flex;">
-                            <h2 id="stacks" style="font-size: 20px;">Coder: 0 | Cyber: 0 | Biotech: 0</h2>
-                        </div>
-                        <h2 id="normalAttack">Normal Attack: ____</h2>
-                        <div class="attackType" >
-                            <p class="single NA" >Single-Target</p>
-                            <p class="aoe NA">AoE</p>
-                            <p class="dot NA">DoT</p>
-                        </div>
-                        <div id="naInfo"></div>
-                        <hr>
-                        <h2 id="skill">Skill: ____</h2>
-                        <div class="attackType" style="display: flex;">
-                            <p class="single SK">Single-Target</p>
-                            <p class="aoe SK">AoE</p>
-                            <p class="dot SK">DoT</p>
-                        </div>
-                        <div id="skInfo"></div>
-                        <hr>
-                        <h2 id="ultimate">Ultimate: ____</h2>
-                        <div class="attackType" style="display: flex;">
-                            <p class="single ULT">Single-Target</p>
-                            <p class="aoe ULT">AoE</p>
-                            <p class="dot ULT">DoT</p>
-                        </div>  
-                        <div id="ultInfo"></div>
                     </div>
                 </div>
-            </div>
-            <h2 id="gameRecommendations"></h2>
-            <div id="weak/resistance">
-                <h2 id="resistance">Resistance</h2>
-                <div id="resistTags">
-                    <p class="attribute" id="boohbah">Boohbah</p>
-                    <p class="attribute" id="teacher">Teacher</p>
-                    <p class="attribute" id="magical">Magical</p>
-                    <p class="roles" id="attack">Attack</p>
-                    <p class="roles" id="tank">Tank</p>
-                    <p class="roles" id="support">Support</p>
-                    <p class="attackType" id="single">Single-Target</p>
-                    <p class="attackType" id="aoe">AoE</p>
-                    <p class="attackType" id="dot">DoT</p>
+                <h2 id="gameRecommendations" style="margin-bottom: 0; text-align: center; font-size: 3vh;">Party Recommendations</h2>
+                <div id="weakResistance">
+                    <div id="resist" style="width: 49%;">
+                        <h2 id="resistance" style="margin-bottom: 0;">Resistance</h2>
+                        <p id="resistText" style="font-size: 2vh; margin: 0;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    </div>
+                    <div id="weak" style="width: 49%;">
+                        <h2 id="weakness" style="margin-bottom: 0;">Weakness</h2>
+                        <p id="weakText" style="font-size: 2vh; margin: 0;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    </div>
                 </div>
-                <h2 id="weakness">Weakness</h2>
-                <div id="weakTags">
-                    <p class="attribute" id="boohbah">Boohbah</p>
-                    <p class="attribute" id="teacher">Teacher</p>
-                    <p class="attribute" id="magical">Magical</p>
-                    <p class="roles" id="attack">Attack</p>
-                    <p class="roles" id="tank">Tank</p>
-                    <p class="roles" id="support">Support</p>
-                    <p class="attackType" id="single">Single-Target</p>
-                    <p class="attackType" id="aoe">AoE</p>
-                    <p class="attackType" id="dot">DoT</p>
-                </div>
+                <h1 id="storyDescription" style="margin-bottom: 0;">Story</h2>
+                <p id="story" style="font-size: 2.444vh; margin: 0; width: 80%">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
             </div>
-            <h2 id="storyDescription">Story</h2>
-            <hr>
-            <p id="story"></p>
         </div>
     </div>
+    <p id='fight'>FIGHT!</p>
+    <img id="exit" src="miscellaneous/exitButton.png">
     <!--Linking Script-->
     <script src="gameSelection.js"></script>
 </body>

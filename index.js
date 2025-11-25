@@ -42,11 +42,10 @@ let play = document.getElementById('play');
 let guidebook = document.getElementById('guidebook');
 let playerCards = document.getElementById('playerCards');
 let enemyCards = document.getElementById('enemyCards');
-/*
+
 play.onclick = function() {
-    window.location.href = ('https://alexioprado.github.io/Boohbah_TheLastHope/guidebook.html');
+    window.location.href = ('https://alexioprado.github.io/Boohbah_TheLastHope/gameSelection.html');
 }
-*/
 guidebook.onclick = function() {
     window.location.href = ('https://alexioprado.github.io/Boohbah_TheLastHope/guidebook.html');
 }

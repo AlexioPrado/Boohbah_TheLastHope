@@ -18,3 +18,219 @@
  * {
     box-sizing: border-box;
 }
+
+body {
+    font-family: cookiefont;
+    font-weight: normal;
+    background-color: rgb(83,162,231);
+    display: flex;
+    flex-direction: column;
+    user-select: none; 
+    overflow-y: hidden;
+}
+
+#mainPanel {
+    display: grid;
+    grid-template-columns: 32% 68%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#gameDescription {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    padding: 2.36%;
+    padding-left: 0;
+}
+
+#description {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(228, 241, 255);
+    overflow-y: scroll;
+    border-radius: 2em;
+    padding: 2%;
+}
+
+#description::-webkit-scrollbar {
+    display: none;
+}
+
+#cardDirectory {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(248, 251, 255);
+    border-radius: 1.5em;
+    padding: 2%;
+}
+
+#cardList {
+    display: flex;
+    flex-direction: row;
+    justify-content:left;
+    column-gap: 1em;
+}
+
+.imgCard {
+    border: 0.35em solid rgb(185, 222, 255);
+    border-radius: 1em;
+    width: 100%;
+    min-width: 4rem;
+    max-width: 12rem;
+    aspect-ratio: 2.25/3.5;
+    object-fit:cover;
+}
+
+.imgCard:hover {
+    filter: opacity(0.5);
+}
+
+#name_health {
+    display: flex;
+    justify-content: space-between;
+}
+
+#health {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#faction_roles{
+    display: flex;
+    gap: 0.3em;
+}
+
+.attribute, .roles {
+    padding: 0.1em 0.3em 0.1em 0.3em;
+    border-radius: 5rem;
+    margin: 0 0 0.2em 0;
+    font-size: 1.125rem;
+}
+.single, .aoe, .dot {
+    padding: 0.1em 0.35em 0.1em 0.35em;
+    border-radius: 5rem;
+    font-size: 1.125rem;
+    margin: 0;
+}
+
+#boohbah {
+    border: 0.2rem solid rgb(255, 166, 166);
+    background: linear-gradient(to right, rgb(255, 210, 125), rgb(255, 255, 123), rgb(255, 201, 210), rgb(175, 175, 255), rgb(255, 96, 255));
+    color: rgb(0, 0, 0);
+}
+#teacher {
+    border: 0.2rem solid rgb(255, 59, 59);
+    background-color: rgb(255, 93, 143);
+    color: rgb(228, 241, 255);
+}
+#magical {
+    border: 0.2rem solid rgb(156, 209, 255);
+    background-color: rgb(189, 224, 254);
+    color: rgb(228, 241, 255);
+}
+#redacted {
+    border: 0.2rem solid rgb(167, 0, 0);
+    background-color: rgb(74, 0, 0);
+    color: rgb(255, 27, 27);
+}
+
+#attack {
+    border: 0.2rem solid rgb(240, 53, 106);
+    background-color: rgb(222, 49, 99	);
+    color: rgb(228, 241, 255);
+}
+#tank {
+    border: 0.2rem solid rgb(255, 161, 67);
+    background-color: rgb(242, 140, 40);
+    color: rgb(228, 241, 255);
+}
+#support {
+    border: 0.2rem solid rgb(124, 234, 124);
+    background-color: rgb(144, 238, 144);
+    color: rgb(228, 241, 255);
+}
+
+.single {
+    border: 0.2rem solid rgb(70, 113, 242);
+    background-color: rgb(98, 133, 237);
+    color: rgb(228, 241, 255);
+}
+.aoe {
+    border: 0.2rem solid rgb(255, 192, 203);
+    background-color: rgb(255, 149, 166);
+    color: rgb(228, 241, 255);
+}
+.dot {
+    border: 0.2rem solid rgb(117, 86, 241);
+    background-color: rgb(93, 63, 211);
+    color: rgb(228, 241, 255);
+}
+
+#weakResistance {
+    display: flex;
+    gap: 2%;
+}
+
+#gameDirectory {
+    flex-direction: column;
+    height: 100vh;
+    padding: 5%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+#gameDirectory::-webkit-scrollbar {
+    display: none;
+}
+
+.game {
+    display: grid;
+    grid-template-columns: 15% 85%;
+    text-align: center;
+    align-items: center;
+    background-color: rgb(228, 241, 255);
+    margin-bottom: 1.5em;
+    border: 1em solid rgb(111, 188, 255);
+    border-radius: 2em;
+}
+
+.gameName {
+    margin: 0;
+    font-size: 3.778vh;
+    text-align: left;
+}
+
+.number {
+    margin: 50% 0 50% 0;
+    font-size: 3.556vh;
+    font-weight: bold;
+    width: min-content;
+    justify-self: center;
+}
+
+#fight {
+    bottom: 1.5em;
+    right: 2em;
+    font-weight: bold;
+    font-size: 32px;
+    margin: 0;
+    background-color: rgb(185, 222, 255);
+    padding: 0.5em 1em 0.5em 1em;
+    border-radius: 1.5em;
+    align-self: flex-start;
+    position: absolute;
+}
+
+#fight:hover {
+    background-color: rgb(255, 110, 110);
+}
+
+#exit {
+    top: 2em;
+    right: 2em;
+    width: 5em;
+    align-self: flex-start;
+    position: absolute;
+}

@@ -71,14 +71,11 @@ body {
     object-fit:cover;
 }
 
-
 .cardName {
     font-size: 1.2vw;
     text-align: center;
     margin: 0.3em 0 0 0;
 }
-
-
 
 #cardDirectory {
     align-self: start;

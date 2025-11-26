@@ -1,3 +1,27 @@
+//Audio
+var click = new Audio('audio/ui/minecraft_click.mp3')
+var background_audio = new Audio('audio/background/Takeshi Abo - KYOUHEI.mp3');
+
+document.addEventListener('mouseover', (event) => {
+    background_audio.loop = true;
+    background_audio.volume = 0.05;
+    background_audio.play();
+});
+
+document.addEventListener("visibilitychange", () => {
+  if (document.hidden) {
+    background_audio.pause();
+  } else {
+    background_audio.play()
+  }
+});
+
+/* Linking Pages*/
+let exit = document.getElementById('exit');
+
+exit.onclick = function (){
+    window.location.href = ("https://alexioprado.github.io/Boohbah_TheLastHope/");
+}
 
 // Buttons
 let boohbah = document.getElementById('boohbahCardGame');
@@ -20,24 +44,6 @@ let attributesTitle = document.getElementById('info6');
 let otherRulesTitle = document.getElementById('info7');
 let gameAreaTitle = document.getElementById('info8')
 let creditsTitle = document.getElementById('info9');
-
-//Audio
-var click = new Audio('audio/ui/minecraft_click.mp3')
-var background_audio = new Audio('audio/background/Takeshi Abo - KYOUHEI.mp3');
-
-document.addEventListener('mouseover', (event) => {
-    background_audio.loop = true;
-    background_audio.volume = 0.05;
-    background_audio.play();
-});
-
-document.addEventListener("visibilitychange", () => {
-  if (document.hidden) {
-    background_audio.pause();
-  } else {
-    background_audio.play()
-  }
-});
 
 boohbah.onclick = function (){
     console.log('General Game Section');
@@ -83,12 +89,4 @@ credits.onclick = function (){
     console.log('Credits Section');
     creditsTitle.scrollIntoView({behavior: "smooth", block: "center"});
     click.play();
-}
-
-
-/* Linking Pages*/
-let exit = document.getElementById('exit');
-
-exit.onclick = function (){
-    window.location.href = ("https://alexioprado.github.io/Boohbah_TheLastHope/");
 }

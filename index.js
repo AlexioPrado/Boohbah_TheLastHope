@@ -18,7 +18,6 @@ document.addEventListener("visibilitychange", () => {
   }
 });
 
-
 scrolldown.onclick = function () {
     window.scrollTo({
         top: 2000,

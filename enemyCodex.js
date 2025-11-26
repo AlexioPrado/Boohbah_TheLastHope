@@ -102,7 +102,7 @@ const keller = {'imgURL': 'cardImages/enemyImages/leslieKeller.png',
                   'attributeStacks': ['16', '16', '18'],
                   'NA': ['Media Monday', 'S', '2', '<p>Deal 2 dmg to the enemy.</p>'],
                   'SK': ['Peer Review', 'D', '3', '<p>Summon a Practice Assignment.<br><u>Practice Assignment:</u> Deal 2 dmg at the end of the round. If HP decreases, deal 3 dmg to the enemy. (Twice per round, 4 rounds)</p>'],
-                  'UL': ['Friday Puzzles', 'N', '3', '2', '<p>Reduce dmg taken by 2. (3 rounds)</p>']};
+                  'UL': ['Friday Puzzles', 'N', '3', '3', '<p>Reduce dmg taken by 2. (3 rounds)</p>']};
 const mcCuen = {'imgURL': 'cardImages/enemyImages/russMcCuen.png',
                   'Name': 'Mr. McCuen',
                   'HP': '65',
@@ -111,16 +111,16 @@ const mcCuen = {'imgURL': 'cardImages/enemyImages/russMcCuen.png',
                   'attributeStacks': ['14', '14', '20'],
                   'NA': ['Catharcist Friday', 'A', '2', '<p>Deal 2 dmg to all enemies.</p>'],
                   'SK': ['Devil\'s Advocate', 'S', '5', '<p>Mr. McCuen becomes invulnerable during the round. Deal dmg at the end of the round based on 2/3 of dmg taken during the round.<br>Invulnerability is removed when attribute effects are triggered.</p>'],
-                  'UL': ['Plausinle Deniability', 'N', '4', '3', '<p>Heal 2 HP at the end of the round. (3 rounds)</p>']};
+                  'UL': ['Plausinle Deniability', 'N', '4', '5', '<p>Heal 2 HP at the end of the round. (3 rounds)</p>']};
 const gardner = {'imgURL': 'cardImages/enemyImages/ethanGardner.png',
                   'Name': 'Mr. Gardner',
                   'HP': '60',
                   'Attribute': 'Teacher', 
                   'Roles': ['Attack', 'Support'], 
                   'attributeStacks': ['14', '18', '18'],
-                  'NA': ['Undecided', 'S', '2', '<p>Deal 2 dmg to the enemy.</p>'],
+                  'NA': ['Undecided', 'S', '3', '<p>Deal 4 dmg to the enemy.</p>'],
                   'SK': ['Undecided', 'N', '3', '<p>Take 3 participation points from the enemy and gain 2 participation points.</p>'],
-                  'UL': ['Undecided', 'N', '5', '0', '<p>Increase <u>Take Notes</u> by 3 dmg and gain 1 participation point when using Take Notes. (Twice per round, 2 rounds)<br>At the end of the round, heal by 3 HP. (2 rounds)</p>']};
+                  'UL': ['Undecided', 'N', '5', '6', '<p>Increase <u>Take Notes</u> by 3 dmg and gain 1 participation point when using Take Notes. (Twice per round, 2 rounds)<br>At the end of the round, heal by 3 HP. (2 rounds)</p>']};
 const chiikawa = {'imgURL': 'cardImages/enemyImages/chiikawa.png',
                   'Name': 'Chiikawa',
                   'HP': '40',

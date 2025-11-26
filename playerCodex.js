@@ -15,6 +15,13 @@ document.addEventListener("visibilitychange", () => {
   }
 });
 
+/* Linking Pages*/
+let exit = document.getElementById('exit');
+
+exit.onclick = function (){
+  window.location.href = ("https://alexioprado.github.io/Boohbah_TheLastHope/");
+}
+
 let title = document.getElementById('title');
 let characterImg = document.getElementById('infoCardImg');
 let characterName = document.getElementById('name');
@@ -529,13 +536,6 @@ function attackType_tags (action, attackType){
     default:
       console.log('ERROR NO ATTACK TYPE FOUND')
   }
-}
-
-/* Linking Pages*/
-let exit = document.getElementById('exit');
-
-exit.onclick = function (){
-  window.location.href = ("https://alexioprado.github.io/Boohbah_TheLastHope/");
 }
 
 /* Filtering */

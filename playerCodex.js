@@ -164,7 +164,7 @@ const evanY = {'imgURL': 'cardImages/evanYango.png',
                'Attribute': 'Coder', 
                'Roles': ['Attack', 'Support'], 
                'NA': ['Undecided', 'S', '2', '1', '<p>Deal 2 dmg to the enemy.</p>'],
-               'SK': ['Undecided', 'A', '3', '2', '<p>Deal 2 dmg to all enemies.<br>If enemies are stunned, deal twice as much dmg.</p>'],
+               'SK': ['Undecided', 'A', '3', '2', '<p>Deal 4 dmg to all enemies.<br>If enemies are stunned, deal twice as much dmg.</p>'],
                'UL': ['Undecided', 'S', '3', '2', '3', '<p>Deal 5 dmg to the enemy.<br>If a character in the party loses or gains HP, increase the next Skill dmg by 2. (3 rounds)</p>']};
 const evelynM = {'imgURL': 'cardImages/evelynMeier.png',
                  'Name': 'Evelyn Meier',
@@ -229,7 +229,7 @@ const marcusP = {'imgURL': 'cardImages/evanYango.png',
                  'Roles': ['Support'], 
                  'NA': ['Undecided', 'S', '1', '1', '<p>Deal 1 dmg to the enemy.</p>'],
                  'SK': ['Undecided', 'S', '3', '3', '<p>Deal 2 dmg to the enemy.<br>Increase the party\'s dmg by 3. Dmg caused during stun is further increased by 4. (3 rounds)</p>'],
-                 'UL': ['Undecided', 'S', '3', '4', '0', '<p>Deal 3 dmg to the enemy.<br>Increase the next stun duration by 2 rounds.</p>']};
+                 'UL': ['Undecided', 'S', '3', '4', '2', '<p>Deal 3 dmg to the enemy.<br>Increase the next stun duration by 2 rounds.</p>']};
 const noahS = {'imgURL': 'cardImages/evanYango.png',
                'Name': 'Noah Sanders',
                'HP': '35',

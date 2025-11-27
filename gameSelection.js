@@ -75,7 +75,7 @@ const keller = {'imgURL': 'cardImages/enemyImages/leslieKeller.png',
                   'attributeStacks': ['16', '16', '18'],
                   'NA': ['Media Monday', 'S', '2', '<p>Deal 2 dmg to the enemy.</p>'],
                   'SK': ['Peer Review', 'D', '3', '<p>Summon a Practice Assignment.<br><u>Practice Assignment:</u> Deal 2 dmg at the end of the round. If HP decreases, deal 3 dmg to the enemy. (Twice per round, 4 rounds)</p>'],
-                  'UL': ['Friday Puzzles', 'N', '3', '2', '<p>Reduce dmg taken by 2. (3 rounds)</p>']};
+                  'UL': ['Friday Puzzles', 'N', '3', '3', '<p>Reduce dmg taken by 2. (3 rounds)</p>']};
 const mcCuen = {'imgURL': 'cardImages/enemyImages/russMcCuen.png',
                   'Name': 'Mr. McCuen',
                   'HP': '65',
@@ -84,7 +84,7 @@ const mcCuen = {'imgURL': 'cardImages/enemyImages/russMcCuen.png',
                   'attributeStacks': ['14', '14', '20'],
                   'NA': ['Catharcist Friday', 'A', '2', '<p>Deal 2 dmg to all enemies.</p>'],
                   'SK': ['Devil\'s Advocate', 'S', '5', '<p>Mr. McCuen becomes invulnerable during the round. Deal dmg at the end of the round based on 2/3 of dmg taken during the round.<br>Invulnerability is removed when attribute effects are triggered.</p>'],
-                  'UL': ['Plausinle Deniability', 'N', '4', '3', '<p>Heal 2 HP at the end of the round. (3 rounds)</p>']};
+                  'UL': ['Plausinle Deniability', 'N', '4', '4', '<p>Heal 2 HP at the end of the round. (3 rounds)</p>']};
 const gardner = {'imgURL': 'cardImages/enemyImages/ethanGardner.png',
                   'Name': 'Mr. Gardner',
                   'HP': '60',
@@ -93,7 +93,7 @@ const gardner = {'imgURL': 'cardImages/enemyImages/ethanGardner.png',
                   'attributeStacks': ['14', '18', '18'],
                   'NA': ['Undecided', 'S', '2', '<p>Deal 2 dmg to the enemy.</p>'],
                   'SK': ['Undecided', 'N', '3', '<p>Take 3 participation points from the enemy and gain 2 participation points.</p>'],
-                  'UL': ['Undecided', 'N', '5', '0', '<p>Increase <u>Take Notes</u> by 3 dmg and gain 1 participation point when using Take Notes. (Twice per round, 2 rounds)<br>At the end of the round, heal by 3 HP. (2 rounds)</p>']};
+                  'UL': ['Undecided', 'N', '5', '6', '<p>Increase <u>Take Notes</u> by 3 dmg and gain 1 participation point when using Take Notes. (Twice per round, 2 rounds)<br>At the end of the round, heal by 3 HP. (2 rounds)</p>']};
 const chiikawa = {'imgURL': 'cardImages/enemyImages/chiikawa.png',
                   'Name': 'Chiikawa',
                   'HP': '40',
@@ -164,45 +164,192 @@ const story = document.getElementById('story');
 const game1Content = {'title' : 'Little Critters Amongst The Crowd',
                       'start' : 'Small but mighty, these three-apples-tall critters can slay chimeras like nothing. Mess with them and you\'ll get a beating.',
                       'cards' : [chiikawa, usagi, hachiware],
+                      'strat' : 'The enemies have high buffing capabilities to deal huge damage to all party members. Make sure to have <b class="tankText">dmg reduction</b>, <b class="healText">healing</b>, or <b class="tankText">shields</b> to mitigate dmg. Use <b class="aoeText">AoE</b> attacks to deal dmg to all enemies.',
                       'resist': ['coder','cyber', 'single'],
                       'weak'  : ['biotech', 'aoe', 'dot'],
                       'story' : ''};
 const game2Content = {'title' : 'Wolfpack Gone Wild',
-                      'start' : '',
+                      'start' : 'Look left and right when passing by a street. Not because of cars but to not be spotted by him.',
                       'cards' : [mcCuen],
+                      'strat' : 'The enemy can absord dmg during the action phase and counterattack during end phase. Circumvent his attacks by utilizing <b class="dotText">DoT</b> attacks to reduce his dmg, <b class="tankText">shields</b> to tank his attacks, or <u>high attribute effect attacks</u> to remove his dmg absorption ability.',
                       'resist': ['biotech', 'aoe', 'single'],
                       'weak'  : ['coder','biotech','dot'],
                       'story' : ''};
 const game3Content = {'title' : 'Combat Master',
                       'start' : '',
                       'cards' : [keller],
+                      'strat' : 'The enemy utilizes DoT attacks and counterattacks. Fight back using high <b class="singleText">Single-Target</b> attacks and <u>high attribute effect attacks</u> to defeat the enemy.',
                       'resist': ['biotech', 'aoe'],
                       'weak'  : ['coder', 'cyber', 'single', 'dot'],
                       'story' : ''};
 const game4Content = {'title' : 'Wolf In Sheep\'s Clothing',
                       'start' : '',
                       'cards' : [gardner],
+                      'strat' : 'The enemy steals participation points, limiting the actions available for the party. Select party members with <u>low participation point costs</u> and utilize <b class="dotText">DoT</b> attacks.',
                       'resist': ['cyber','biotech', 'aoe'],
                       'weak'  : ['coder','single','dot'],
                       'story' : ''};
 const game5Content = {'title' : 'Uncontrollable Psychological Event',
                       'start' : '',
                       'cards' : [sixSeven],
+                      'strat' : 'The enemy has unpredictable dmg capabilities, either dealing high Single-Target or AoE attacks. Counterattack his dmg by utilizing , <b class="healText">healing</b> that occur during action phase, and <u>high attribute effect attacks</u>.',
                       'resist': ['coder','aoe'],
                       'weak'  : ['biotech','cyber','dot','single'],
                       'story' : ''};
 const game6Content = {'title' : 'Battle Of The Century',
                       'start' : '',
                       'cards' : [humbah, jingbah, zingzingzingbah, zumbah, jumbah],
+                      'strat' : 'The enemies disregard attribute effects and excels in Single-Target attacks. Fight back by selecting party members with <b class="aoeText">AoE</b> attacks and <b class="healText">healing</b> or <b class="shieldText">shields</b> to mitigate dmg.',
                       'resist': ['single','dot'],
                       'weak'  : ['aoe'],
                       'story' : ''};
 const game7Content = {'title' : 'The True Mastermind',
                       'start' : '',
                       'cards' : [kimJongBirukin],
+                      'strat' : 'The person you trust most has betrayed you. Use all the skills that you have learned to defeat him. <b>May the odds be ever in your favor.</b>',
                       'resist': ['aoe','dot'],
                       'weak'  : ['single'],
                       'story' : ''};
+
+let title = document.getElementById('title');
+let characterImg = document.getElementById('infoCardImg');
+let characterName = document.getElementById('name');
+let hp = document.getElementById('health');
+let attributes = document.getElementsByClassName('attribute');
+let attributeStack = document.getElementsByClassName('attribute_stacks');
+let stacks = document.getElementById('stacks');
+let roles = document.getElementsByClassName('roles');
+let naTitle = document.getElementById('normalAttack');
+let skTitle = document.getElementById('skill');
+let ulTitle = document.getElementById('ultimate');
+let attackType_NA = document.getElementsByClassName('NA');
+let attackType_SK = document.getElementsByClassName('SK');
+let attackType_ULT = document.getElementsByClassName('ULT');
+let naInfo = document.getElementById('naInfo');
+let skInfo = document.getElementById('skInfo');
+let ultInfo = document.getElementById('ultInfo');
+
+selectingCard(chiikawa);
+
+chiikawaCard.onclick = function(){
+  selectingCard(chiikawa);
+}
+hachiwareCard.onclick = function(){
+  selectingCard(hachiware);
+}
+usagiCard.onclick = function(){
+  selectingCard(usagi);
+}
+
+// Main Function in displaying all information of the specified enemy
+function selectingCard (characterSheet){
+  //Replace character name and HP
+  characterName.innerHTML = characterSheet['Name'];
+  hp.innerHTML = 'HP: ' + characterSheet['HP'];
+
+  //Select and display the Attribute tag of character
+  switch (characterSheet['Attribute']){
+    case 'Boohbah':
+      displaying(attributes, [0], 'flex');
+      break;
+    case 'Teacher':
+      displaying(attributes, [1], 'flex');
+      break;
+    case 'Magical':
+      displaying(attributes, [2], 'flex');
+      break;
+    case 'REDACTED':
+      displaying(attributes, [3], 'flex');
+      break;
+    default:
+      console.log('ERROR NO ATTRIBUTE FOUND');
+  }
+
+  if (characterSheet['attributeStacks'][0] === 'N'){
+    attributeStack.style = 'display: none;';
+    stacks.style = 'display: none;';
+  } else {
+    attributeStack.style = 'display: flex;';
+    stacks.style = 'display: flex;';    
+  }
+
+  // Used to gather all role tags needed for character
+  let displayingRole = [];
+  //Select the role tags of character
+  for (let i = 0; i < characterSheet['Roles'].length; i++){
+    switch (characterSheet['Roles'][i]){
+      case 'Attack':
+        displayingRole.push(0);
+        break;
+      case 'Tank':
+        displayingRole.push(1);
+        break;
+      case 'Support':
+        displayingRole.push(2);
+        break;
+      default:
+        console.log('ERROR NO ROLE FOUND');
+    }    
+  }
+  //Display role tags needed
+  displaying(roles, displayingRole, 'flex');
+
+  //Display Attribute stack requirements
+  stacks.innerHTML = 'Coder: ' + characterSheet['attributeStacks'][0] + ' | ' + 'Cyber: ' + characterSheet['attributeStacks'][1] + ' | ' + 'Biotech: ' + characterSheet['attributeStacks'][2];
+
+  //Display Normal Attack information
+  naTitle.innerHTML = 'Normal Attack: ' + characterSheet['NA'][0];
+  attackType_tags(attackType_NA, characterSheet['NA'][1]);
+  naInfo.innerHTML = '<p>Participation Cost: <b>' + characterSheet['NA'][2] + '</p>';
+  naInfo.innerHTML += characterSheet['NA'][3];
+
+  //Display Skill information
+  skTitle.innerHTML = 'Skill: ' + characterSheet['SK'][0];
+  attackType_tags(attackType_SK, characterSheet['SK'][1]);
+  skInfo.innerHTML = '<p>Participation Cost: <b>' + characterSheet['SK'][2] + '</p>';
+  skInfo.innerHTML += characterSheet['SK'][3];
+  
+  //Display ultimate information
+  ulTitle.innerHTML = 'Ultimate: ' + characterSheet['UL'][0];
+  attackType_tags(attackType_ULT, characterSheet['UL'][1]);
+  ultInfo.innerHTML = '<p>Energy Cost: <b>' + characterSheet['UL'][3] + '</b> | Participation Cost: <b>' + characterSheet['UL'][2] + '</p>';
+  ultInfo.innerHTML += characterSheet['UL'][4];
+
+  //Display user's action
+  console.log('Selected: ' + characterSheet['Name']);
+}
+
+// Display the tags of a specific character by hiding unused tags and displaying the selected tag based on index number
+function displaying (element, display, type){
+  for (let i of element){
+    i.style = 'display: none;';
+  }
+  for (let i of display){
+    element[i].style = 'display: ' + type;
+  }
+}
+
+//Display the appropriate attack type tag on an action
+function attackType_tags (action, attackType){
+  for (let i of action){
+    i.style = 'display: none;';
+  }
+  switch (attackType){
+    case 'S':
+      action[0].style = 'display: flex';
+      break;
+    case 'A':
+      action[1].style = 'display: flex';
+      break;
+    case 'D':
+      action[2].style = 'display: flex';
+      break;
+    case 'N':
+      break;
+    default:
+      console.log('ERROR NO ATTACK TYPE FOUND')
+  }
+}
 
 /* WORKS
 carddiv.onclick = function(){

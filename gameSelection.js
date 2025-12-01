@@ -22,6 +22,7 @@ exit.onclick = function (){
   window.location.href = ("https://alexioprado.github.io/Boohbah_TheLastHope/");
 }
 
+//Enemy Card descriptions
 const humbah = {'imgURL': 'cardImages/enemyImages/humbah.png',
                 'Name': 'Humbah',
                 'HP': '70',
@@ -140,6 +141,20 @@ const kimJongBirukin = {'imgURL': 'cardImages/enemyImages/kimJongBirukin.png',
                   'SK': ['"First They Came"', 'N', '4', '<p>Enhance <u>Conflict</u> to an AoE attack. Reduce base dmg to 3 dmg. (3 rounds)<br>When the <u>Broken Promise shield</u> breaks, remove enhanced state and reduce base dmg to 2. (2 rounds)</p>'],
                   'UL': ['Dictate The Battlefield', 'N', '4', '7', '<p>All enemies current HP is decreased by half and shields are removed.<br>Place the Broken Promise shield onto oneself with strength 15.<br><u>Broken Promise</u>: When present, dmg is increased by 3. When broken, deal 10 dmg to oneself.</p>']};
 
+const enemyDictionary = {'humbah': humbah,
+                         'jingbah' : jingbah,
+                         'jumbah' : jumbah,
+                         'zingzingzingbah': zingzingzingbah,
+                         'zumbah' : zumbah,
+                         'keller' : keller,
+                         'mcCuen' : mcCuen,
+                         'gardner' : gardner,
+                         'chiikawa' : chiikawa,
+                         'hachiware' : hachiware,
+                         'usagi' : usagi,
+                         'sixSeven' : sixSeven,
+                         'kimJongBirukin' : kimJongBirukin} 
+
 //Game Directory Elements
 const game1 = document.getElementById('game1');
 const game2 = document.getElementById('game2');
@@ -152,65 +167,112 @@ const game7 = document.getElementById('game7');
 //Game Description Elements
 const gameTitle = document.getElementById('gameName');
 const starterDesc = document.getElementById('gameStarter');
-const card1 = document.getElementById('card1');
-const card2 = document.getElementById('card2');
-const card3 = document.getElementById('card3');
-const card4 = document.getElementById('card4');
-const card5 = document.getElementById('card5');
-// resist
-// weak
+const enemyCards = document.getElementsByClassName('imgCard');
+const gameStrat = document.getElementById('strategy');
+const resist = document.getElementsByClassName('resist');
+const weak = document.getElementsByClassName('weak');
 const story = document.getElementById('story');
+const cardDescription = document.getElementById('cardDescription');
 
+//Game contents
 const game1Content = {'title' : 'Little Critters Amongst The Crowd',
                       'start' : 'Small but mighty, these three-apples-tall critters can slay chimeras like nothing. Mess with them and you\'ll get a beating.',
-                      'cards' : [chiikawa, usagi, hachiware],
+                      'cards' : [chiikawa, usagi, hachiware, 'chiikawa', 'usagi', 'hachiware'],
                       'strat' : 'The enemies have high buffing capabilities to deal huge damage to all party members. Make sure to have <b class="tankText">dmg reduction</b>, <b class="healText">healing</b>, or <b class="tankText">shields</b> to mitigate dmg. Use <b class="aoeText">AoE</b> attacks to deal dmg to all enemies.',
                       'resist': ['coder','cyber', 'single'],
                       'weak'  : ['biotech', 'aoe', 'dot'],
                       'story' : ''};
 const game2Content = {'title' : 'Wolfpack Gone Wild',
                       'start' : 'Look left and right when passing by a street. Not because of cars but to not be spotted by him.',
-                      'cards' : [mcCuen],
+                      'cards' : [mcCuen, 'mcCuen'],
                       'strat' : 'The enemy can absord dmg during the action phase and counterattack during end phase. Circumvent his attacks by utilizing <b class="dotText">DoT</b> attacks to reduce his dmg, <b class="tankText">shields</b> to tank his attacks, or <u>high attribute effect attacks</u> to remove his dmg absorption ability.',
                       'resist': ['biotech', 'aoe', 'single'],
                       'weak'  : ['coder','biotech','dot'],
                       'story' : ''};
 const game3Content = {'title' : 'Combat Master',
                       'start' : '',
-                      'cards' : [keller],
+                      'cards' : [keller, 'keller'],
                       'strat' : 'The enemy utilizes DoT attacks and counterattacks. Fight back using high <b class="singleText">Single-Target</b> attacks and <u>high attribute effect attacks</u> to defeat the enemy.',
                       'resist': ['biotech', 'aoe'],
                       'weak'  : ['coder', 'cyber', 'single', 'dot'],
                       'story' : ''};
 const game4Content = {'title' : 'Wolf In Sheep\'s Clothing',
                       'start' : '',
-                      'cards' : [gardner],
+                      'cards' : [gardner, 'gardner'],
                       'strat' : 'The enemy steals participation points, limiting the actions available for the party. Select party members with <u>low participation point costs</u> and utilize <b class="dotText">DoT</b> attacks.',
                       'resist': ['cyber','biotech', 'aoe'],
                       'weak'  : ['coder','single','dot'],
                       'story' : ''};
 const game5Content = {'title' : 'Uncontrollable Psychological Event',
                       'start' : '',
-                      'cards' : [sixSeven],
-                      'strat' : 'The enemy has unpredictable dmg capabilities, either dealing high Single-Target or AoE attacks. Counterattack his dmg by utilizing , <b class="healText">healing</b> that occur during action phase, and <u>high attribute effect attacks</u>.',
+                      'cards' : [sixSeven, 'sixSeven'],
+                      'strat' : 'The enemy has unpredictable dmg capabilities, either dealing high Single-Target or AoE attacks. Counterattack his dmg by <b class="healText">healing</b> during the action phase and using <u>high attribute effect attacks</u>.',
                       'resist': ['coder','aoe'],
                       'weak'  : ['biotech','cyber','dot','single'],
                       'story' : ''};
 const game6Content = {'title' : 'Battle Of The Century',
                       'start' : '',
-                      'cards' : [humbah, jingbah, zingzingzingbah, zumbah, jumbah],
-                      'strat' : 'The enemies disregard attribute effects and excels in Single-Target attacks. Fight back by selecting party members with <b class="aoeText">AoE</b> attacks and <b class="healText">healing</b> or <b class="shieldText">shields</b> to mitigate dmg.',
+                      'cards' : [humbah, jingbah, zingzingzingbah, zumbah, jumbah, 'humbah','jingbah','zingzingzingbah','zumbah','jumbah'],
+                      'strat' : 'The enemies disregard attribute effects and excels in Single-Target attacks. Fight back by selecting party members with <b class="aoeText">AoE</b> attacks. Use <b class="healText">healing</b> or <b class="shieldText">shields</b> to mitigate dmg.',
                       'resist': ['single','dot'],
                       'weak'  : ['aoe'],
                       'story' : ''};
 const game7Content = {'title' : 'The True Mastermind',
                       'start' : '',
-                      'cards' : [kimJongBirukin],
+                      'cards' : [kimJongBirukin, 'kimJongBirukin'],
                       'strat' : 'The person you trust most has betrayed you. Use all the skills that you have learned to defeat him. <b>May the odds be ever in your favor.</b>',
-                      'resist': ['aoe','dot'],
-                      'weak'  : ['single'],
+                      'resist': ['aoe'],
+                      'weak'  : ['single','dot'],
                       'story' : ''};
 
+selectingGame(game1Content);
+
+game1.onclick = function(){selectingGame(game1Content);}
+game2.onclick = function(){selectingGame(game2Content);}
+game3.onclick = function(){selectingGame(game3Content);}
+game4.onclick = function(){selectingGame(game4Content);}
+game5.onclick = function(){selectingGame(game5Content);}
+game6.onclick = function(){selectingGame(game6Content);}
+game7.onclick = function(){selectingGame(game7Content);}
+
+/*Selecting games*/
+function selectingGame(gameSheet) {
+  cardDescription.style = 'display: none;';
+
+  gameTitle.innerHTML = gameSheet['title'];
+  starterDesc.innerHTML = gameSheet['start'];
+  gameStrat.innerHTML = gameSheet['strat'];
+  story.innerHTML = gameSheet['story'];
+
+  //Displaying enemy cards
+  for (let card in enemyCards){
+    enemyCards[card].style = 'display: none';
+  }
+  for (let i = 0; i < gameSheet['cards'].length/2; i++){
+    enemyCards[i].style = 'display: block';
+    enemyCards[i].parentElement.id = gameSheet['cards'][i+gameSheet['cards'].length/2];
+    enemyCards[i].src = gameSheet['cards'][i]['imgURL'];
+  }
+
+  //Displaying resistance and weakness
+  for (let resistance in resist){
+    if (gameSheet['resist'].some(res => res == resist[resistance].id)){
+      resist[resistance].style = 'display: block';
+    } else {
+      resist[resistance].style = 'display: none';
+    }
+  }
+  for (let weakness in weak){
+    //console.log(weakness)
+    if (gameSheet['weak'].some(wea => wea == weak[weakness].id)){
+      weak[weakness].style = 'display: block';
+    } else {
+      weak[weakness].style = 'display: none';
+    }
+  }
+}
+
+//enemy card description elements
 let title = document.getElementById('title');
 let characterImg = document.getElementById('infoCardImg');
 let characterName = document.getElementById('name');
@@ -229,8 +291,25 @@ let naInfo = document.getElementById('naInfo');
 let skInfo = document.getElementById('skInfo');
 let ultInfo = document.getElementById('ultInfo');
 
-selectingCard(chiikawa);
+const card1 = document.getElementById('card1');
+const card2 = document.getElementById('card2');
+const card3 = document.getElementById('card3');
+const card4 = document.getElementById('card4');
+const card5 = document.getElementById('card5');
 
+let cardDisplayed;
+let cardOpen = false;
+
+card1.onclick = function(){openingCards(card1);}
+card2.onclick = function(){openingCards(card2);}
+card3.onclick = function(){openingCards(card3);}
+card4.onclick = function(){openingCards(card4);}
+card5.onclick = function(){openingCards(card5);}
+
+
+//selectingCard(chiikawa);
+
+/*
 chiikawaCard.onclick = function(){
   selectingCard(chiikawa);
 }
@@ -239,6 +318,34 @@ hachiwareCard.onclick = function(){
 }
 usagiCard.onclick = function(){
   selectingCard(usagi);
+}
+*/
+
+//Opening and closing card descriptions
+function openingCards(card){
+  if (cardOpen & cardDisplayed == card) {
+    cardDescription.style = 'display: none';
+    cardOpen = !cardOpen;
+  } else if (cardOpen & cardDisplayed != card) {
+    cardDisplayed = card;
+    findCard(card);
+  } else {
+    cardDisplayed = card;
+    cardOpen = !cardOpen;
+    findCard(card);
+  }
+  console.log(cardDisplayed.id)
+  console.log(cardOpen)
+}
+
+//Find what card is in this card spot and display correct information
+function findCard(card){
+  for (let key in enemyDictionary){
+    if (card.parentElement.id == key){
+      cardDescription.style = 'display: grid';
+      selectingCard(enemyDictionary[key]);
+    }
+  }
 }
 
 // Main Function in displaying all information of the specified enemy

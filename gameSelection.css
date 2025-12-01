@@ -128,6 +128,14 @@ body {
     align-items: center;
 }
 
+#stacks {
+    margin: 0.5em 0 0.5em 0;
+}
+
+#normalAttack, #skill, #ultimate {
+    margin: 0;
+}
+
 #faction_roles{
     display: flex;
     gap: 0.3em;
@@ -321,4 +329,9 @@ body {
     width: 5em;
     align-self: flex-start;
     position: absolute;
+}
+
+p {
+    font-size: 1.125rem;
+    margin: 0.5em 0em 0.5em 0em;
 }

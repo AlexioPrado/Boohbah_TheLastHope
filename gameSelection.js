@@ -187,7 +187,7 @@ const game2Content = {'title' : 'Wolfpack Gone Wild',
                       'cards' : [mcCuen, 'mcCuen'],
                       'strat' : 'The enemy can absord dmg during the action phase and counterattack during end phase. Circumvent his attacks by utilizing <b class="dotText">DoT</b> attacks to reduce his dmg, <b class="tankText">shields</b> to tank his attacks, or <u>high attribute effect attacks</u> to remove his dmg absorption ability.',
                       'resist': ['biotech', 'aoe', 'single'],
-                      'weak'  : ['coder','biotech','dot'],
+                      'weak'  : ['coder','cyber','dot'],
                       'story' : ''};
 const game3Content = {'title' : 'Combat Master',
                       'start' : '',

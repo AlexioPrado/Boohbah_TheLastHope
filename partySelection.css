@@ -1,0 +1,55 @@
+@font-face {
+    font-family: 'cookiefont';
+    src: url(Fonts/cookie_bold.TTF) format('truetype');
+    font-weight: bold;
+}
+@font-face {
+    font-family: 'cookiefont';
+    src: url(Fonts/cookie_regular.TTF) format('truetype');
+    font-weight: normal;
+}
+@font-face {
+    font-family: 'zzzfont';
+    src: url(Fonts/印品鸿蒙体.ttf) format('truetype');
+    font-weight: bolder;
+}
+
+
+ * {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: cookiefont;
+    font-weight: normal;
+    background-color: rgb(83,162,231);
+    display: flex;
+    flex-direction: column;
+    user-select: none; 
+    overflow-y: hidden;
+}
+
+#fight {
+    bottom: 1em;
+    right: 1.5em;
+    font-weight: bold;
+    font-size: 32px;
+    margin: 0;
+    background-color: rgb(185, 222, 255);
+    padding: 0.5em 1em 0.5em 1em;
+    border-radius: 1.5em;
+    align-self: flex-start;
+    position: absolute;
+}
+
+#fight:hover {
+    background-color: rgb(255, 110, 110);
+}
+
+#exit {
+    top: 2em;
+    right: 2em;
+    width: 5em;
+    align-self: flex-start;
+    position: absolute;
+}

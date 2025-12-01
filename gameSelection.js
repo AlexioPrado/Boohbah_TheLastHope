@@ -31,7 +31,8 @@ const humbah = {'imgURL': 'cardImages/enemyImages/humbah.png',
                 'attributeStacks': ['N', 'N', 'N'],
                 'NA': ['Silly Marching', 'S', '1', '<p>Deal 3 dmg to the enemy.</p>'],
                 'SK': ['Sideway Steps', 'A', '3', '<p>Deal 3 piercing dmg to all enemies.</p>'],
-                'UL': ['Skipping', 'S', '4', '4', '<p>Deal 7 dmg to the enemy.</p>']};
+                'UL': ['Skipping', 'S', '4', '4', '<p>Deal 7 dmg to the enemy.</p>'],
+                'identifier': 'humbah'};
 const jingbah = {'imgURL': 'cardImages/enemyImages/jingbah.png',
                  'Name': 'Jingbah',
                  'HP': '80',
@@ -40,7 +41,8 @@ const jingbah = {'imgURL': 'cardImages/enemyImages/jingbah.png',
                  'attributeStacks': ['N', 'N', 'N'],
                  'NA': ['Arm Circles', 'N', '2', '<p>Reduce dmg taken by 3. (2 rounds)</p>'],
                  'SK': ['Get Up And Gallop', 'N', '3', '<p>Create a Cloud shield with strength 5 to the active character.</p>'],
-                 'UL': ['Busy Dizzy Twirls', 'N', '4', '3', '<p>If <u>Cloud shield</u> is present, increase Shield strength to 10. Attacks to the Cloud shield will be decreased by 2.</p>']};
+                 'UL': ['Busy Dizzy Twirls', 'N', '4', '3', '<p>If <u>Cloud shield</u> is present, increase Shield strength to 10. Attacks to the Cloud shield will be decreased by 2.</p>'],
+                 'identifier': 'jingbah'};
 const jumbah = {'imgURL': 'cardImages/enemyImages/jumbah.png',
                 'Name': 'Jumbah',
                 'HP': '75',
@@ -49,7 +51,8 @@ const jumbah = {'imgURL': 'cardImages/enemyImages/jumbah.png',
                 'attributeStacks': ['N', 'N', 'N'],
                 'NA': ['Undecided', 'S', '2', '<p>Deal 3 dmg to the enemy.</p>'],
                 'SK': ['Undecided', 'N', '3', '<p>Increase dmg of the active character by 3. (3 rounds)</p>'],
-                'UL': ['Undecided', 'N', '4', '2', '<p>If the active character uses participation points, gain 1 energy. (Twice per round, 2 rounds)</p>']};
+                'UL': ['Undecided', 'N', '4', '2', '<p>If the active character uses participation points, gain 1 energy. (Twice per round, 2 rounds)</p>'],
+                'identifier': 'jumbah'};
 const zingzingzingbah = {'imgURL': 'cardImages/enemyImages/zingzingzingbah.png',
                          'Name': 'Zing Zing Zingbah',
                          'HP': '75',
@@ -58,7 +61,8 @@ const zingzingzingbah = {'imgURL': 'cardImages/enemyImages/zingzingzingbah.png',
                          'attributeStacks': ['N', 'N', 'N'],
                          'NA': ['Stretch And Sway', 'S', '2', '<p>Deal 1 dmg to the enmy.</p>'],
                          'SK': ['Tone Up Your Bum And Tum', 'N', '3', '<p>Summon a Hula Hoop.<br><u>Hula Hoop:</u> Heal the character with the lowest HP by 3 at the end of the round. (2 rounds)</p>'],
-                         'UL': ['Twist With The Boohbahs', 'N', '4', '3', '<p>Heal all characters by 4 HP.</p>']};
+                         'UL': ['Twist With The Boohbahs', 'N', '4', '3', '<p>Heal all characters by 4 HP.</p>'],
+                         'identifier': 'zingzingzingbah'};
 const zumbah = {'imgURL': 'cardImages/enemyImages/zumbah.png',
                   'Name': 'Zumbah',
                   'HP': '60',
@@ -67,7 +71,8 @@ const zumbah = {'imgURL': 'cardImages/enemyImages/zumbah.png',
                   'attributeStacks': ['N', 'N', 'N'],
                   'NA': ['Stomp Your Feet', 'S', '3', '<p>Deal 4 dmg to the enemy.</p>'],
                   'SK': ['Join In And Jump', 'N', '3', '<p>Enhance <u>Stomp Your Feet</u> by 1 dmg and decrease participation point cost by 1. (Twice per round)</p>'],
-                  'UL': ['Swing Your Leg', 'N', '4', '3', '<p>The next <u>Stomp Your Feet</u> does not need participation points and deals increased dmg by 5.</p>']};
+                  'UL': ['Swing Your Leg', 'N', '4', '3', '<p>The next <u>Stomp Your Feet</u> does not need participation points and deals increased dmg by 5.</p>'],
+                  'identifier': 'zumbah'};
 const keller = {'imgURL': 'cardImages/enemyImages/leslieKeller.png',
                   'Name': 'Ms. Keller',
                   'HP': '65',
@@ -76,7 +81,8 @@ const keller = {'imgURL': 'cardImages/enemyImages/leslieKeller.png',
                   'attributeStacks': ['16', '16', '18'],
                   'NA': ['Media Monday', 'S', '2', '<p>Deal 2 dmg to the enemy.</p>'],
                   'SK': ['Peer Review', 'D', '3', '<p>Summon a Practice Assignment.<br><u>Practice Assignment:</u> Deal 2 dmg at the end of the round. If HP decreases, deal 3 dmg to the enemy. (Twice per round, 4 rounds)</p>'],
-                  'UL': ['Friday Puzzles', 'N', '3', '3', '<p>Reduce dmg taken by 2. (3 rounds)</p>']};
+                  'UL': ['Friday Puzzles', 'N', '3', '3', '<p>Reduce dmg taken by 2. (3 rounds)</p>'],
+                  'identifier': 'keller'};
 const mcCuen = {'imgURL': 'cardImages/enemyImages/russMcCuen.png',
                   'Name': 'Mr. McCuen',
                   'HP': '65',
@@ -85,7 +91,8 @@ const mcCuen = {'imgURL': 'cardImages/enemyImages/russMcCuen.png',
                   'attributeStacks': ['14', '14', '20'],
                   'NA': ['Catharcist Friday', 'A', '2', '<p>Deal 2 dmg to all enemies.</p>'],
                   'SK': ['Devil\'s Advocate', 'S', '5', '<p>Mr. McCuen becomes invulnerable during the round. Deal dmg at the end of the round based on 2/3 of dmg taken during the round.<br>Invulnerability is removed when attribute effects are triggered.</p>'],
-                  'UL': ['Plausinle Deniability', 'N', '4', '4', '<p>Heal 2 HP at the end of the round. (3 rounds)</p>']};
+                  'UL': ['Plausinle Deniability', 'N', '4', '4', '<p>Heal 2 HP at the end of the round. (3 rounds)</p>'],
+                  'identifier': 'mcCuen'};
 const gardner = {'imgURL': 'cardImages/enemyImages/ethanGardner.png',
                   'Name': 'Mr. Gardner',
                   'HP': '60',
@@ -94,7 +101,8 @@ const gardner = {'imgURL': 'cardImages/enemyImages/ethanGardner.png',
                   'attributeStacks': ['14', '18', '18'],
                   'NA': ['Undecided', 'S', '2', '<p>Deal 2 dmg to the enemy.</p>'],
                   'SK': ['Undecided', 'N', '3', '<p>Take 3 participation points from the enemy and gain 2 participation points.</p>'],
-                  'UL': ['Undecided', 'N', '5', '6', '<p>Increase <u>Take Notes</u> by 3 dmg and gain 1 participation point when using Take Notes. (Twice per round, 2 rounds)<br>At the end of the round, heal by 3 HP. (2 rounds)</p>']};
+                  'UL': ['Undecided', 'N', '5', '6', '<p>Increase <u>Take Notes</u> by 3 dmg and gain 1 participation point when using Take Notes. (Twice per round, 2 rounds)<br>At the end of the round, heal by 3 HP. (2 rounds)</p>'],
+                  'identifier': 'gardner'};
 const chiikawa = {'imgURL': 'cardImages/enemyImages/chiikawa.png',
                   'Name': 'Chiikawa',
                   'HP': '40',
@@ -103,7 +111,8 @@ const chiikawa = {'imgURL': 'cardImages/enemyImages/chiikawa.png',
                   'attributeStacks': ['14', '14', '10'],
                   'NA': ['Sasumata Jab', 'S', '2', '<p>Deal 2 dmg to the enemy.</p>'],
                   'SK': ['Weeping', 'A', '3', '<p>Deal 2 dmg to all enemies.<br>Heal the party by 5 HP. Heal the party by 4 HP at the end of the round.</p>'],
-                  'UL': ['EH!', 'S', '4', '2', '<p>Deal 3 dmg to the enemy.<br>Increase party\'s dmg by 5. (3 rounds)</p>']};
+                  'UL': ['EH!', 'S', '4', '2', '<p>Deal 3 dmg to the enemy.<br>Increase party\'s dmg by 5. (3 rounds)</p>'],
+                  'identifier': 'chiikawa'};
 const hachiware = {'imgURL': 'cardImages/enemyImages/hachiware.png',
                   'Name': 'Hachiware',
                   'HP': '35',
@@ -112,7 +121,8 @@ const hachiware = {'imgURL': 'cardImages/enemyImages/hachiware.png',
                   'attributeStacks': ['14', '12', '10'],
                   'NA': ['Sasumata Swing', 'A', '2', '<p>Deal 2 dmg to all enemies.</p>'],
                   'SK': ['Cameria Click', 'A', '3', '<p>Deal 3 dmg to all enemies.<br>Take a snapshot of the battefield and create a Photo shield with 8 strength to the active character. If attacked with the Photo shield present, turn on flash and deal 2 dmg to the enemy.</p>'],
-                  'UL': ['OI!', 'S', '4', '3', '<p>Deal 4 dmg to the enemy.<br>Reduce incoming attacks by 2. (5 rounds)</p>']};
+                  'UL': ['OI!', 'S', '4', '3', '<p>Deal 4 dmg to the enemy.<br>Reduce incoming attacks by 2. (5 rounds)</p>'],
+                  'identifier': 'hachiware'};
 const usagi = {'imgURL': 'cardImages/enemyImages/usagi.png',
                   'Name': 'Usagi',
                   'HP': '35',
@@ -121,7 +131,8 @@ const usagi = {'imgURL': 'cardImages/enemyImages/usagi.png',
                   'attributeStacks': ['10', '12', '10'],
                   'NA': ['Staff Jab', 'S', '1', '<p>Deal 3 dmg to the enemy.</p>'],
                   'SK': ['Two Dolla!', 'A', '2', '<p>Deal 4 dmg to all enemies. Reduce HP by 3.</p>'],
-                  'UL': ['UNA!', 'S', '3', '3', '<p>Deal 10 dmg to the enemy. Increase <u>UNA!</u> dmg by 2 for every 3 HP from Base HP.</p>']};
+                  'UL': ['UNA!', 'S', '3', '3', '<p>Deal 10 dmg to the enemy. Increase <u>UNA!</u> dmg by 2 for every 3 HP from Base HP.</p>'],
+                'identifier': 'usagi'};
 const sixSeven = {'imgURL': 'cardImages/enemyImages/sixSeven.png',
                   'Name': 'Six Seven',
                   'HP': '67',
@@ -130,7 +141,8 @@ const sixSeven = {'imgURL': 'cardImages/enemyImages/sixSeven.png',
                   'attributeStacks': ['20', '18', '16'],
                   'NA': ['Peace Sign', 'A', '2', '<p>Deal 2 dmg to all enemies.</p>'],
                   'SK': ['Six or Seven', 'S', '3', '<p>Deal 6 or 7 dmg to the enemy.</p>'],
-                  'UL': ['Lady Justice', 'A', '4', '2', '<p>Deal 4 dmg to all enemies.<br>Every Skill or Normal Attack used, deal a coordinated attack, dealing 2 dmg to the enemy. (3 rounds)<br>At the end of the round, heal 6 or 7 HP.</p>']};
+                  'UL': ['Lady Justice', 'A', '4', '2', '<p>Deal 4 dmg to all enemies.<br>Every Skill or Normal Attack used, deal a coordinated attack, dealing 2 dmg to the enemy. (3 rounds)<br>At the end of the round, heal 6 or 7 HP.</p>'],
+                  'identifier': 'sixSeven'};
 const kimJongBirukin = {'imgURL': 'cardImages/enemyImages/kimJongBirukin.png',
                   'Name': 'Kim Jong Birukin',
                   'HP': '100',
@@ -139,7 +151,8 @@ const kimJongBirukin = {'imgURL': 'cardImages/enemyImages/kimJongBirukin.png',
                   'attributeStacks': ['N', 'N', 'N'],
                   'NA': ['Conflict', 'S', '2', '<p>Deal 5 dmg to the enemy.<br>When the <u>Broken Promise shield</u> breaks, reduce base dmg to 3. (2 rounds)</p>'],
                   'SK': ['"First They Came"', 'N', '4', '<p>Enhance <u>Conflict</u> to an AoE attack. Reduce base dmg to 3 dmg. (3 rounds)<br>When the <u>Broken Promise shield</u> breaks, remove enhanced state and reduce base dmg to 2. (2 rounds)</p>'],
-                  'UL': ['Dictate The Battlefield', 'N', '4', '7', '<p>All enemies current HP is decreased by half and shields are removed.<br>Place the Broken Promise shield onto oneself with strength 15.<br><u>Broken Promise</u>: When present, dmg is increased by 3. When broken, deal 10 dmg to oneself.</p>']};
+                  'UL': ['Dictate The Battlefield', 'N', '4', '7', '<p>All enemies current HP is decreased by half and shields are removed.<br>Place the Broken Promise shield onto oneself with strength 15.<br><u>Broken Promise</u>: When present, dmg is increased by 3. When broken, deal 10 dmg to oneself.</p>'],
+                  'identifier': 'kimJongBirukin'};
 
 const enemyDictionary = {'humbah': humbah,
                          'jingbah' : jingbah,
@@ -173,6 +186,9 @@ const resist = document.getElementsByClassName('resist');
 const weak = document.getElementsByClassName('weak');
 const story = document.getElementById('story');
 const cardDescription = document.getElementById('cardDescription');
+
+//Game Enemies
+let enemy_fight = [];
 
 //Game contents
 const game1Content = {'title' : 'Little Critters Amongst The Crowd',
@@ -237,6 +253,8 @@ game7.onclick = function(){selectingGame(game7Content);}
 
 /*Selecting games*/
 function selectingGame(gameSheet) {
+  enemy_fight = [];
+
   cardDescription.style = 'display: none;';
 
   gameTitle.innerHTML = gameSheet['title'];
@@ -249,6 +267,7 @@ function selectingGame(gameSheet) {
     enemyCards[card].style = 'display: none';
   }
   for (let i = 0; i < gameSheet['cards'].length/2; i++){
+    enemy_fight.push(gameSheet['cards'][i]['identifier']);
     enemyCards[i].style = 'display: block';
     enemyCards[i].parentElement.id = gameSheet['cards'][i+gameSheet['cards'].length/2];
     enemyCards[i].src = gameSheet['cards'][i]['imgURL'];
@@ -263,7 +282,6 @@ function selectingGame(gameSheet) {
     }
   }
   for (let weakness in weak){
-    //console.log(weakness)
     if (gameSheet['weak'].some(wea => wea == weak[weakness].id)){
       weak[weakness].style = 'display: block';
     } else {
@@ -305,21 +323,6 @@ card2.onclick = function(){openingCards(card2);}
 card3.onclick = function(){openingCards(card3);}
 card4.onclick = function(){openingCards(card4);}
 card5.onclick = function(){openingCards(card5);}
-
-
-//selectingCard(chiikawa);
-
-/*
-chiikawaCard.onclick = function(){
-  selectingCard(chiikawa);
-}
-hachiwareCard.onclick = function(){
-  selectingCard(hachiware);
-}
-usagiCard.onclick = function(){
-  selectingCard(usagi);
-}
-*/
 
 //Opening and closing card descriptions
 function openingCards(card){
@@ -467,3 +470,27 @@ card1.onclick = function(){
   card1.parentElement.id = 'hachiware';
 }
 */
+
+/*
+if (typeof(Storage) !== "undefined") {
+  if (sessionStorage.clickcount) {
+    sessionStorage.clickcount = Number(sessionStorage.clickcount)+1;
+  } else {
+    sessionStorage.clickcount = 1;
+  }
+  x.innerHTML = "You have clicked the button " + sessionStorage.clickcount + " time(s) in this session!";
+} else {
+  x.innerHTML = "Sorry, no Web storage support!";
+}
+*/
+
+const fight = document.getElementById('fight');
+
+/*Confirm game selection*/
+fight.onclick = function() {
+  if (typeof(Storage) !== "undefined") {
+    localStorage.enemies = enemy_fight;
+    console.log(localStorage.enemies)
+  }
+  window.location.href = ("https://alexioprado.github.io/Boohbah_TheLastHope/partySelection.html");
+}

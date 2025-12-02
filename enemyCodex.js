@@ -14,6 +14,10 @@ document.addEventListener("visibilitychange", () => {
   }
 });
 
+//Clicking Audio
+var click = new Audio('audio/ui/minecraft_click.mp3');
+click.volume = 0.2;
+
 /* Linking Pages*/
 let exit = document.getElementById('exit');
 
@@ -227,6 +231,8 @@ kimJongBirukinCard.onclick = function(){
 
 // Main Function in displaying all information of the specified enemy
 function selectingCard (characterSheet){
+  //Click Audio
+  click.play();
   //scroll to the top
   title.scrollIntoView({behavior: "smooth", block: "center"})
 

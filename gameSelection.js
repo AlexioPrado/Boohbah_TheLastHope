@@ -15,6 +15,10 @@ document.addEventListener("visibilitychange", () => {
   }
 });
 
+//Clicking Audio
+var click = new Audio('audio/ui/minecraft_click.mp3');
+click.volume = 0.2;
+
 /* Linking Pages*/
 let exit = document.getElementById('exit');
 
@@ -256,6 +260,9 @@ game7.onclick = function(){selectingGame(game7Content);}
 
 /*Selecting games*/
 function selectingGame(gameSheet) {
+  //Click Audio
+  click.play();
+
   cardOpen = false;
   enemy_fight = [];
 
@@ -327,6 +334,9 @@ card5.onclick = function(){openingCards(card5);}
 
 //Opening and closing card descriptions
 function openingCards(card){
+  //Click Audio
+  click.play();
+
   if (cardOpen & cardDisplayed == card) {
     cardDescription.style = 'display: none';
     cardOpen = !cardOpen;
@@ -461,16 +471,6 @@ function attackType_tags (action, attackType){
       console.log('ERROR NO ATTACK TYPE FOUND')
   }
 }
-
-/* WORKS
-carddiv.onclick = function(){
-  carddiv.children[0].src = 'cardImages/enemyImages/usagi.png';
-}
-
-card1.onclick = function(){
-  card1.parentElement.id = 'hachiware';
-}
-*/
 
 /*
 if (typeof(Storage) !== "undefined") {

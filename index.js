@@ -1,7 +1,8 @@
 
 let scrolldown = document.getElementById('scrollDown');
 let scrollup = document.getElementById('scrollUp');
-var click = new Audio('audio/ui/minecraft_click.mp3')
+var click = new Audio('audio/ui/minecraft_click.mp3');
+click.volume = 0.2;
 var background_audio = new Audio("audio/background/Takeshi Abo - LEASE.mp3");
 
 document.addEventListener('mouseover', (event) => {

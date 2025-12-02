@@ -15,6 +15,10 @@ document.addEventListener("visibilitychange", () => {
   }
 });
 
+//Clicking Audio
+var click = new Audio('audio/ui/minecraft_click.mp3');
+click.volume = 0.2;
+
 /* Linking Pages*/
 let exit = document.getElementById('exit');
 
@@ -431,6 +435,8 @@ sophiaCard.onclick = function(){
 
 // Main Function in displaying all information of the specified character
 function selectingCard (characterSheet){
+  //Click audio
+  click.play();
   //scroll to the top
   title.scrollIntoView({behavior: "smooth", block: "center"})
 

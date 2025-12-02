@@ -1,5 +1,6 @@
 //Audio
-var click = new Audio('audio/ui/minecraft_click.mp3')
+var click = new Audio('audio/ui/minecraft_click.mp3');
+click.volume = 0.2;
 var background_audio = new Audio('audio/background/Takeshi Abo - KYOUHEI.mp3');
 
 document.addEventListener('mouseover', (event) => {

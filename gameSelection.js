@@ -241,6 +241,9 @@ const game7Content = {'title' : 'The True Mastermind',
                       'weak'  : ['single','dot'],
                       'story' : ''};
 
+let cardDisplayed;
+let cardOpen = false;
+
 selectingGame(game1Content);
 
 game1.onclick = function(){selectingGame(game1Content);}
@@ -253,6 +256,7 @@ game7.onclick = function(){selectingGame(game7Content);}
 
 /*Selecting games*/
 function selectingGame(gameSheet) {
+  cardOpen = false;
   enemy_fight = [];
 
   cardDescription.style = 'display: none;';
@@ -314,9 +318,6 @@ const card2 = document.getElementById('card2');
 const card3 = document.getElementById('card3');
 const card4 = document.getElementById('card4');
 const card5 = document.getElementById('card5');
-
-let cardDisplayed;
-let cardOpen = false;
 
 card1.onclick = function(){openingCards(card1);}
 card2.onclick = function(){openingCards(card2);}

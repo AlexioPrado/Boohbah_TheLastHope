@@ -22,18 +22,187 @@
 body {
     font-family: cookiefont;
     font-weight: normal;
-    background-color: rgb(83,162,231);
+    background-color: rgb(238, 247, 255);
+    display: grid;
+    grid-template-columns: 65% 35%;
+    overflow: hidden;
+    user-select: none; 
+}
+
+#partySection {
+    background: linear-gradient(-45deg, rgb(83,162,231) 40%, rgb(104, 185, 255)50%, rgb(83,162,231) 60%);
+    background-size: 300%;
+    background-position-x: 100%;
+    animation: shimmer 4s infinite linear;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    column-gap: 1%;
+    padding-left: 2%;
+}
+
+@keyframes shimmer {
+   to {
+      background-position-x: 0%
+   }
+}
+
+#party1, #party2, #party3 {
+    width: 27%;
     display: flex;
     flex-direction: column;
-    user-select: none; 
-    overflow-y: hidden;
+    align-items: center;
+    justify-content: center;
+}
+
+.characterCard {
+    background: rgb(228, 241, 255);
+    width: 95%;
+    aspect-ratio: 2.25/3.5;
+    border: 0.2em solid black;
+    border-radius: 1.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.characterCard:hover {
+    transform: rotateZ(2deg);
+}
+
+.characterImg {
+    width: 100%;
+    aspect-ratio: 2.25/3.5;
+    object-fit: cover;
+    border-radius: 1.5em;
+}
+
+.templateText {
+    font-weight: bold;
+    font-size: larger;
+}
+
+
+.attribute_role {
+    background-color: rgb(238, 247, 255);
+    border-radius: 4em;
+    padding: 0.5em;
+    margin-bottom: 0.5em;
+    max-width: 95%;
+    overflow-x: scroll;
+    display: flex;
+    flex-direction: row;
+    gap: 0.3em;
+}
+
+.attribute, .roles {
+    padding: 0.1em 0.3em 0.1em 0.3em;
+    border-radius: 5rem;
+    margin: 0;
+    font-size: 2vh;
+}
+
+#coder {
+    border: 0.2rem solid rgb(52, 112, 197);
+    background-color: rgb(0, 71, 171);
+    color: rgb(228, 241, 255);
+}
+#cyber {
+    border: 0.2rem solid rgb(255, 216, 100);
+    background-color: rgb(255, 191, 0);
+    color: rgb(228, 241, 255);
+}
+#biotech {
+    border: 0.2rem solid rgb(51, 186, 186);
+    background-color: rgb(8, 143, 143);
+    color: rgb(228, 241, 255);
+}
+
+#attack {
+    border: 0.2rem solid rgb(240, 53, 106);
+    background-color: rgb(222, 49, 99	);
+    color: rgb(228, 241, 255);
+}
+#tank {
+    border: 0.2rem solid rgb(255, 161, 67);
+    background-color: rgb(242, 140, 40);
+    color: rgb(228, 241, 255);
+}
+#support {
+    border: 0.2rem solid rgb(124, 234, 124);
+    background-color: rgb(144, 238, 144);
+    color: rgb(228, 241, 255);
+}
+.name {
+    font-weight: bold;
+    text-align: left;
+    font-size: xx-large;
+    margin: 0 0 0.3em 0;
+}
+
+.card {
+    max-height: 33%;
+    width: 100%;
+    display: grid;
+    place-items: center;
+    overflow: visible;
+    z-index: 1;
+}
+
+.cardImg {
+    border: 0.35em solid rgb(185, 222, 255);
+    border-radius: 1em;
+    width: 100%;
+    min-width: 4rem;
+    max-width: 12rem;
+    aspect-ratio: 2.25/3.5;
+    object-fit: cover;
+    rotate: z 10deg;
+}
+
+.cardName {
+    font-size: 1.2vw;
+    text-align: center;
+    margin: 0.3em 0 0 0;
+    rotate: z 10deg;
+    position: relative;
+    right: 1.5em;
+    overflow: visible;
+}
+
+#cards {
+    background-color: rgb(185, 222, 255);
+}
+
+#cardSelection {
+    background-color: rgb(185, 222, 255);
+    border-left: 1em solid rgb(238, 247, 255);
+    top: -10%;
+    position: absolute;
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    row-gap: 1em;
+    column-gap: 1em;
+    width: 40%;
+    right: 2em;
+    top: -5em;
+    height: 125vh;
+    padding: 10% 5% 13% 3%;
+    rotate: z -10deg;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    z-index: 0;
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
 
 #fight {
     bottom: 1em;
-    right: 1.5em;
+    left: 1.5em;
     font-weight: bold;
-    font-size: 32px;
+    font-size: 3.556vh;
     margin: 0;
     background-color: rgb(185, 222, 255);
     padding: 0.5em 1em 0.5em 1em;
@@ -48,8 +217,9 @@ body {
 
 #exit {
     top: 2em;
-    right: 2em;
-    width: 5em;
+    left: 2em;
+    min-width: 2em;
+    max-width: 6em;
     align-self: flex-start;
     position: absolute;
 }

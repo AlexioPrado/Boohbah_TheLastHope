@@ -124,7 +124,7 @@ const hachiware = {'imgURL': 'cardImages/enemyImages/hachiware.png',
                   'Roles': ['Tank'], 
                   'attributeStacks': ['14', '12', '10'],
                   'NA': ['Sasumata Swing', 'A', '2', '<p>Deal 2 dmg to all enemies.</p>'],
-                  'SK': ['Cameria Click', 'A', '3', '<p>Deal 3 dmg to all enemies.<br>Take a snapshot of the battefield and create a Photo shield with 8 strength to the active character. If attacked with the Photo shield present, turn on flash and deal 2 dmg to the enemy.</p>'],
+                  'SK': ['Camera Click', 'A', '3', '<p>Deal 3 dmg to all enemies.<br>Take a snapshot of the battefield and create a Photo shield with 8 strength to the active character. If attacked with the Photo shield present, turn on flash and deal 2 dmg to the enemy.</p>'],
                   'UL': ['OI!', 'S', '4', '3', '<p>Deal 4 dmg to the enemy.<br>Reduce incoming attacks by 2. (5 rounds)</p>'],
                   'identifier': 'hachiware'};
 const usagi = {'imgURL': 'cardImages/enemyImages/usagi.png',

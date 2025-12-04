@@ -135,8 +135,8 @@ body {
 }
 .name {
     font-weight: bold;
-    text-align: left;
-    font-size: xx-large;
+    text-align: center;
+    font-size: 3vh;
     margin: 0 0 0.3em 0;
 }
 

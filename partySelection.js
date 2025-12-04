@@ -59,14 +59,88 @@ const shamCard = document.getElementById('shamNemer');
 const sophiaCard = document.getElementById('sophiaSwart');
 const tanishkaCard = document.getElementById('tanishkaPeddy');
 
+const card1 = document.getElementById('cardOne');
+const card2 = document.getElementById('cardTwo');
+const card3 = document.getElementById('cardThree');
+
+
 let party = ['N','N','N'];
+let partyHTML = [card1, card2, card3]
 
+const names = document.getElementsByClassName('name');
+const attRol = document.getElementsByClassName('attribute_role');
 
+card1.onclick = function(){revert(card1, 0);}
+card2.onclick = function(){revert(card2, 1);}
+card3.onclick = function(){revert(card3, 2);}
 
+adamCard.onclick = function(){selectCardSpace(adamCard);}
+addisonCard.onclick = function(){selectCardSpace(addisonCard);}
+aftonCard.onclick = function(){selectCardSpace(aftonCard);}
+alexCard.onclick = function(){selectCardSpace(alexCard);}
+angelCard.onclick = function(){selectCardSpace(angelCard);}
+beckketCard.onclick = function(){selectCardSpace(beckketCard);}
+biancaCard.onclick = function(){selectCardSpace(biancaCard);}
+birukCard.onclick = function(){selectCardSpace(birukCard);}
+calebCard.onclick = function(){selectCardSpace(calebCard);}
+christopherCard.onclick = function(){selectCardSpace(christopherCard);}
+dennisCard.onclick = function(){selectCardSpace(dennisCard);}
+elizabethCard.onclick = function(){selectCardSpace(elizabethCard);}
+evanCard.onclick = function(){selectCardSpace(evanCard);}
+evelynCard.onclick = function(){selectCardSpace(evelynCard);}
+karimCard.onclick = function(){selectCardSpace(karimCard);}
+katarinaCard.onclick = function(){selectCardSpace(katarinaCard);}
+keshavCard.onclick = function(){selectCardSpace(keshavCard);}
+khaniCard.onclick = function(){selectCardSpace(khani);}
+mandiCard.onclick = function(){selectCardSpace(mandiCard);}
+marcusCCard.onclick = function(){selectCardSpace(marcusCCard);}
+marcusPCard.onclick = function(){selectCardSpace(marcusPCard);}
+noahCard.onclick = function(){selectCardSpace(noahCard);}
+oliviaCard.onclick = function(){selectCardSpace(oliviaCard);}
+parthCard.onclick = function(){selectCardSpace(parthCard);}
+rahulCard.onclick = function(){selectCardSpace(rahulCard);}
+saraCard.onclick = function(){selectCardSpace(saraCard);}
+samuelCard.onclick = function(){selectCardSpace(samuelCard);}
+shamCard.onclick = function(){selectCardSpace(shamCard);}
+sophiaCard.onclick = function(){selectCardSpace(sophiaCard);}
+tanishkaCard.onclick = function(){selectCardSpace(tanishkaCard);}
 
+function selectCardSpace(card){
+  if (party.includes(card.id)){
+    revert(partyHTML[party.indexOf(card.id)], party.indexOf(card.id));
+  } else if (!party.includes('N')){
+    console.log('Max Party Size.');
+    return;
+  } else{
+    party[party.indexOf('N')] = card.id;
+    console.log('Party Member ' + (party.indexOf(card.id)+1) + ': ' + card.id)
+    selectCard(partyHTML[party.indexOf(card.id)], card);
+  }
+}
 
+function selectCard(card, character){
+  card.parentElement.children[0].style = 'display: flex';
+  card.parentElement.children[1].style = 'display: flex';
+  card.parentElement.children[2].children[1].style = 'display: flex';
+  card.parentElement.children[2].children[0].style = 'display: none';
 
+  card.parentElement.children[0].innerHTML = character.children[1].innerHTML;
+  //card.parentElement.children[1]; add attributes and roles
+  card.parentElement.children[2].children[1].src = character.children[0].src;
+}
 
+function revert(card, space){
+  if (party[space] !== 'N'){
+    party[space] = 'N';
+    card.parentElement.children[0].style = 'display: none';
+    card.parentElement.children[1].style = 'display: none';
+    card.parentElement.children[2].children[1].style = 'display: none';
+    card.parentElement.children[2].children[0].style = 'display: flex';
+    console.log('Cleared Card ' + (space + 1));
+  } else {
+    console.log('Card already empty.');
+  }
+}
 
 let coders = document.getElementsByClassName('coder');
 let biotechs = document.getElementsByClassName('biotech');

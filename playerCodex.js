@@ -21,10 +21,18 @@ click.volume = 0.2;
 
 /* Linking Pages*/
 let exit = document.getElementById('exit');
-
 exit.onclick = function (){
   window.location.href = ("https://alexioprado.github.io/Boohbah_TheLastHope/");
 }
+
+if (window.localStorage.codexLink){
+  exit.style = 'display: none';
+}
+
+/* Detecting page closing */
+window.addEventListener('unload', function () {
+  this.window.localStorage.codexLink = false;
+});
 
 let title = document.getElementById('title');
 let characterImg = document.getElementById('infoCardImg');

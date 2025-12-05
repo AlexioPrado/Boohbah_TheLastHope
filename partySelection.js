@@ -26,6 +26,13 @@ let fight = document.getElementById('fight');
 fight.onclick = function (){
     console.log(localStorage.enemies);
 }
+//Player Codex
+let codex = document.getElementById('codex');
+codex.onclick = function(){
+  window.localStorage.codexLink = true;
+  window.open('https://alexioprado.github.io/Boohbah_TheLastHope/playerCodex.html');
+}
+
 
 // character Card from HTML
 const adamCard = document.getElementById('adamMitchell');

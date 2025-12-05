@@ -26,7 +26,9 @@ exit.onclick = function (){
 }
 
 if (window.localStorage.codexLink){
-  exit.style = 'display: none';
+  exit.style = 'display: hidden';
+} else {
+  exit.style = 'display: inline';
 }
 
 /* Detecting page closing */

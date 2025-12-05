@@ -1,0 +1,7 @@
+#exit {
+    top: 2em;
+    right: 2em;
+    width: 5em;
+    align-self: flex-start;
+    position: absolute;
+}

@@ -29,7 +29,7 @@ fight.onclick = function (){
 //Player Codex
 let codex = document.getElementById('codex');
 codex.onclick = function(){
-  window.localStorage.codexLink = true;
+  localStorage.codexLink = true;
   window.open('https://alexioprado.github.io/Boohbah_TheLastHope/playerCodex.html');
 }
 

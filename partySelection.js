@@ -81,7 +81,16 @@ alexCard.onclick = function(){selectCardSpace(alexCard);}
 angelCard.onclick = function(){selectCardSpace(angelCard);}
 beckketCard.onclick = function(){selectCardSpace(beckketCard);}
 biancaCard.onclick = function(){selectCardSpace(biancaCard);}
-birukCard.onclick = function(){selectCardSpace(birukCard);}
+
+birukCard.onclick = function(){
+  if(localStorage.enemies != 'kimJongBirukin'){
+    selectCardSpace(birukCard);
+  } else {
+    birukCard.children[0].src = 'cardImages/enemyImages/kimJongBirukin.png';
+    birukCard.children[1].innerHTML = 'UNAVAILABLE';
+  }
+}
+
 calebCard.onclick = function(){selectCardSpace(calebCard);}
 christopherCard.onclick = function(){selectCardSpace(christopherCard);}
 dennisCard.onclick = function(){selectCardSpace(dennisCard);}
@@ -91,7 +100,7 @@ evelynCard.onclick = function(){selectCardSpace(evelynCard);}
 karimCard.onclick = function(){selectCardSpace(karimCard);}
 katarinaCard.onclick = function(){selectCardSpace(katarinaCard);}
 keshavCard.onclick = function(){selectCardSpace(keshavCard);}
-khaniCard.onclick = function(){selectCardSpace(khani);}
+khaniCard.onclick = function(){selectCardSpace(khaniCard);}
 mandiCard.onclick = function(){selectCardSpace(mandiCard);}
 marcusCCard.onclick = function(){selectCardSpace(marcusCCard);}
 marcusPCard.onclick = function(){selectCardSpace(marcusPCard);}
@@ -125,8 +134,25 @@ function selectCard(card, character){
   card.parentElement.children[2].children[0].style = 'display: none';
 
   card.parentElement.children[0].innerHTML = character.children[1].innerHTML;
-  //card.parentElement.children[1]; add attributes and roles
   card.parentElement.children[2].children[1].src = character.children[0].src;
+
+  let attRol = [];
+  for (let i = 1; i < character.classList.length; i++){
+    attRol.push(character.classList[i]);
+  }
+  console.log(attRol)
+
+  for (let i = 0; i<card.parentElement.children[1].children.length; i++){
+    card.parentElement.children[1].children[i].style = 'display: none';
+  }
+
+  for (let j = 0; j < card.parentElement.children[1].children.length; j++){
+    if (attRol.includes(card.parentElement.children[1].children[j].id)){
+      console.log(card.parentElement.children[1].children[j])
+      card.parentElement.children[1].children[j].style = 'display: flex';
+    }
+  
+  }
 }
 
 function revert(card, space){

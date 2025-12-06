@@ -1,7 +1,79 @@
-#exit {
-    top: 2em;
-    right: 2em;
-    width: 5em;
-    align-self: flex-start;
+@font-face {
+    font-family: 'cookiefont';
+    src: url(Fonts/cookie_bold.TTF) format('truetype');
+    font-weight: bold;
+}
+@font-face {
+    font-family: 'cookiefont';
+    src: url(Fonts/cookie_regular.TTF) format('truetype');
+    font-weight: normal;
+}
+@font-face {
+    font-family: 'zzzfont';
+    src: url(Fonts/印品鸿蒙体.ttf) format('truetype');
+    font-weight: bolder;
+}
+
+
+ * {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    font-family: cookiefont;
+    font-weight: normal;
+    display: grid;
+    grid-template-columns: 65% 35%;
+    height: 100vh;
+}
+
+#cardArea {
+    background-color: rgb(189, 224, 254);
+}
+
+#summonArea {
+    background-color: rgb(93, 63, 211);
+}
+
+#exit, #info, #history, #roundNum {
     position: absolute;
+    top: 1.778vh;
+    width: 8vh;
+    height: 8vh;
+    font-weight: bold;
+    font-size: 4.667vh;
+    margin: 0;
+    background-color: rgb(83,162,231);
+    border-radius: 4vh;
+    text-align: center;
+    align-content: center;
+}
+
+#exit {
+    font-size: 5.5vh;
+    right: 1.778vh;
+}
+#info {
+    font-size: 6vh;
+    right: 10.667vh;
+}
+#history {
+    right: 19.556vh;
+    width: 34vh;
+}
+#roundNum {
+    left: 1.778vh;
+    width: 24vh;
+}
+
+#diceArea {
+    position: absolute;
+    background-color: rgb(83,162,231);
+    border-radius: 4vh;
+    width: 8vh;
+    height: 70%;
+    right: 1.778vh;
+    top: 15%;
+    bottom: 15%;
 }

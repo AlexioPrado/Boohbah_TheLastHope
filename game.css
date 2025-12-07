@@ -36,7 +36,7 @@ body {
     background-color: rgb(93, 63, 211);
 }
 
-#exit, #info, #history, #roundNum {
+.absoluteButton {
     position: absolute;
     top: 1.778vh;
     width: 8vh;
@@ -64,16 +64,81 @@ body {
 }
 #roundNum {
     left: 1.778vh;
-    width: 24vh;
+    width: 25vh;
+}
+#endRound {
+    width: 11vh;
+    height: 11vh;
+    border-radius: 5.5vh;
+    left: 1.778vh;
+    top: 47%;
+}
+#enemyDiNum, #playerDiNum{
+    left: 3.278vh;
+    text-align: center;
+    border: 0.8vh solid rgb(228, 241, 255);
+}
+#enemyDiNum {
+    top: 37%;
+}
+#playerDiNum {
+    top: 60%;
 }
 
 #diceArea {
     position: absolute;
     background-color: rgb(83,162,231);
     border-radius: 4vh;
-    width: 8vh;
-    height: 70%;
+    width: 16vh;
+    height: max-content;
     right: 1.778vh;
-    top: 15%;
-    bottom: 15%;
+    top: 14.5%;
+    display: flexbox;
+    padding: 1vh 0 1vh 0;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    row-gap: 1vh;
+}
+
+#diceArea::-webkit-scrollbar {
+    display: none;
+}
+
+.dice {
+    width: 6vh;
+    margin-left: 1vh;
+}
+
+/*How dice that are selected look like*/
+#attack {
+    border: 0.5vh solid gold;
+    border-radius: 3vh;
+}
+
+#actionButtons {
+    position: absolute;
+    background-color: rgb(228, 241, 255);
+    height: 16vh;
+    width: 40%;
+    right: 0%;
+    bottom: 0%;
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 1.5vh;
+    border-top-left-radius: 6vh;
+}
+
+#switch, #normalAttack, #skill, #ultimate {
+    width: 10vh;
+    justify-self: center;
+    align-self: start;    
+}
+
+.actionTitle {
+    font-weight: bold;
+    font-size: 18px;
 }

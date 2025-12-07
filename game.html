@@ -9,57 +9,71 @@
 <body>
     <div id="cardArea">
         <div id="enemyArea">
-            <section class="enemyCard" id="eplaceLL">
-                <img class="enemyCardImg" id="MELL">
-                <h3 class="enemyName" id="NELL"></h3>
-            </section>
-            <section class="enemyCard" id="eplaceLeft">
-                <img class="enemyCardImg" id="MEL">
-                <h3 class="enemyName" id="NEL"></h3>
-            </section>
-            <section class="enemyCard" id="eplaceMid">
-                <div id="enemyShield"></div>
-                <img class="enemyCardImg" id="MEM">
-                <h3 class="enemyName" id="NEM"></h3>
-            </section>
-            <section class="enemyCard" id="eplaceRight">
-                <img class="enemyCardImg" id="MER">
-                <h3 class="enemyName" id="NER"></h3>
-            </section>
-            <section class="enemyCard" id="eplaceRR">
-                <img class="enemyCardImg" id="MERR">
-                <h3 class="enemyName" id="NERR"></h3>
-            </section>
         </div>
         <div id="playerArea">
-            <section class="playerCard" id="pplaceLeft">
+            <section class="playerCard" id="Left">
                 <img class="playerCardImg" id="MPEL">
                 <h3 class="playerName" id="NPEL"></h3>
             </section>
-            <section class="playerCard" id="pplaceMid">
+            <section class="playerCard" id="Middle">
                 <div id="playerShield"></div>
                 <img class="playerCardImg" id="MPEM">
                 <h3 class="playerName" id="NPEM"></h3>
             </section>
-            <section class="playerCard" id="pplaceRight">
+            <section class="playerCard" id="Right">
                 <img class="playerCardImg" id="MPER">
                 <h3 class="playerName" id="NPER"></h3>
             </section>
         </div>
     </div>
     <div id="summonArea">
-        
+        <div id="enemySummon">
+            
+        </div>
+        <div id="playerSummon">
+
+        </div>
+
     </div>
 
-    <p id="exit">X</p>
-    <p id="info">?</p>
-    <p id="history">Move History</p>
-    <p id="roundNum">Round: 1</p>
+    <!--Top Section-->
+    <p class="absoluteButton" id="exit">X</p>
+    <p class="absoluteButton" id="info">?</p>
+    <p class="absoluteButton" id="history">Move History</p>
+    <p class="absoluteButton" id="roundNum">Round: 1</p>
 
+    <!--Middle Section-->
+    <p class="absoluteButton" id="enemyDiNum">10</p>
+    <p class="absoluteButton" id="endRound">End</p>
+    <p class="absoluteButton" id="playerDiNum">10</p>
     <div id="diceArea">
-        
+        <img class="dice" id="attack" src="gameAssests/attackDice.png">
+        <img class="dice" id="tank" src="gameAssests/tankDice.png">
+        <img class="dice" id="support" src="gameAssests/supportDice.png">
+        <img class="dice" id="attack" src="gameAssests/attackDice.png">
+        <img class="dice" id="tank" src="gameAssests/tankDice.png">
+        <img class="dice" id="support" src="gameAssests/supportDice.png">
+        <img class="dice" id="attack" src="gameAssests/attackDice.png">
+        <img class="dice" id="tank" src="gameAssests/tankDice.png">
+        <img class="dice" id="support" src="gameAssests/supportDice.png">
+        <img class="dice" id="attack" src="gameAssests/attackDice.png">
+        <img class="dice" id="attack" src="gameAssests/attackDice.png">
+        <img class="dice" id="tank" src="gameAssests/tankDice.png">
+        <img class="dice" id="support" src="gameAssests/supportDice.png">
     </div>
     
+    <!--Bottom Section-->
+    <div id="actionButtons">
+        <img class="action" id="switch" src="gameAssests/switchCharacter.png">
+        <img class="action" id="normalAttack" src="gameAssests/normalAttack.png">
+        <img class="action" id="skill" src="gameAssests/skill.png">
+        <img class="action" id="ultimate" src="gameAssests/ultimate.png">
+        <p class="actionTitle" id="switchText">Switch Character</p>
+        <p class="actionTitle" id="normalText">Normal Attack</p>
+        <p class="actionTitle" id="skillText">Skill</p>
+        <p class="actionTitle" id="ultimateText">Ultimate</p>
+    </div>
+
     <!--Linking Script-->
     <script src="game.js"></script>
 </body>

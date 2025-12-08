@@ -26,16 +26,35 @@
                 <img class="diceRoll additional" id="diceThirteen" src="gameAssests/diceStart.png">
             </div>
             <div class="buttonArea">
-                <p id="reroll">Reroll Dice: 1</p>
-                <p id="confirm">Confirm</p>
+                <p class="overlayButton" id="reroll">Reroll Dice: 1</p>
+                <p class="overlayButton" id="confirm">Confirm</p>
             </div>    
         </div> 
     </div>
     <div id="endGameOverlay">
         <p id="gameResultTitle">YOU LOST</p>
         <div class="buttonArea">
-            <p id="replay">Reset Game</p>
-            <p id="continue">Continue</p>
+            <p class="overlayButton" id="replay">Reset Game</p>
+            <p class="overlayButton" id="continue">Continue</p>
+        </div>
+    </div>
+    <div id="leaveGameOverlay">
+        <p id="leaveGameTitle">Leave Game?</p>
+        <div class="buttonArea">
+            <p class="overlayButton" id="leave">Leave</p>
+            <p class="overlayButton" id="back">Cancel</p>
+        </div>
+    </div>
+    <div id="moveHistoryOverlay">
+        <div id="historyArea">
+            <p id="historyTitle">History</p>
+            <div id="historyBox">
+                <ul id="historyText">
+                    <li>Next one</li>
+                    <li>Next Two</li>
+                    <li>Next Three</li>
+                </ul>
+            </div>
         </div>
     </div>
     <div id="cardArea">

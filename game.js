@@ -11,10 +11,8 @@ const enemyGroup = {'chiikawa' : 'audio/gameMusic/Bubbly Washing Machine.mp3',
 //Initializing audio
 let background_audio;
 
-
 /*TEMPORARY*/
 localStorage.enemies = 'sixSeven';
-
 
 //Setting Audio
 for (let enemy in enemyGroup){
@@ -38,12 +36,33 @@ document.addEventListener("visibilitychange", () => {
     }
 });
 
+const endGameOverlay = document.getElementById('endGameOverlay');
+const leaveGameOverlay = document.getElementById('leaveGameOverlay');
+const diceOverlay = document.getElementById('diceOverlay');
+
+
+
+
+
 /* Linking Pages*/
 let exit = document.getElementById('exit');
 let info = document.getElementById('info');
+let endGame = document.getElementById('continue');
 
 exit.onclick = function (){
-    //Create Overlay to confirm
+    let leave = document.getElementById('leave');
+    let back = document.getElementById('back');
+    
+    leaveGameOverlay.style = 'display: flex;';
+
+    leave.onclick = function(){
+        window.location.href = ("https://alexioprado.github.io/Boohbah_TheLastHope/gameSelection.html");
+    }
+    back.onclick = function(){
+        leaveGameOverlay.style = 'display: none;';
+    }
+}
+endGame.onclick = function(){
     window.location.href = ("https://alexioprado.github.io/Boohbah_TheLastHope/gameSelection.html");
 }
 info.onclick = function (){

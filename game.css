@@ -26,10 +26,11 @@ body {
     display: grid;
     grid-template-columns: 60% 40%;
     height: 100vh;
+    user-select: none; 
 }
 
 
-#diceOverlay, #endGameOverlay {
+#diceOverlay, #endGameOverlay, #leaveGameOverlay, #moveHistoryOverlay {
     position: fixed;
     width: 100%;
     height: 100%;
@@ -40,21 +41,27 @@ body {
     background-color: rgb(0, 0, 0, 0.8);
     z-index: 3;
     cursor: pointer;
+}
+#diceOverlay, #endGameOverlay, #leaveGameOverlay {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
+#moveHistoryOverlay{
+    display: flex;
+    flex-direction: column;
+}
 
 /* TEMPORARY */
-#diceOverlay {
+#diceOverlay, #endGameOverlay, #leaveGameOverlay {
     display: none;
 }
 
 #diceTitle {
     width: 100%;
     text-align: center;
-    color: white;
+    color: rgb(228, 241, 255);
     font-weight: bold;
     font-size: 54px;
     margin-bottom: 3vh;
@@ -62,8 +69,22 @@ body {
 #gameResultTitle{
     text-align: center;
     color: rgb(255, 96, 96);
-    font-weight: 900;
+    font-weight: bold;
     font-size: 92px;
+}
+#leaveGameTitle{
+    text-align: center;
+    color: rgb(228, 241, 255);
+    font-weight: bold;
+    font-size: 92px;
+}
+#historyTitle{
+    background-color: rgb(83,162,231);
+    margin: 1vh;
+    font-weight: bold;
+    font-size: 54px;
+    padding: 1vh;
+    border-radius: 2vh;
 }
 
 #diceAreaBox {
@@ -74,11 +95,25 @@ body {
     align-items: center;
     width: 50%;
 }
-
 #diceRollArea {
     display: grid;
     grid-template-columns: 20% 20% 20% 20% 20%;
     gap: 0.75vh;
+}
+
+#historyArea {
+    background-color: rgb(228, 241, 255);
+    width: 25%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+#historyBox {
+    margin: 1vh;
+    background-color: rgb(189, 224, 254);
+    font-size: 18px;
+    padding: 1vh;
+    border-radius: 2vh;
 }
 
 .buttonArea {
@@ -88,7 +123,7 @@ body {
     gap: 1vh;
 }
 
-#reroll, #confirm, #replay, #continue {
+.overlayButton {
     background-color: rgb(228, 241, 255);
     font-size: 24px;
     font-weight: bold;
@@ -96,7 +131,7 @@ body {
     border-radius: 2vh;
 }
 
-#reroll:hover, #confirm:hover, #replay:hover, #continue:hover {
+.overlayButton:hover {
     background-color: rgb(125, 194, 255);
 }
 

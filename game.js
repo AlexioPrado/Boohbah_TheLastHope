@@ -50,3 +50,16 @@ info.onclick = function (){
     window.open('https://alexioprado.github.io/Boohbah_TheLastHope/guidebook.html');
 }
 
+
+/*reseting page*/
+let reset = document.getElementById('replay');
+
+reset.onclick = function() {
+    location.reload();
+}
+//CHECKING CODE FOR RELOAD PAGE
+document.addEventListener('keyup', event => {
+    if (event.code === 'ArrowDown') {
+        console.log('hello')
+    }
+})

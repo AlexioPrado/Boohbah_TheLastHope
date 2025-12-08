@@ -28,6 +28,91 @@ body {
     height: 100vh;
 }
 
+
+#diceOverlay, #endGameOverlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(0, 0, 0, 0.8);
+    z-index: 3;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* TEMPORARY */
+#diceOverlay {
+    display: none;
+}
+
+#diceTitle {
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-size: 54px;
+    margin-bottom: 3vh;
+}
+#gameResultTitle{
+    text-align: center;
+    color: rgb(255, 96, 96);
+    font-weight: 900;
+    font-size: 92px;
+}
+
+#diceAreaBox {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+
+#diceRollArea {
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    gap: 0.75vh;
+}
+
+.buttonArea {
+    display: flex;
+    flex-direction: row;
+    margin-top: 4vh;
+    gap: 1vh;
+}
+
+#reroll, #confirm, #replay, #continue {
+    background-color: rgb(228, 241, 255);
+    font-size: 24px;
+    font-weight: bold;
+    padding: 1vh;
+    border-radius: 2vh;
+}
+
+#reroll:hover, #confirm:hover, #replay:hover, #continue:hover {
+    background-color: rgb(125, 194, 255);
+}
+
+.diceRoll {
+    width: 8vh;
+}
+.additional {
+    display: none;
+}
+
+/*EXAMPLE*/
+#diceOne {
+    border: 0.5vh solid gold;
+    border-radius: 4vh;
+}
+
 #cardArea {
     background-color: rgb(189, 224, 254);
     display: grid;

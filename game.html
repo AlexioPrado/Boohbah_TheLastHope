@@ -9,29 +9,87 @@
 <body>
     <div id="cardArea">
         <div id="enemyArea">
+            <section class="enemyCard" id="five">
+                <p class="HP" id="fiveHP">69</p>
+                <img class="enemyCardImg" id="fiveImg">
+            </section>
+            <section class="enemyCard" id="three">
+                <p class="HP" id="threeHP">67</p>
+                <img class="enemyCardImg" id="threeImg">
+            </section>
+            <section class="enemyCard" id="one">
+                <p class="HP" id="oneHP">86</p>
+                <div id="enemyShield"></div>
+                <img class="enemyCardImg" id="oneImg">
+            </section>
+            <section class="enemyCard" id="two">
+                <p class="HP" id="twoHP">77</p>
+                <img class="enemyCardImg" id="twoImg">
+            </section>
+            <section class="enemyCard" id="four">
+                <p class="HP" id="fourHP"></p>
+                <img class="enemyCardImg" id="fourImg">
+            </section>
         </div>
         <div id="playerArea">
+            <section class="switchArrow" id="switchLeft">
+                <img class="arrow" id="left" src="gameAssests/switchArrow.png">
+            </section>
             <section class="playerCard" id="Left">
-                <img class="playerCardImg" id="MPEL">
-                <h3 class="playerName" id="NPEL"></h3>
+                <p class="HP" id="leftHP">50</p>
+                <img class="playerCardImg" id="leftImg">
             </section>
             <section class="playerCard" id="Middle">
+                <p class="HP" id="middleHP">77</p>
                 <div id="playerShield"></div>
-                <img class="playerCardImg" id="MPEM">
-                <h3 class="playerName" id="NPEM"></h3>
+                <img class="playerCardImg" id="middleImg">
             </section>
             <section class="playerCard" id="Right">
-                <img class="playerCardImg" id="MPER">
-                <h3 class="playerName" id="NPER"></h3>
+                <p class="HP" id="rightHP">5</p>
+                <div class="deathOverlay"></div>
+                <img class="playerCardImg" id="rightImg">
+            </section>
+            <section class="switchArrow" id="switchRight">
+                <img class="arrow" id="right" src="gameAssests/switchArrow.png">
             </section>
         </div>
     </div>
     <div id="summonArea">
-        <div id="enemySummon">
-            
+        <div id="enemySummonArea">
+            <section class="enemySummon">
+                <p class="usage">2</p>
+                <p class="rounds">3 Rounds</p>
+            </section>
+            <section class="enemySummon">
+                <p class="usage">2</p>
+                <p class="rounds">3 Rounds</p>
+            </section>
+            <section class="enemySummon">
+                <p class="usage">2</p>
+                <p class="rounds">3 Rounds</p>
+            </section>
+            <section class="enemySummon">
+                <p class="usage">2</p>
+                <p class="rounds">3 Rounds</p>
+            </section>
         </div>
-        <div id="playerSummon">
-
+        <div id="playerSummonArea">
+            <section class="playerSummon">
+                <p class="usage">2</p>
+                <p class="rounds">3 Rounds</p>
+            </section>
+            <section class="playerSummon">
+                <p class="usage">2</p>
+                <p class="rounds">3 Rounds</p>
+            </section>
+            <section class="playerSummon">
+                <p class="usage">2</p>
+                <p class="rounds">3 Rounds</p>
+            </section>
+            <section class="playerSummon">
+                <p class="usage">2</p>
+                <p class="rounds">3 Rounds</p>
+            </section>
         </div>
 
     </div>
@@ -64,14 +122,19 @@
     
     <!--Bottom Section-->
     <div id="actionButtons">
+        <p class="actionTitle" id="switchText">Switch Character</p>
+        <p class="actionTitle" id="normalText">Normal Attack: </p>
+        <p class="actionTitle" id="skillText">Skill: </p>
+        <p class="actionTitle" id="ultimateText">Ultimate: I'm Peddy Like That</p>
         <img class="action" id="switch" src="gameAssests/switchCharacter.png">
         <img class="action" id="normalAttack" src="gameAssests/normalAttack.png">
         <img class="action" id="skill" src="gameAssests/skill.png">
         <img class="action" id="ultimate" src="gameAssests/ultimate.png">
-        <p class="actionTitle" id="switchText">Switch Character</p>
-        <p class="actionTitle" id="normalText">Normal Attack</p>
-        <p class="actionTitle" id="skillText">Skill</p>
-        <p class="actionTitle" id="ultimateText">Ultimate</p>
+        <p class="actionCost" id="switchCost">Cost: 1</p>
+        <p class="actionCost" id="normalCost">Cost: 1</p>
+        <p class="actionCost" id="skillCost">Cost: 1</p>
+        <p class="actionCost" id="ultimateCost">Cost: 1</p>
+        
     </div>
 
     <!--Linking Script-->

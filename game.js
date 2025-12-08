@@ -10,6 +10,12 @@ const enemyGroup = {'chiikawa' : 'audio/gameMusic/Bubbly Washing Machine.mp3',
 }
 //Initializing audio
 let background_audio;
+
+
+/*TEMPORARY*/
+localStorage.enemies = 'sixSeven';
+
+
 //Setting Audio
 for (let enemy in enemyGroup){
     if (localStorage.enemies == enemy){

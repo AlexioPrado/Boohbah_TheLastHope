@@ -24,16 +24,146 @@ body {
     font-family: cookiefont;
     font-weight: normal;
     display: grid;
-    grid-template-columns: 65% 35%;
+    grid-template-columns: 60% 40%;
     height: 100vh;
 }
 
 #cardArea {
     background-color: rgb(189, 224, 254);
+    display: grid;
+    grid-template-rows: 50% 50%;
 }
+
+#playerArea, #enemyArea {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.playerCard, .enemyCard {
+    background-color: rgb(228, 241, 255);
+    border-radius: 1vh;
+    height: 55%;
+    aspect-ratio: 2.25/3.5;
+    margin: 1vh;
+    position: relative;
+}
+
+#one {
+    margin-top: 8vh;
+}
+#Middle {
+    margin-bottom: 8vh;
+}
+
+.HP {
+    position: absolute;
+    background-color: rgb(125, 194, 255);
+    width: 4.5vh;
+    height: 4.5vh;
+    padding: 0.5vh;
+    font-weight: bold;
+    font-size: 2.22vh;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: -1vh;
+    top: -1vh;
+    border-radius: 2vh;
+    z-index: 1;
+}
+
+#playerShield, #enemyShield {
+    background-color: rgb(93, 63, 211, 0.5);
+    height: 108%;
+    aspect-ratio: 2.25/3.5;
+    position: absolute;
+    left: -4%;
+    top: -4%;
+    border-radius: 2vh;
+}
+
+.deathOverlay {
+    background-color: rgb(0, 0, 0, 0.4);
+    height: 100%;
+    aspect-ratio: 2.25/3.5;
+    position: absolute;
+    border-radius: 1vh;
+}
+
+.arrow {
+    width: 8vh;
+}
+#left{
+    transform: rotateY(180deg);
+    margin-right: 1vh;
+}
+#right{
+    margin-left: 1vh;
+}
+
 
 #summonArea {
     background-color: rgb(93, 63, 211);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 90%;
+    border-left: 1vh solid black;
+}
+
+#enemySummonArea, #playerSummonArea {
+    display: grid;
+    width: max-content;
+    grid-template-columns: 50% 50%;
+    gap: 2vh;
+    padding-left: 3vh;
+    z-index: 1;
+}
+#enemySummonArea {
+    padding-bottom: 1.5vh;
+}
+#playerSummonArea {
+    padding-top: 1.5vh;
+}
+
+.enemySummon, .playerSummon {
+    background-color: rgb(228, 241, 255);
+    border-radius: 1vh;
+    width: 12vh;
+    height: 12vh;
+    position: relative;
+    align-items: l;
+}
+
+.usage {
+    background-color: rgb(125, 194, 255);
+    border-radius: 1vh;
+    position: absolute;
+    width: 3vh;
+    height: 3vh;
+    font-weight: bold;
+    font-size: 1.778vh;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: -8%;
+    top: -8%;
+    z-index: 1;
+}
+.rounds {
+    background-color: rgb(189, 224, 254);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: max-content;
+    z-index: 1;
+    padding: 0.3vh;
+    border-radius: 1vh 0 1vh 0;
 }
 
 .absoluteButton {
@@ -92,13 +222,14 @@ body {
     width: 16vh;
     height: max-content;
     right: 1.778vh;
-    top: 14.5%;
+    top: 20%;
     display: flexbox;
     padding: 1vh 0 1vh 0;
     flex-direction: column;
     flex-wrap: wrap;
     align-items: center;
     row-gap: 1vh;
+    z-index: 1;
 }
 
 #diceArea::-webkit-scrollbar {
@@ -119,7 +250,7 @@ body {
 #actionButtons {
     position: absolute;
     background-color: rgb(228, 241, 255);
-    height: 16vh;
+    height: max-content;
     width: 40%;
     right: 0%;
     bottom: 0%;
@@ -140,5 +271,10 @@ body {
 
 .actionTitle {
     font-weight: bold;
-    font-size: 18px;
+    font-size: 2vh;
+}
+
+.actionCost {
+    font-weight: bold;
+    font-size: 1.778vh;
 }

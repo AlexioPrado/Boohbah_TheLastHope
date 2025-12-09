@@ -162,12 +162,6 @@ let enemyDiceNum = document.getElementById('enemyDiNum');
 //    }
 //}
 
-//playerTurnOverlay.classList.add('active');
-//setTimeout(function() {
-//    playerTurnOverlay.classList.remove('active');
-//},2250)
-
-
 //Exit Button Interaction
 exitButton.onclick = function (){
     click.play();
@@ -183,7 +177,7 @@ exitButton.onclick = function (){
 }
 //Info Button Interaction
 infoButton.onclick = function (){window.open('https://alexioprado.github.io/Boohbah_TheLastHope/guidebook.html');}
-//Move History Interaction
+//Move History Button Interaction
 moveHistoryButton.onclick = function() {
     click.play();
     moveHistoryOverlay.style = 'display: flex;';
@@ -205,7 +199,6 @@ endRoundButton.onclick = function(){
 }
 //Card Description Interaction
 cardDescriptionOverlay.onclick = function() {cardDescriptionOverlay.style = 'display: none';}
-
 
 //Start of GAME
 console.log(localStorage.enemies);
@@ -288,10 +281,41 @@ console.log(localStorage.partyMembers);
  * 5. player turn
  */
 
-gameStartOverlay.style = 'display: none';
+//const cardDictionary = {'humbah': humbah,
+//                        'jingbah' : jingbah,
+//                        'jumbah' : jumbah,
+//                        'zingzingzingbah': zingzingzingbah,
+//                        'zumbah' : zumbah,
+//                        'keller' : keller,
+//                        'mcCuen' : mcCuen,
+//                        'gardner' : gardner,
+//                        'chiikawa' : chiikawa,
+//                        'hachiware' : hachiware,
+//                        'usagi' : usagi,
+//                        'sixSeven' : sixSeven,
+//                        'kimJongBirukin' : kimJongBirukin} 
 
 
 
+//playerTurnOverlay.classList.add('active');
+//setTimeout(function() {
+//    playerTurnOverlay.classList.remove('active');
+//},2250)
+
+let playerList = localStorage.partyMembers.split(",");
+console.log(playerList);
+
+
+//Display "Starting Game" to mimic game loading And start game.
+setTimeout(function() {
+    gameStartOverlay.style = 'display: none;';
+    prepareGame();
+} , 3000);
+
+//Changing HTML and CSS to reflect chosen game and party;
+function prepareGame() {
+    
+}
 
 
 

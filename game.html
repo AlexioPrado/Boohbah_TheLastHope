@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="game.css">
 </head>
 <body>
-    <div id="diceOverlay">
+    <div class="overlay centerOverlay" id="diceOverlay">
         <p id="diceTitle">Dice Phase</p>
         <div id="diceAreaBox">
             <div id="diceRollArea">
@@ -31,23 +31,23 @@
             </div>    
         </div> 
     </div>
-    <div id="endGameOverlay">
+    <div class="overlay centerOverlay" id="endGameOverlay">
         <p id="gameResultTitle">YOU LOST</p>
         <div class="buttonArea">
             <p class="overlayButton" id="replay">Reset Game</p>
             <p class="overlayButton" id="continue">Continue</p>
         </div>
     </div>
-    <div id="leaveGameOverlay">
+    <div class="overlay centerOverlay" id="leaveGameOverlay">
         <p id="leaveGameTitle">Leave Game?</p>
         <div class="buttonArea">
             <p class="overlayButton" id="leave">Leave</p>
             <p class="overlayButton" id="back">Cancel</p>
         </div>
     </div>
-    <div id="moveHistoryOverlay">
+    <div class="overlay" id="moveHistoryOverlay">
         <div id="historyArea">
-            <p id="historyTitle">History</p>
+            <p id="historyTitle">Move History</p>
             <div id="historyBox">
                 <ul id="historyText">
                     <li>Next one</li>
@@ -55,6 +55,68 @@
                     <li>Next Three</li>
                 </ul>
             </div>
+        </div>
+        <p class="clickContinue">> Click to Continue <</p>
+    </div>
+    <div class="overlay" id="cardDescriptionOverlay">
+        <div id="cardDescriptionArea">
+            <div id="name_health" style="display: flex; margin-bottom: 0.5em;">
+                <h1 id="name" style="margin: 0;">Tanishka Peddy</h2>
+                <h2 id="health" style="margin: 0;">HP: 25</h2>                    
+            </div>
+            <div id="attributes_roles" style="display: flex;">
+                <p class="attribute" id="coder" style="display: none;">Coder</p>
+                <p class="attribute" id="cyber" style="display: none;">Cyber</p>
+                <p class="attribute" id="biotech" style="display: none;">Biotech</p>
+                <p class="attribute" id="boohbah" style="display: none;">Boohbah</p>
+                <p class="attribute" id="teacher" style="display: none;">Teacher</p>
+                <p class="attribute" id="magical" style="display: none;">Magical</p>
+                <p class='attribute' id='redacted' style="display: none;">REDACTED</p>
+                <p class="roles" id="attack" style="display: none;">Attack</p>
+                <p class="roles" id="tank">Tank</p>
+                <p class="roles" id="support" style="display: none;">Support</p>
+            </div>
+            <div id="attribute_stacks" style="display: flex; margin: 0.5em 0 0.5em 0;">
+                <h2 id="stacks" style="font-size: 20px;">Coder: 0 | Cyber: 0 | Biotech: 0</h2>
+            </div>
+            <h2 id="normalAttackDescTitle">Normal Attack: ____</h2>
+            <div class="attackType" style="display: flex;">
+                <p class="single NA" style="display: none;">Single-Target</p>
+                <p class="aoe NA">AoE</p>
+                <p class="dot NA" style="display: none;">DoT</p>
+            </div>
+            <div id="naInfo"></div>
+            <hr>
+            <h2 id="skillDescTitle">Skill: ____</h2>
+            <div class="attackType" style="display: flex;">
+                <p class="single SK" style="display: none;">Single-Target</p>
+                <p class="aoe SK" style="display: none;">AoE</p>
+                <p class="dot SK" style="display: none;">DoT</p>
+            </div>
+            <div id="skInfo"></div>
+            <hr>
+            <h2 id="ultimateDescTitle">Ultimate: ____</h2>
+            <div class="attackType" style="display: flex;">
+                <p class="single ULT" style="display: none;">Single-Target</p>
+                <p class="aoe ULT" style="display: none;">AoE</p>
+                <p class="dot ULT" style="display: none;">DoT</p>
+            </div>  
+            <div id="ultInfo"></div>
+        </div>
+        <p class="clickContinue">> Click to Continue <</p>
+    </div>
+    <div class="overlay centerOverlay" id="actionSelectionOverlay"></div>
+    <div class="overlay" id="playerTurnOverlay">
+        <p id="playerTurnTitle">PLAYER TURN</p>
+    </div>
+    <div class="overlay centerOverlay" id="gameStartOverlay">
+        <p id="gameStartTitle">Game Starting...</p>
+    </div>
+    <div class="overlay centerOverlay" id="endRoundOverlay">
+        <p id="endRoundTitle">End Round?</p>
+        <div class="buttonArea">
+            <p class="overlayButton" id="endRoundButton">End Round</p>
+            <p class="overlayButton" id="dontEndRoundButton">Cancel</p>
         </div>
     </div>
     <div id="cardArea">
@@ -69,6 +131,7 @@
             </section>
             <section class="enemyCard" id="one">
                 <p class="HP" id="oneHP">86</p>
+                <p class="shieldHP" id="enemyShieldHP">12</p>
                 <div id="enemyShield"></div>
                 <img class="enemyCardImg" id="oneImg">
             </section>
@@ -91,6 +154,7 @@
             </section>
             <section class="playerCard" id="Middle">
                 <p class="HP" id="middleHP">77</p>
+                <p class="shieldHP" id="playerShieldHP">69</p>
                 <div id="playerShield"></div>
                 <img class="playerCardImg" id="middleImg">
             </section>
@@ -106,39 +170,39 @@
     </div>
     <div id="summonArea">
         <div id="enemySummonArea">
-            <section class="enemySummon">
-                <p class="usage">2</p>
-                <p class="rounds">3 Rounds</p>
+            <section class="enemySummon" id="enemySummon1">
+                <p class="usage" id="eSU1">2</p>
+                <p class="rounds" id="eSR1">3 Rounds</p>
             </section>
-            <section class="enemySummon">
-                <p class="usage">2</p>
-                <p class="rounds">3 Rounds</p>
+            <section class="enemySummon" id="enemySummon2">
+                <p class="usage" id="eSU2">2</p>
+                <p class="rounds" id="eSR2">3 Rounds</p>
             </section>
-            <section class="enemySummon">
-                <p class="usage">2</p>
-                <p class="rounds">3 Rounds</p>
+            <section class="enemySummon" id="enemySummon3">
+                <p class="usage" id="eSU3">2</p>
+                <p class="rounds" id="eSR3">3 Rounds</p>
             </section>
-            <section class="enemySummon">
-                <p class="usage">2</p>
-                <p class="rounds">3 Rounds</p>
+            <section class="enemySummon" id="enemySummon4">
+                <p class="usage" id="eSU4">2</p>
+                <p class="rounds" id="eSR4">3 Rounds</p>
             </section>
         </div>
         <div id="playerSummonArea">
-            <section class="playerSummon">
-                <p class="usage">2</p>
-                <p class="rounds">3 Rounds</p>
+            <section class="playerSummon" id="playerSummon1">
+                <p class="usage" id="pSU1">2</p>
+                <p class="rounds" id="pSR1">3 Rounds</p>
             </section>
-            <section class="playerSummon">
-                <p class="usage">2</p>
-                <p class="rounds">3 Rounds</p>
+            <section class="playerSummon" id="playerSummon2">
+                <p class="usage" id="pSU2">2</p>
+                <p class="rounds" id="pSR2">3 Rounds</p>
             </section>
-            <section class="playerSummon">
-                <p class="usage">2</p>
-                <p class="rounds">3 Rounds</p>
+            <section class="playerSummon" id="playerSummon3">
+                <p class="usage" id="pSU3">2</p>
+                <p class="rounds" id="pSR3">3 Rounds</p>
             </section>
-            <section class="playerSummon">
-                <p class="usage">2</p>
-                <p class="rounds">3 Rounds</p>
+            <section class="playerSummon" id="playerSummon4">
+                <p class="usage" id="pSU4">2</p>
+                <p class="rounds" id="pSR4">3 Rounds</p>
             </section>
         </div>
 
@@ -155,19 +219,19 @@
     <p class="absoluteButton" id="endRound">End</p>
     <p class="absoluteButton" id="playerDiNum">10</p>
     <div id="diceArea">
-        <img class="dice" id="attack" src="gameAssests/attackDice.png">
-        <img class="dice" id="tank" src="gameAssests/tankDice.png">
-        <img class="dice" id="support" src="gameAssests/supportDice.png">
-        <img class="dice" id="attack" src="gameAssests/attackDice.png">
-        <img class="dice" id="tank" src="gameAssests/tankDice.png">
-        <img class="dice" id="support" src="gameAssests/supportDice.png">
-        <img class="dice" id="attack" src="gameAssests/attackDice.png">
-        <img class="dice" id="tank" src="gameAssests/tankDice.png">
-        <img class="dice" id="support" src="gameAssests/supportDice.png">
-        <img class="dice" id="attack" src="gameAssests/attackDice.png">
-        <img class="dice" id="attack" src="gameAssests/attackDice.png">
-        <img class="dice" id="tank" src="gameAssests/tankDice.png">
-        <img class="dice" id="support" src="gameAssests/supportDice.png">
+        <img class="dice attackDice" id="dice1" src="gameAssests/attackDice.png">
+        <img class="dice tankDice" id="dice2" src="gameAssests/tankDice.png">
+        <img class="dice supportDice" id="dice3" src="gameAssests/supportDice.png">
+        <img class="dice attackDice" id="dice4" src="gameAssests/attackDice.png">
+        <img class="dice tankDice" id="dice5" src="gameAssests/tankDice.png">
+        <img class="dice supportDice" id="dice6" src="gameAssests/supportDice.png">
+        <img class="dice attackDice" id="dice7" src="gameAssests/attackDice.png">
+        <img class="dice tankDice" id="dice8" src="gameAssests/tankDice.png">
+        <img class="dice supportDice" id="dice9" src="gameAssests/supportDice.png">
+        <img class="dice attackDice" id="dice10" src="gameAssests/attackDice.png">
+        <img class="dice additional attackDice" id="dice11" src="gameAssests/attackDice.png">
+        <img class="dice additional tankDice" id="dice12" src="gameAssests/tankDice.png">
+        <img class="dice additional supportDice" id="dice13" src="gameAssests/supportDice.png">
     </div>
     
     <!--Bottom Section-->

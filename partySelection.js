@@ -24,7 +24,10 @@ exit.onclick = function (){
 //Fight
 let fight = document.getElementById('fight');
 fight.onclick = function (){
-    console.log(localStorage.enemies);
+  localStorage.partyMembers = party;
+  console.log(localStorage.enemies);
+  console.log(localStorage.partyMembers);
+  window.location.href = ("https://alexioprado.github.io/Boohbah_TheLastHope/game.html");
 }
 //Player Codex
 let codex = document.getElementById('codex');
@@ -69,7 +72,6 @@ const tanishkaCard = document.getElementById('tanishkaPeddy');
 const card1 = document.getElementById('cardOne');
 const card2 = document.getElementById('cardTwo');
 const card3 = document.getElementById('cardThree');
-
 
 let party = ['N','N','N'];
 let partyHTML = [card1, card2, card3]
@@ -147,7 +149,6 @@ function selectCard(card, character){
   for (let i = 1; i < character.classList.length; i++){
     attRol.push(character.classList[i]);
   }
-  console.log(attRol)
 
   for (let i = 0; i<card.parentElement.children[1].children.length; i++){
     card.parentElement.children[1].children[i].style = 'display: none';
@@ -155,7 +156,6 @@ function selectCard(card, character){
 
   for (let j = 0; j < card.parentElement.children[1].children.length; j++){
     if (attRol.includes(card.parentElement.children[1].children[j].id)){
-      console.log(card.parentElement.children[1].children[j])
       card.parentElement.children[1].children[j].style = 'display: flex';
     }
   

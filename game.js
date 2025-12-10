@@ -13,12 +13,14 @@ const click = new Audio('audio/ui/minecraft_click.mp3');
 click.volume = 0.2;
 
 /*TEMPORARY*/
-localStorage.enemies = 'sixSeven';
+localStorage.enemies = 'kimJongBirukin';
 
 //Setting Audio
 for (let enemy in enemyGroup){
-    if (localStorage.enemies == enemy){
+    if (localStorage.enemies.split(",")[0] == enemy){
         background_audio = new Audio(enemyGroup[enemy]);
+    } else {
+        continue;
     }
 }
 //Looping music
@@ -62,12 +64,14 @@ let rightSwitch = document.getElementById('switchRight');
 let leftCard = document.getElementById('Left');
 let middleCard = document.getElementById('Middle');
 let rightCard = document.getElementById('Right');
+let playerCardList = [leftCard, middleCard, rightCard];
 //Enemy Cards
 let enemyOne = document.getElementById('one');
 let enemyTwo = document.getElementById('two');
 let enemyThree = document.getElementById('three');
 let enemyFour = document.getElementById('four');
 let enemyFive = document.getElementById('five');
+let enemyCardList = [enemyOne, enemyTwo, enemyThree, enemyFour, enemyFive];
 
 //ActionArea
 let switchButton = document.getElementById('switch');
@@ -294,8 +298,276 @@ console.log(localStorage.partyMembers);
 //                        'usagi' : usagi,
 //                        'sixSeven' : sixSeven,
 //                        'kimJongBirukin' : kimJongBirukin} 
+const imageCardDictionary = {'humbah': 'cardImages/enemyImages/humbah.png',
+                             'jingbah' : 'cardImages/enemyImages/jingbah.png',
+                             'jumbah' : 'cardImages/enemyImages/jumbah.png',
+                             'zingzingzingbah': 'cardImages/enemyImages/zingzingzingbah.png',
+                             'zumbah' : 'cardImages/enemyImages/zumbah.png',
+                             'keller' : 'cardImages/enemyImages/leslieKeller.png',
+                             'mcCuen' : 'cardImages/enemyImages/russMcCuen.png',
+                             'gardner' : 'gcardImages/enemyImages/ethanGardner.png',
+                             'chiikawa' : 'cardImages/enemyImages/chiikawa.png',
+                             'hachiware' : 'cardImages/enemyImages/hachiware.png',
+                             'usagi' : 'cardImages/enemyImages/usagi.png',
+                             'sixSeven' : 'cardImages/enemyImages/sixSeven.png',
+                             'kimJongBirukin' : 'cardImages/enemyImages/kimJongBirukin.png',
+                             'adamMitchell' : 'cardImages/adamMitchell.png',
+                             'addisonBrooks' : 'cardImages/addisonBrooks.png',
+                             'aftonPate' : 'cardImages/aftonPate.png',
+                             'alexAriasKurcan' : 'cardImages/alexAriasKurcan.png',
+                             'angelCarmichael' : 'cardImages/angelCarmichael.png',
+                             'beckketSummers' : 'cardImages/beckketSummers.png',
+                             'biancaBaccay' : 'cardImages/biancaBaccay.png',
+                             'birukYidnekachew' : 'cardImages/birukYidnekachew.png',
+                             'calebArrick' : 'cardImages/calebArrick.png',
+                             'dennisWright' : 'cardImages/dennisWright.png',
+                             'elizabethTaiwo' : 'cardImages/elizabethTaiwo.png',
+                             'evanYango' : 'cardImages/evanYango.png',
+                             'evelynMeier' : 'cardImages/evelynMeier.png',
+                             'karimRiveraApolinar' : 'cardImages/karimRiveraApolinar.png',
+                             'katarinaRusso' : 'cardImages/katarinaRusso.png',
+                             'keshavTekalur' : 'cardImages/keshavTekalur.png',
+                             'khaniLyan' : 'cardImages/khaniLyan.png',
+                             'mandiNguyen' : 'cardImages/mandiNguyen.png',
+                             'marcusCeradini' : 'cardImages/marcusCeradini.png',
+                             'marcusPrado' : 'cardImages/marcusPrado.png',
+                             'noahSanders' : 'cardImages/noahSanders.png',
+                             'oliviaDwyer' : 'cardImages/oliviaDwyer.png',
+                             'parthThite' : 'cardImages/parthThite.png',
+                             'rahulMurgai' : 'cardImages/rahulMurgai.png',
+                             'saraReinert' : 'cardImages/saraReinert.png',
+                             'shamNemer' : 'cardImages/shamNemer.png',
+                             'samuelTaiwo' : 'cardImages/samuelTaiwo.png',
+                             'sophiaSwart' : 'cardImages/sophiaSwart.png',
+                             'tanishkaPeddy' : 'cardImages/tanishkaPeddy.png'}
 
+let partyList = [];      
+let activeCharacter;                                              
+let partyMaxHP = [];                             
+let partyHP = [];                             
+let activeCharacterDmg = 0;
+let actionMoveType = '';
+let endRoundDmg = {};
+let endRoundDOT = {};
+let actionActivateList = {};
+let normalActivateList = {};
+let skillActivateList = {};
+let ultimateActivateList = {};
+let shield = 0;
 
+function actionActivate() {
+    for (let activation in actionActivateList){
+        activation();
+    }
+}
+function normalActivate() {
+    for (let activation in normalActivateList){
+        activation();
+    }
+}
+function skillActivate() {
+    for (let activation in skillActivateList){
+        activation();
+    }
+}
+function ultimateActivate() {
+    for (let activation in ultimateActivateList){
+        activation();
+    }
+}
+function healLowest(healing){
+    let lowest = 100;
+    let id = 0;
+    for (let character in partyList){
+        if (partyList['HP'][character] < lowest){
+            lowest = partyList['HP'][character];
+            id = character;
+        }
+    }
+    if (partyList['HP'][id] + healing > partyList['maxHP'][id]){
+        partyList['HP'][id] = partyList['maxHP'][id];
+    } else {
+        partyList['HP'][id] += healing;
+    }
+}
+function healActive(healing){
+    if (activeCharacter['HP'] + healing > activeCharacter['maxHP']){
+        activeCharacter['HP'] = activeCharacter['maxHP'];
+    } else {
+        activeCharacter['HP'] += healing;
+    }
+}
+function healAll(healing){
+    for (let character in partyList){
+        if (partyList['HP'][character] + healing > partyList['maxHP'][character]){
+            partyList['HP'][character] = partyList['maxHP'][character];
+        } else {
+            partyList['HP'][character] += healing;
+        }
+    }
+}
+
+const tanishkaPeddy = {
+    'image' : 'cardImages/tanishkaPeddy.png',
+    'characterName' : 'tanishkhaPeddy',
+    'roleType' : ['attack'],
+    'maxHP' : 25,
+    'HP' : 25,
+    'kitName' : ['Step Back', 'I\'m Peddy Like That', 'I\'m #1 For A Reason'],
+    'attackType' : ['single','single','single'],
+    'attribute' : 'biotech',
+    'attributeStack' : [1, 2, 3],
+    'actionCost' : [1,3,4],
+    'energyCost' : 5,
+    'dotDuration' : 0,
+    'statusDuration' : 0,
+    'normal' : function() {
+        actionMoveType = 'single';
+        activeCharacterDmg = 2;
+        actionActivate();
+        normalActivate();
+    },
+    'skill' : function() {
+        actionMoveType = 'single';
+        activeCharacterDmg = 3;
+        endRoundDmg.push(5);
+        actionActivate();
+        skillActivate();
+    },
+    'ultimate' : function() {
+        actionMoveType = 'single';
+        activeCharacterDmg = 12;
+        actionActivate();
+        ultimateActivate();
+    }
+}
+
+const adamMitchell = {
+    'image' : 'cardImages/adamMitchell.png',
+    'characterName' : 'adamMitchell',
+    'roleType' : ['tank'],
+    'maxHP' : 40,
+    'HP' : 40,
+    'kitName' : ['Undecided', 'Undecided', 'Undecided'],
+    'attackType' : ['aoe', 'N', 'N'],
+    'attribute' : 'biotech',
+    'attributeStack' : [1, 0, 0],
+    'actionCost' : [2, 3, 3],
+    'energyCost' : 2,
+    'dotDuration' : 0,
+    'statusDuration' : 3,
+    'normal' : function() {
+        actionMoveType = 'aoe';
+        activeCharacterDmg = 1;
+        actionActivate();
+        normalActivate();
+    },
+    'skill' : function() {
+        actionMoveType = 'N';
+        activeCharacterDmg = 0;
+        //IMPLEMENT STATUS DURATION
+        for (let characterHP in partyList){
+            partyList['maxHP'][characterHP] += 5;
+        }
+    },
+    'ultimate' : function() {
+        actionMoveType = 'N';
+        activeCharacterDmg = 0;
+        let adamShield = 0;
+        for (let characterHP in partyList){
+            if ((partyList['maxHP'][characterHP] - partyList['HP'][characterHP]) > adamShield){
+                if ((partyList['maxHP'][characterHP] - partyList['HP'][characterHP]) > 10) {
+                    adamShield = 10;
+                } else {
+                   adamShield = (partyList['maxHP'][characterHP] - partyList['HP'][characterHP]) 
+                }
+            }
+        }
+        shield = adamShield;
+    }
+}
+
+const sophiaSwart = {
+    'image' : 'cardImages/sophiaSwart.png',
+    'characterName' : 'sophiaSwart',
+    'roleType' : ['tank', 'support'],
+    'maxHP' : 40,
+    'HP' : 40,
+    'kitName' : ['Undecided', 'Undecided', 'Undecided'],
+    'attackType' : ['single','aoe','aoe'],
+    'attribute' : 'biotech',
+    'attributeStack' : [1, 2, 3],
+    'actionCost' : [2, 3, 2],
+    'energyCost' : 2,
+    'dotDuration' : 0,
+    'statusDuration' : 3,
+    'normal' : function() {
+        actionMoveType = 'single';
+        activeCharacterDmg = 2;
+        actionActivate();
+        normalActivate();
+    },
+    'skill' : function() {
+        actionMoveType = 'aoe';
+        activeCharacterDmg = 3;
+        shield = 7;
+        normalActivateList.push(function(){
+            activeCharacterDmg += shield;
+        });
+        skillActivateList.push(function() {
+            activeCharacterDmg += shield;
+        });
+        actionActivate();
+        skillActivate();
+    },
+    'ultimate' : function() {
+        actionMoveType = 'aoe';
+        activeCharacterDmg = 1;
+        healAll(2);
+        //IMPLEMENT ROUND DURATION
+        actionActivateList.push(function(){
+            if (shield + 2 > 9){
+                shield = 9;
+            } else {
+                shield += 2
+            }
+        });
+        actionActivate();
+        ultimateActivate();
+    }
+}
+
+const kimJongBirukin = {
+    'image' : 'cardImages/enemyImages/kimJongBirukin.png',
+    'characterName' : 'kimJongBirukin',
+    'roleType' : ['atack'],
+    'maxHP' : 100,
+    'HP' : 100,
+    'kitName' : ['Undecided', 'Undecided', 'Undecided'],
+    'attackType' : ['single','N','N'],
+    'actionCost' : [2, 4, 4],
+    'energyCost' : 7,
+    'dotDuration' : 0,
+    'statusDuration' : 2,
+    'normal' : function() {
+        actionMoveType = 'single';
+        activeCharacterDmg = 2;
+        actionActivate();
+        normalActivate();
+    },
+    'skill' : function() {
+        actionMoveType = 'N';
+        activeCharacterDmg = 3;
+        actionActivate();
+        skillActivate();
+    },
+    'ultimate' : function() {
+        actionMoveType = 'N';
+        activeCharacterDmg = 1;
+        actionActivate();
+        ultimateActivate();
+    }
+}
 
 //playerTurnOverlay.classList.add('active');
 //setTimeout(function() {
@@ -303,7 +575,9 @@ console.log(localStorage.partyMembers);
 //},2250)
 
 let playerList = localStorage.partyMembers.split(",");
-console.log(playerList);
+
+let enemyList = localStorage.enemies.split(",");
+
 
 
 //Display "Starting Game" to mimic game loading And start game.
@@ -311,10 +585,11 @@ setTimeout(function() {
     gameStartOverlay.style = 'display: none;';
     prepareGame();
 } , 3000);
-
+ 
 //Changing HTML and CSS to reflect chosen game and party;
 function prepareGame() {
-    
+    //Enemy Card allocation
+    //Player Card allocation
 }
 
 
@@ -472,15 +747,15 @@ const sixSeven = {'imgURL': 'cardImages/enemyImages/sixSeven.png',
                   'NA': ['Peace Sign', 'A', '2', '<p>Deal 2 dmg to all enemies.</p>'],
                   'SK': ['Six or Seven', 'S', '3', '<p>Deal 6 or 7 dmg to the enemy.</p>'],
                   'UL': ['Lady Justice', 'A', '4', '2', '<p>Deal 4 dmg to all enemies.<br>Every Skill or Normal Attack used, deal a coordinated attack, dealing 2 dmg to the enemy. (3 rounds)<br>At the end of the round, heal 6 or 7 HP.</p>']};
-const kimJongBirukin = {'imgURL': 'cardImages/enemyImages/kimJongBirukin.png',
-                  'Name': 'sIDBQEWF=SINVQDonqdnq',
-                  'HP': '100',
-                  'Attribute': 'REDACTED', 
-                  'Roles': ['Attack'], 
-                  'attributeStacks': ['N', 'N', 'N'],
-                  'NA': ['REDACTED', 'N', '2', '<p>SDLKNOQWEKX;s pfjahasdva asdoafjacnva sdhfoqeaadsvle</p>'],
-                  'SK': ['REDACTED', 'N', '4', '<p>oweufpqdna pojgqeqeOIDOIEPOGFJDNAOP ijag iodsj vldgrdf</p>'],
-                  'UL': ['REDACTED', 'N', '4', '3', '<p>PNQUDHFNsd OHGOADHF AER nviovdsoirfa FDJQIFADA</p>']};
+//const kimJongBirukin = {'imgURL': 'cardImages/enemyImages/kimJongBirukin.png',
+//                  'Name': 'sIDBQEWF=SINVQDonqdnq',
+//                  'HP': '100',
+//                  'Attribute': 'REDACTED', 
+//                  'Roles': ['Attack'], 
+//                  'attributeStacks': ['N', 'N', 'N'],
+//                  'NA': ['REDACTED', 'N', '2', '<p>SDLKNOQWEKX;s pfjahasdva asdoafjacnva sdhfoqeaadsvle</p>'],
+//                  'SK': ['REDACTED', 'N', '4', '<p>oweufpqdna pojgqeqeOIDOIEPOGFJDNAOP ijag iodsj vldgrdf</p>'],
+//                  'UL': ['REDACTED', 'N', '4', '3', '<p>PNQUDHFNsd OHGOADHF AER nviovdsoirfa FDJQIFADA</p>']};
 
 /* Player Cards */
 const adamM = {'imgURL': 'cardImages/adamMitchell.png',

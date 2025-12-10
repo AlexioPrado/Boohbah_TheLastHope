@@ -83,7 +83,7 @@ const adamM = {'imgURL': 'cardImages/adamMitchell.png',
                   'Roles': ['Tank'], 
                   'NA': ['Undecided', 'A', '2', '1', '<p>Deal 1 dmg to all enemies.</p>'],
                   'SK': ['Undecided', 'N', '3', '0', '<p>Increase the party\'s Base HP by 5. (3 rounds)</p>'],
-                  'UL': ['Undecided', 'N', '3', '0', '2', '<p>Create a shield with strength based on the character\'s HP difference. with the most difference from thier current and Base HP. Max 10 strength</p>']};
+                  'UL': ['Undecided', 'N', '3', '0', '2', '<p>Create a shield with strength based on the character\'s HP with the most difference from their current and Base HP. Max 10 strength</p>']};
 const addisonB = {'imgURL': 'cardImages/addisonBrooks.png',
                   'Name': 'Addison Brooks',
                   'HP': '30',

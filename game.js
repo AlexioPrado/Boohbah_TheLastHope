@@ -342,9 +342,7 @@ const imageCardDictionary = {'humbah': 'cardImages/enemyImages/humbah.png',
                              'tanishkaPeddy' : 'cardImages/tanishkaPeddy.png'}
 
 let partyList = [];      
-let activeCharacter;                                              
-let partyMaxHP = [];                             
-let partyHP = [];                             
+let activeCharacter;                                                                         
 let activeCharacterDmg = 0;
 let actionMoveType = '';
 let endRoundDmg = {};

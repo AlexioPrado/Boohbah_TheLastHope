@@ -285,19 +285,6 @@ console.log(localStorage.partyMembers);
  * 5. player turn
  */
 
-//const cardDictionary = {'humbah': humbah,
-//                        'jingbah' : jingbah,
-//                        'jumbah' : jumbah,
-//                        'zingzingzingbah': zingzingzingbah,
-//                        'zumbah' : zumbah,
-//                        'keller' : keller,
-//                        'mcCuen' : mcCuen,
-//                        'gardner' : gardner,
-//                        'chiikawa' : chiikawa,
-//                        'hachiware' : hachiware,
-//                        'usagi' : usagi,
-//                        'sixSeven' : sixSeven,
-//                        'kimJongBirukin' : kimJongBirukin} 
 const imageCardDictionary = {'humbah': 'cardImages/enemyImages/humbah.png',
                              'jingbah' : 'cardImages/enemyImages/jingbah.png',
                              'jumbah' : 'cardImages/enemyImages/jumbah.png',
@@ -356,45 +343,60 @@ let healActivateList = {};
 let shieldActivateList = {};
 let shield = 0;
 
+let enemyPartyList = [];      
+let activeEnemy;                                                                         
+let activeEnemyDmg = 0;
+let enemyActionMoveType = '';
+let enemyEndActionDmg = {};
+let enemyEndRoundDmg = {};
+let enemyEndRoundDOT = {};
+let enemyActionActivateList = {};
+let enemyNormalActivateList = {};
+let enemySkillActivateList = {};
+let enemyUltimateActivateList = {};
+let enemyHealActivateList = {};
+let enemyShieldActivateList = {};
+let enemyShield = 0;
+
 //Activate whenever an action occurs
-function actionActivate() {
-    for (let activation in actionActivateList){
+function actionActivate(actionList) {
+    for (let activation in actionList){
         activation();
     }
 }
 //Activate when a normal attack is used
-function normalActivate() {
-    for (let activation in normalActivateList){
+function normalActivate(normalList) {
+    for (let activation in normalList){
         activation();
     }
 }
 //Activate when a skill is used
-function skillActivate() {
-    for (let activation in skillActivateList){
+function skillActivate(skillList) {
+    for (let activation in skillList){
         activation();
     }
 }
 //Activate when an ultimate is used
-function ultimateActivate() {
-    for (let activation in ultimateActivateList){
+function ultimateActivate(ultimateList) {
+    for (let activation in ultimateList){
         activation();
     }
 }
 //Activate when healing occurs
-function healActivate() {
-    for (let activation in healActivateList){
+function healActivate(healingList) {
+    for (let activation in healingList){
         activation();
     }
 }
 //Activate when creating a shield, healing a shield, or shield is damaged.
-function shieldActivate() {
-    for (let activation in shieldActivateList){
+function shieldActivate(shieldList) {
+    for (let activation in shieldList){
         activation();
     }
 }
 
-function healLowest(healing){
-    let lowest = 100;
+function healLowest(healing, partyList){
+    let lowest = 999;
     let id = 0;
     for (let character in partyList){
         if (partyList['HP'][character] < lowest){
@@ -408,14 +410,14 @@ function healLowest(healing){
         partyList['HP'][id] += healing;
     }
 }
-function healActive(healing){
-    if (activeCharacter['HP'] + healing > activeCharacter['maxHP']){
-        activeCharacter['HP'] = activeCharacter['maxHP'];
+function healActive(healing, activecard){
+    if (activecard['HP'] + healing > activecard['maxHP']){
+        activecard['HP'] = activecard['maxHP'];
     } else {
-        activeCharacter['HP'] += healing;
+        activecard['HP'] += healing;
     }
 }
-function healAll(healing){
+function healAll(healing, partyList){
     for (let character in partyList){
         if (partyList['HP'][character] + healing > partyList['maxHP'][character]){
             partyList['HP'][character] = partyList['maxHP'][character];
@@ -424,6 +426,38 @@ function healAll(healing){
         }
     }
 }
+
+function energyUpdate(character) {
+    if (character['energy'] > character['energyCost']){
+        character['energy'] = character['energyCost'];
+    }
+}
+
+function updateCards(cardType){
+    //Update the enemy card area
+    function updateEnemy(){
+        for (let card in enemyPartyList){
+            enemyCardList[card]// CONTINUE WOKRING HERE
+        }
+    }
+    //Update the player card area
+    function updatePlayer(){
+
+    }
+
+    switch(cardType){
+        case 'enemy':
+            updateEnemy();
+            break;
+        case 'player':
+            updatePlayer();
+            break;
+        default:
+            console.log('ERROR');
+    }
+}
+
+
 
 const tanishkaPeddy = {
     'image' : 'cardImages/tanishkaPeddy.png',
@@ -442,21 +476,21 @@ const tanishkaPeddy = {
     'normal' : function() {
         actionMoveType = 'single';
         activeCharacterDmg = 2;
-        actionActivate();
-        normalActivate();
+        actionActivate(actionActivateList);
+        normalActivate(normalActivateList);
     },
     'skill' : function() {
         actionMoveType = 'single';
         activeCharacterDmg = 3;
         endRoundDmg.push(5);
-        actionActivate();
-        skillActivate();
+        actionActivate(actionActivateList);
+        skillActivate(skillActivateList);
     },
     'ultimate' : function() {
         actionMoveType = 'single';
         activeCharacterDmg = 12;
-        actionActivate();
-        ultimateActivate();
+        actionActivate(actionActivateList);
+        ultimateActivate(ultimateActivateList);
     }
 }
 
@@ -477,8 +511,8 @@ const adamMitchell = {
     'normal' : function() {
         actionMoveType = 'aoe';
         activeCharacterDmg = 1;
-        actionActivate();
-        normalActivate();
+        actionActivate(actionActivateList);
+        normalActivate(normalActivateList);
     },
     'skill' : function() {
         actionMoveType = 'N';
@@ -487,8 +521,8 @@ const adamMitchell = {
         for (let characterHP in partyList){
             partyList['maxHP'][characterHP] += 5;
         }
-        actionActivate();
-        skillActivate();
+        actionActivate(actionActivateList);
+        skillActivate(skillActivateList);
     },
     'ultimate' : function() {
         actionMoveType = 'N';
@@ -504,8 +538,8 @@ const adamMitchell = {
             }
         }
         shield = adamShield;
-        actionActivate();
-        ultimateActivate();
+        actionActivate(actionActivateList);
+        ultimateActivate(ultimateActivateList);
     }
 }
 
@@ -526,21 +560,25 @@ const sophiaSwart = {
     'normal' : function() {
         actionMoveType = 'single';
         activeCharacterDmg = 2;
-        actionActivate();
-        normalActivate();
+        actionActivate(actionActivateList);
+        normalActivate(normalActivateList);
     },
     'skill' : function() {
         actionMoveType = 'aoe';
         activeCharacterDmg = 3;
         shield = 7;
         normalActivateList.push(function(){
-            activeCharacterDmg += shield;
+            if (activeCharacterDmg != 0){
+                activeCharacterDmg += shield;
+            }
         });
         skillActivateList.push(function() {
-            activeCharacterDmg += shield;
+            if (activeCharacterDmg != 0){
+                activeCharacterDmg += shield;
+            }
         });
-        actionActivate();
-        skillActivate();
+        actionActivate(actionActivateList);
+        skillActivate(skillActivateList);
     },
     'ultimate' : function() {
         actionMoveType = 'aoe';
@@ -554,8 +592,8 @@ const sophiaSwart = {
                 shield += 2
             }
         });
-        actionActivate();
-        ultimateActivate();
+        actionActivate(actionActivateList);
+        ultimateActivate(ultimateActivateList);
     }
 }
 
@@ -570,6 +608,7 @@ const kimJongBirukin = {
     'attackType' : ['single','N','N'],
     'actionCost' : [2, 4, 4],
     'energyCost' : 7,
+    'energy' : 0,
     'dotDuration' : 0,
     'statusDuration' : 2,
     'enhancedState' : false,
@@ -579,29 +618,33 @@ const kimJongBirukin = {
     'normal' : function() {
         //Checking promiseShield buff
         if (this.promiseShield){
-            activeCharacterDmg = 3
+            activeEnemyDmg = 3
         } else if (this.shieldBroken){
-            activeCharacterDmg = -2;
+            activeEnemyDmg = -2;
             this.shieldTimer -= 1
         }
         //Damage and move type based on enhanceState
         if (this.enhancedState){
-            actionMoveType = 'aoe';
+            enemyActionMoveType = 'aoe';
             this.attackType[0] = 'aoe';
             if (this.shieldBroken){
-                activeCharacterDmg += 4;
+                activeEnemyDmg += 4;
             } else {
-                activeCharacterDmg += 3;
+                activeEnemyDmg += 3;
             }
             this.statusDuration -= 1;
         } else {
-            actionMoveType = 'single';
+            enemyActionMoveType = 'single';
             this.attackType[0] = 'single';
-            activeCharacterDmg += 5;
+            activeEnemyDmg += 5;
         }
 
-        actionActivate();
-        normalActivate();
+        //Energy
+        this.energy += 1;
+        energyUpdate(this);
+
+        actionActivate(enemyActionActivateList);
+        normalActivate(enemyNormalActivateList);
 
         //Resetting shieldTimer and shieldBroken Status
         if (this.shieldTimer == 0){
@@ -616,35 +659,38 @@ const kimJongBirukin = {
     },
     'skill' : function() {
         //Skill does not deal dmg
-        actionMoveType = 'N';
-        activeCharacterDmg = 0;
-        //Sets enhanced state adn reset duration
+        enemyActionMoveType = 'N';
+        activeEnemyDmg = 0;
+        //Sets enhanced state and reset duration
         this.enhancedState = true;
         this.statusDuration = 2;
 
-        actionActivate();
-        skillActivate();
+        actionActivate(enemyActionActivateList);
+        skillActivate(enemySkillActivateList);
     },
     'ultimate' : function() {
         //Ultimate does not deal dmg
-        actionMoveType = 'N';
-        activeCharacterDmg = 0;
+        enemyActionMoveType = 'N';
+        activeEnemyDmg = 0;
 
-        shield = 15;
+        //Create Broken Promise Shield
+        enemyShield = 15;
         this.promiseShield = true;
-        shieldActivateList.push(function() {
-            if (shield <= 0 & this.promiseShield){
+        enemyShieldActivateList.push(function() {
+            if (enemyShield <= 0 & this.promiseShield){
                 this.shieldBroken = true;
                 this.HP -= 10;
             }
         })
 
-
-        actionActivate();
-        ultimateActivate();
-        shieldActivate();
+        actionActivate(enemyActionActivateList);
+        ultimateActivate(enemyUltimateActivateList);
+        shieldActivate(enemyShieldActivateList);
     }
 }
+
+let enemyCards = [kimJongBirukin];
+let playerCards = [adamMitchell, sophiaSwart, tanishkaPeddy];
 
 //playerTurnOverlay.classList.add('active');
 //setTimeout(function() {
@@ -652,10 +698,7 @@ const kimJongBirukin = {
 //},2250)
 
 let playerList = localStorage.partyMembers.split(",");
-
 let enemyList = localStorage.enemies.split(",");
-
-
 
 //Display "Starting Game" to mimic game loading And start game.
 setTimeout(function() {
@@ -666,7 +709,24 @@ setTimeout(function() {
 //Changing HTML and CSS to reflect chosen game and party;
 function prepareGame() {
     //Enemy Card allocation
+    //Cut enemyCardList to what is only needed and display cards
+    enemyCardList.splice(enemyList.length);
+    for (let card in enemyCardList){
+        enemyCardList[card].style = 'display: flex';
+    }
+    //Find enemyCard in enemycards list
+    for (let card in enemyCards){
+        if (enemyCards[card]['characterName'] == enemyList[card]){
+            enemyPartyList.push(enemyList[card]);
+        }
+    }
+    //update HTML
+    updateCards('enemy');
     //Player Card allocation
+
+    //Switch Arrows
+    leftSwitch.style = 'display: flex';
+    rightSwitch.style = 'display: flex';
 }
 
 

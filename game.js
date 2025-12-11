@@ -345,34 +345,54 @@ let partyList = [];
 let activeCharacter;                                                                         
 let activeCharacterDmg = 0;
 let actionMoveType = '';
+let endActionDmg = {};
 let endRoundDmg = {};
 let endRoundDOT = {};
 let actionActivateList = {};
 let normalActivateList = {};
 let skillActivateList = {};
 let ultimateActivateList = {};
+let healActivateList = {};
+let shieldActivateList = {};
 let shield = 0;
 
+//Activate whenever an action occurs
 function actionActivate() {
     for (let activation in actionActivateList){
         activation();
     }
 }
+//Activate when a normal attack is used
 function normalActivate() {
     for (let activation in normalActivateList){
         activation();
     }
 }
+//Activate when a skill is used
 function skillActivate() {
     for (let activation in skillActivateList){
         activation();
     }
 }
+//Activate when an ultimate is used
 function ultimateActivate() {
     for (let activation in ultimateActivateList){
         activation();
     }
 }
+//Activate when healing occurs
+function healActivate() {
+    for (let activation in healActivateList){
+        activation();
+    }
+}
+//Activate when creating a shield, healing a shield, or shield is damaged.
+function shieldActivate() {
+    for (let activation in shieldActivateList){
+        activation();
+    }
+}
+
 function healLowest(healing){
     let lowest = 100;
     let id = 0;
@@ -467,6 +487,8 @@ const adamMitchell = {
         for (let characterHP in partyList){
             partyList['maxHP'][characterHP] += 5;
         }
+        actionActivate();
+        skillActivate();
     },
     'ultimate' : function() {
         actionMoveType = 'N';
@@ -482,6 +504,8 @@ const adamMitchell = {
             }
         }
         shield = adamShield;
+        actionActivate();
+        ultimateActivate();
     }
 }
 
@@ -553,38 +577,72 @@ const kimJongBirukin = {
     'shieldBroken' : false,
     'shieldTimer' : 2,
     'normal' : function() {
+        //Checking promiseShield buff
         if (this.promiseShield){
             activeCharacterDmg = 3
         } else if (this.shieldBroken){
             activeCharacterDmg = -2;
+            this.shieldTimer -= 1
         }
+        //Damage and move type based on enhanceState
         if (this.enhancedState){
             actionMoveType = 'aoe';
             this.attackType[0] = 'aoe';
             if (this.shieldBroken){
-                activeCharacterDmg 
+                activeCharacterDmg += 4;
             } else {
                 activeCharacterDmg += 3;
             }
+            this.statusDuration -= 1;
         } else {
             actionMoveType = 'single';
             this.attackType[0] = 'single';
             activeCharacterDmg += 5;
         }
+
         actionActivate();
         normalActivate();
+
+        //Resetting shieldTimer and shieldBroken Status
+        if (this.shieldTimer == 0){
+            this.shieldTimer = 2;
+            this.shieldBroken = false;
+        }
+        //Resetting status duration and enhance status to false
+        if (this.statusDuration == 0){
+            this.statusDuration = 2;
+            this.enhancedState = false;
+        }
     },
     'skill' : function() {
+        //Skill does not deal dmg
         actionMoveType = 'N';
-        activeCharacterDmg = 3;
+        activeCharacterDmg = 0;
+        //Sets enhanced state adn reset duration
+        this.enhancedState = true;
+        this.statusDuration = 2;
+
         actionActivate();
         skillActivate();
     },
     'ultimate' : function() {
+        //Ultimate does not deal dmg
         actionMoveType = 'N';
-        activeCharacterDmg = 1;
+        activeCharacterDmg = 0;
+
+        shield = 15;
+        this.promiseShield = true;
+        shieldActivateList.push(function() {
+            if (shield <= 0 & this.promiseShield){
+                this.shieldBroken = true;
+                this.HP -= 10;
+            }
+        })
+
+
         actionActivate();
         ultimateActivate();
+        shieldActivate();
     }
 }
 

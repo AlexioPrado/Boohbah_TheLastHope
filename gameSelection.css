@@ -303,10 +303,10 @@ body {
     bottom: 1em;
     right: 1.5em;
     font-weight: bold;
-    font-size: 32px;
+    font-size: 4.667vh;
     margin: 0;
     background-color: rgb(185, 222, 255);
-    padding: 0.5em 1em 0.5em 1em;
+    padding: 0.2em 1em 0.2em 1em;
     border-radius: 1.5em;
     align-self: flex-start;
     position: absolute;

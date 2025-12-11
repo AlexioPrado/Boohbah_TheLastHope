@@ -24,7 +24,7 @@ body {
     font-family: cookiefont;
     font-weight: normal;
     display: grid;
-    grid-template-columns: 60% 40%;
+    grid-template-columns: 68% 32%;
     height: 100vh;
     user-select: none; 
 }
@@ -71,40 +71,28 @@ body {
     text-align: center;
     color: rgb(228, 241, 255);
     font-weight: bold;
-    font-size: 54px;
+    font-size: 6vh;
     margin-bottom: 3vh;
 }
 #gameResultTitle{
     text-align: center;
     color: rgb(255, 96, 96);
     font-weight: bold;
-    font-size: 92px;
+    font-size: 10.222vh;
 }
-#leaveGameTitle, #endRoundTitle {
+#leaveGameTitle, #endRoundTitle, #playerTurnTitle, #gameStartTitle {
     text-align: center;
     color: rgb(228, 241, 255);
     font-weight: bold;
-    font-size: 92px;
+    font-size: 10.222vh;
 }
 #historyTitle{
     background-color: rgb(83,162,231);
     margin: 1vh;
     font-weight: bold;
-    font-size: 54px;
+    font-size: 6vh;
     padding: 1vh;
     border-radius: 2vh;
-}
-#playerTurnTitle {
-    text-align: center;
-    color: rgb(228, 241, 255);
-    font-weight: bold;
-    font-size: 92px;
-}
-#gameStartTitle {
-    text-align: center;
-    color: rgb(228, 241, 255);
-    font-weight: bold;
-    font-size: 92px;
 }
 
 #playerTurnOverlay.active {
@@ -136,7 +124,7 @@ body {
 #historyBox {
     margin: 1vh;
     background-color: rgb(189, 224, 254);
-    font-size: 18px;
+    font-size: 2vh;
     padding: 0 1vh 1vh 1vh;
     border-radius: 2vh;
     height: 100%;
@@ -163,7 +151,7 @@ body {
     bottom: 4vh; 
     color: rgb(228, 241, 255);
     font-weight: bold;
-    font-size: 18px;
+    font-size: 2vh;
 }
 .buttonArea {
     display: flex;
@@ -174,7 +162,7 @@ body {
 
 .overlayButton {
     background-color: rgb(228, 241, 255);
-    font-size: 24px;
+    font-size: 2.667vh;
     font-weight: bold;
     padding: 1vh;
     border-radius: 2vh;
@@ -401,6 +389,8 @@ body {
     z-index: 1;
     padding: 0.3vh;
     border-radius: 1vh 0 1vh 0;
+    font-weight: normal;
+    font-size: 1.5vh;
 }
 
 .absoluteButton {

@@ -154,7 +154,7 @@ const kimJongBirukin = {'imgURL': 'cardImages/enemyImages/kimJongBirukin.png',
                   'Roles': ['Attack'], 
                   'attributeStacks': ['N', 'N', 'N'],
                   'NA': ['Conflict', 'S', '2', '<p>Deal 5 dmg to the enemy.<br>When the <u>Broken Promise shield</u> breaks, reduce base dmg to 3. (2 rounds)</p>'],
-                  'SK': ['"First They Came"', 'N', '4', '<p>Enhance <u>Conflict</u> to an AoE attack. Reduce base dmg to 3 dmg. (3 rounds)<br>When the <u>Broken Promise shield</u> breaks, remove enhanced state and reduce base dmg to 2. (2 rounds)</p>'],
+                  'SK': ['"First They Came"', 'N', '4', '<p>Enhance <u>Conflict</u> to an AoE attack. Reduce base dmg to 3 dmg. (2 rounds)<br>When the <u>Broken Promise shield</u> breaks, remove enhanced state and reduce base dmg to 2. (2 rounds)</p>'],
                   'UL': ['Dictate The Battlefield', 'N', '4', '7', '<p>All enemies current HP is decreased by half and shields are removed.<br>Place the Broken Promise shield onto oneself with strength 15.<br><u>Broken Promise</u>: When present, dmg is increased by 3. When broken, deal 10 dmg to oneself.</p>'],
                   'identifier': 'kimJongBirukin'};
 

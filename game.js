@@ -538,18 +538,39 @@ const sophiaSwart = {
 const kimJongBirukin = {
     'image' : 'cardImages/enemyImages/kimJongBirukin.png',
     'characterName' : 'kimJongBirukin',
-    'roleType' : ['atack'],
+    'attackPattern' : ['n', 'n', 's', 'n', 'n', 'n', 'u', 's', 'n', 'n', 's', 'n'],
+    'roleType' : ['attack'],
     'maxHP' : 100,
     'HP' : 100,
-    'kitName' : ['Undecided', 'Undecided', 'Undecided'],
+    'kitName' : ['Conflict', '"First They Came"', 'Dictate The Battlefield'],
     'attackType' : ['single','N','N'],
     'actionCost' : [2, 4, 4],
     'energyCost' : 7,
     'dotDuration' : 0,
     'statusDuration' : 2,
+    'enhancedState' : false,
+    'promiseShield' : false,
+    'shieldBroken' : false,
+    'shieldTimer' : 2,
     'normal' : function() {
-        actionMoveType = 'single';
-        activeCharacterDmg = 2;
+        if (this.promiseShield){
+            activeCharacterDmg = 3
+        } else if (this.shieldBroken){
+            activeCharacterDmg = -2;
+        }
+        if (this.enhancedState){
+            actionMoveType = 'aoe';
+            this.attackType[0] = 'aoe';
+            if (this.shieldBroken){
+                activeCharacterDmg 
+            } else {
+                activeCharacterDmg += 3;
+            }
+        } else {
+            actionMoveType = 'single';
+            this.attackType[0] = 'single';
+            activeCharacterDmg += 5;
+        }
         actionActivate();
         normalActivate();
     },
